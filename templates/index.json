@@ -1,18 +1,36 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "hero_banner": {
+    "hero": {
       "type": "hero-banner",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "5,000+",
+            "label": "Happy Clients"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "8",
+            "label": "Services Offered"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "98%",
+            "label": "Satisfaction"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
-        "heading": "Professional Property Services You Can Trust",
+        "eyebrow": "UK Property Services",
+        "heading_line_1": "Professional Property",
+        "heading_line_2": "Services",
+        "heading_line_3": "You Can Trust",
         "subheading": "From legal packs to photography, surveys to tenancy agreements — everything you need to buy, sell or let property in the UK.",
         "background_image": "shopify://shop_images/download-1773395004634.jpg_1_1.png",
         "overlay_opacity": 40,
@@ -20,52 +38,11 @@
         "button_1_link": "shopify://collections/all",
         "button_2_label": "Learn More",
         "button_2_link": "",
-        "trust_text_1": "500+ Properties Served",
-        "trust_text_2": "Rated 4.9/5",
-        "trust_text_3": "RICS Accredited",
-        "color_scheme": "scheme-3",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "badge_title": "RICS Regulated",
+        "badge_subtitle": "UK Property Experts"
       }
     },
-    "trust_bar": {
-      "type": "trust-bar",
-      "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "5000+",
-            "label": "Happy Clients"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "number": "98%",
-            "label": "Satisfaction Rate"
-          }
-        },
-        "stat_4": {
-          "type": "stat",
-          "settings": {
-            "number": "RICS",
-            "label": "Regulated"
-          }
-        }
-      },
-      "block_order": [
-        "stat_1",
-        "stat_3",
-        "stat_4"
-      ],
-      "settings": {
-        "heading": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "service_grid": {
+    "services": {
       "type": "service-grid",
       "blocks": {
         "service_1": {
@@ -101,7 +78,7 @@
         "service_4": {
           "type": "service",
           "settings": {
-            "title": "Professional Photography Service",
+            "title": "Professional Photography",
             "description": "High-quality property photography to showcase your property at its very best.",
             "price_from": "From £149",
             "icon_name": "camera",
@@ -141,7 +118,7 @@
         "service_8": {
           "type": "service",
           "settings": {
-            "title": "Boosting List for Rightmove/Zoopla/Onthemarket",
+            "title": "Boosting Listing",
             "description": "Premium listing placement on Rightmove, Zoopla, and OnTheMarket for maximum exposure.",
             "price_from": "From £99",
             "icon_name": "megaphone",
@@ -150,121 +127,146 @@
         }
       },
       "block_order": [
-        "service_1",
-        "service_2",
-        "service_3",
-        "service_4",
-        "service_5",
-        "service_6",
-        "service_7",
-        "service_8"
+        "service_1", "service_2", "service_3", "service_4",
+        "service_5", "service_6", "service_7", "service_8"
       ],
       "settings": {
-        "heading": "Our Services",
-        "subheading": "Everything you need to sell, let, or manage your property — all in one place.",
-        "color_scheme": "",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "eyebrow": "What We Offer",
+        "heading": "Our Property Services",
+        "subheading": "Everything you need under one roof — professional, regulated and competitively priced.",
+        "view_all_label": "View All Services",
+        "view_all_link": "shopify://collections/all",
+        "color_scheme": "scheme-1"
       }
     },
-    "process_timeline": {
-      "type": "process-timeline",
+    "why_choose_us": {
+      "type": "why-choose-us",
       "blocks": {
-        "step_1": {
-          "type": "step",
+        "feature_1": {
+          "type": "feature",
           "settings": {
-            "step_number": "1",
-            "title": "Choose Your Service",
-            "description": "Browse our range of property services and select what you need."
+            "icon": "shield",
+            "title": "Fully Regulated",
+            "description": "All our services are delivered by RICS-regulated professionals, giving you complete peace of mind."
           }
         },
-        "step_2": {
-          "type": "step",
+        "feature_2": {
+          "type": "feature",
           "settings": {
-            "step_number": "2",
-            "title": "Provide Property Details",
-            "description": "Enter your property address and any specific requirements."
+            "icon": "clock",
+            "title": "Fast Turnaround",
+            "description": "We understand time is critical in property transactions. Most services delivered within 48–72 hours."
           }
         },
-        "step_3": {
-          "type": "step",
+        "feature_3": {
+          "type": "feature",
           "settings": {
-            "step_number": "3",
-            "title": "Expert Processing",
-            "description": "Our team of professionals handles your service with care."
+            "icon": "star",
+            "title": "5-Star Rated",
+            "description": "Over 5,000 satisfied clients have rated us 5 stars for quality, speed and professionalism."
           }
         },
-        "step_4": {
-          "type": "step",
+        "feature_4": {
+          "type": "feature",
           "settings": {
-            "step_number": "4",
-            "title": "Receive Your Documents",
-            "description": "Get your completed documents delivered to your account."
+            "icon": "phone",
+            "title": "Expert Support",
+            "description": "Our UK-based team is available to guide you through every step of your property journey."
+          }
+        },
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "5k+",
+            "label": "Clients Served",
+            "full_width": false
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "12yr",
+            "label": "Experience",
+            "full_width": false
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "98%",
+            "label": "Satisfaction Rate",
+            "full_width": false
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "£0",
+            "label": "Hidden Fees — ever",
+            "full_width": true
           }
         }
       },
       "block_order": [
-        "step_1",
-        "step_2",
-        "step_3",
-        "step_4"
+        "feature_1", "feature_2", "feature_3", "feature_4",
+        "stat_1", "stat_2", "stat_3", "stat_4"
       ],
       "settings": {
-        "heading": "How It Works",
-        "subheading": "Getting started is simple — just four easy steps.",
-        "color_scheme": "",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "eyebrow": "Why Choose Us",
+        "heading": "The Trusted Name in Property Services",
+        "subheading": "We work with buyers, sellers and landlords across the UK to make property transactions smooth and stress-free."
       }
     },
-    "cta_section": {
-      "type": "rich-text",
+    "testimonials": {
+      "type": "testimonials",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "testimonial_1": {
+          "type": "testimonial",
           "settings": {
-            "heading": "Ready to Get Started?",
-            "heading_size": "h1"
+            "quote": "Buy Property Services made our auction purchase so smooth. The legal pack was ready within 24 hours and the team explained every document clearly.",
+            "name": "Sarah Thompson",
+            "role": "First-time buyer, Manchester"
           }
         },
-        "text": {
-          "type": "text",
+        "testimonial_2": {
+          "type": "testimonial",
           "settings": {
-            "text": "<p>Browse our full range of property services or get in touch for a free consultation.</p>"
+            "quote": "The RICS Level 2 Survey flagged issues that saved us from a costly mistake. Absolutely worth every penny. Professional and thorough.",
+            "name": "James Hargreaves",
+            "role": "Property investor, Leeds"
           }
         },
-        "button": {
-          "type": "button",
+        "testimonial_3": {
+          "type": "testimonial",
           "settings": {
-            "button_label": "Browse All Services",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "quote": "The photography service transformed our listing — we had viewings booked within 24 hours of going live. Couldn't be happier.",
+            "name": "Emily Clarke",
+            "role": "Landlord, Birmingham"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "eyebrow": "Client Reviews",
+        "heading": "What Our Clients Say",
+        "subheading": "Trusted by thousands of buyers, sellers and landlords across the UK."
+      }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "heading": "Ready to Get Started?",
+        "subheading": "Browse our full range of professional property services and order online in minutes.",
+        "button_label": "Browse All Services",
+        "button_link": "shopify://collections/all"
       }
     }
   },
   "order": [
-    "hero_banner",
-    "trust_bar",
-    "service_grid",
-    "process_timeline",
-    "cta_section"
+    "hero",
+    "services",
+    "why_choose_us",
+    "testimonials",
+    "cta"
   ]
 }

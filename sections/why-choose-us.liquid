@@ -1,0 +1,159 @@
+<section class="why-section section">
+  <div class="container">
+    <div class="why-grid">
+      <!-- Features list -->
+      <div>
+        <div class="section-header" style="text-align:left;margin-bottom:40px">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          <h2>{{ section.settings.heading }}</h2>
+          {%- if section.settings.subheading != blank -%}
+            <p>{{ section.settings.subheading }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="why-features">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'feature' -%}
+              <div class="why-feature" {{ block.shopify_attributes }}>
+                <div class="why-feature__icon">
+                  {%- case block.settings.icon -%}
+                    {%- when 'shield' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    {%- when 'clock' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    {%- when 'star' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    {%- when 'phone' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+                    {%- when 'check' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  {%- endcase -%}
+                </div>
+                <div class="why-feature__text">
+                  <h4>{{ block.settings.title }}</h4>
+                  <p>{{ block.settings.description }}</p>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <!-- Stats visual panel -->
+      <div class="why-visual">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'stat' -%}
+            <div class="why-stat-card{% if block.settings.full_width %} full{% endif %}" {{ block.shopify_attributes }}>
+              <div class="num">{{ block.settings.number }}</div>
+              <div class="lbl">{{ block.settings.label }}</div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why Choose Us",
+  "tag": "div",
+  "class": "section-why-choose-us",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Why Choose Us"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Trusted Name in Property Services"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "We work with buyers, sellers and landlords across the UK to make property transactions smooth and stress-free."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shield", "label": "Shield" },
+            { "value": "clock", "label": "Clock" },
+            { "value": "star", "label": "Star" },
+            { "value": "phone", "label": "Phone" },
+            { "value": "check", "label": "Checkmark" }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description text goes here."
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "name": "Stat Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "5k+"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Clients Served"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full width",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose Us",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "shield", "title": "Fully Regulated", "description": "All our services are delivered by RICS-regulated professionals, giving you complete peace of mind." } },
+        { "type": "feature", "settings": { "icon": "clock", "title": "Fast Turnaround", "description": "We understand time is critical in property transactions. Most services delivered within 48–72 hours." } },
+        { "type": "feature", "settings": { "icon": "star", "title": "5-Star Rated", "description": "Over 5,000 satisfied clients have rated us 5 stars for quality, speed and professionalism." } },
+        { "type": "feature", "settings": { "icon": "phone", "title": "Expert Support", "description": "Our UK-based team is available to guide you through every step of your property journey." } },
+        { "type": "stat", "settings": { "number": "5k+", "label": "Clients Served", "full_width": false } },
+        { "type": "stat", "settings": { "number": "12yr", "label": "Experience", "full_width": false } },
+        { "type": "stat", "settings": { "number": "98%", "label": "Satisfaction Rate", "full_width": false } },
+        { "type": "stat", "settings": { "number": "£0", "label": "Hidden Fees — ever", "full_width": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}
