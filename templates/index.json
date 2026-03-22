@@ -252,6 +252,50 @@
         "subheading": "Trusted by thousands of buyers, sellers and landlords across the UK."
       }
     },
+    "how_it_works": {
+      "type": "process-timeline",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "title": "Choose Your Service",
+            "description": "Browse our range of property services and select what you need."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "title": "Provide Property Details",
+            "description": "Enter your property address and any specific requirements."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "title": "Expert Processing",
+            "description": "Our team of professionals handles your service with care."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "step_number": "4",
+            "title": "Receive Your Documents",
+            "description": "Get your completed documents delivered to your account."
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "settings": {
+        "heading": "How It Works",
+        "subheading": "Getting started is simple — just four easy steps.",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "cta": {
       "type": "cta-band",
       "settings": {
@@ -265,6 +309,7 @@
   "order": [
     "hero",
     "services",
+    "how_it_works",
     "why_choose_us",
     "testimonials",
     "cta"

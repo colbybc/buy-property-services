@@ -1,6 +1,5 @@
 /* ==========================================================================
    Buy Property Services — Custom Theme Styles
-   Inspired by the clean, professional property services design
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -13,7 +12,6 @@
   --bp-orange-hover: #D4872E;
   --bp-olive: #8FB339;
   --bp-cream: #F5F0E1;
-  --bp-tan: #C4B699;
   --bp-text: #1A1A1A;
   --bp-text-light: #555555;
   --bp-white: #FFFFFF;
@@ -45,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   .section { padding: 48px 0; }
 }
 
-/* --- Section Headers (bp- prefix to avoid Dawn conflict) --- */
+/* --- Section Headers --- */
 .bp-section-header {
   text-align: center;
   margin-bottom: 48px;
@@ -126,21 +124,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   HERO
+   HERO — large text, cross pattern, trust markers
    ========================================================================== */
 .hero {
   position: relative;
   background: linear-gradient(135deg, #0f3d1f 0%, #1A4D2E 40%, #1e5c35 100%);
   overflow: hidden;
-  padding: 80px 0 60px;
+  padding: 100px 0 80px;
 }
+
+/* Cross / grid pattern overlay */
 .hero__pattern {
   position: absolute;
   inset: 0;
+  opacity: 0.07;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 40%);
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
+
 .hero__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -154,53 +157,59 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero__eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--bp-orange);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
+
+/* Large hero heading like the reference */
 .hero__text h1 {
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   color: var(--bp-white);
-  margin: 0 0 20px;
-  line-height: 1.15;
+  margin: 0 0 24px;
+  line-height: 1.1;
 }
 .hero__text h1 em {
   font-style: normal;
   color: var(--bp-orange);
 }
 .hero__sub {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: rgba(255,255,255,0.8);
   line-height: 1.7;
-  margin: 0 0 32px;
+  margin: 0 0 36px;
   max-width: 520px;
 }
 .hero__cta {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
+
+/* Trust markers / stats in hero */
 .hero__stats {
   display: flex;
-  gap: 40px;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 .hero__stat {
   text-align: left;
 }
 .hero__stat .num {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--bp-white);
   line-height: 1.2;
 }
 .hero__stat .lbl {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.55);
   margin-top: 2px;
 }
 
@@ -252,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 989px) {
-  .hero { padding: 48px 0 40px; }
+  .hero { padding: 60px 0 48px; }
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -260,20 +269,20 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero__sub { margin-left: auto; margin-right: auto; }
   .hero__cta { justify-content: center; }
-  .hero__stats { justify-content: center; gap: 32px; }
+  .hero__stats { justify-content: center; gap: 36px; }
   .hero__stat { text-align: center; }
   .hero__image-wrap { max-width: 500px; margin: 0 auto; }
   .hero__badge { left: 50%; transform: translateX(-50%); }
 }
 @media (max-width: 479px) {
-  .hero__stats { gap: 20px; }
-  .hero__stat .num { font-size: 1.35rem; }
+  .hero__stats { gap: 24px; flex-wrap: wrap; }
+  .hero__stat .num { font-size: 1.5rem; }
   .hero__cta { flex-direction: column; align-items: center; }
   .hero__cta .btn { width: 100%; max-width: 280px; }
 }
 
 /* ==========================================================================
-   SERVICES GRID
+   SERVICES GRID — inline SVG icons from reference
    ========================================================================== */
 .services-section {
   background: var(--bp-bg-light);
@@ -352,6 +361,114 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
+   PROCESS TIMELINE — horizontal on desktop
+   ========================================================================== */
+.process-timeline {
+  background: var(--bp-white);
+}
+.process-timeline__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.process-timeline__heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--bp-text);
+  margin: 0 0 12px;
+}
+.process-timeline__subheading {
+  font-size: 1.05rem;
+  color: var(--bp-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.process-timeline__steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* Horizontal connector line */
+.process-timeline__steps::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 48px;
+  right: 48px;
+  height: 2px;
+  background: var(--bp-border);
+}
+.process-timeline__step {
+  flex: 1;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+}
+.process-timeline__number {
+  width: 48px;
+  height: 48px;
+  background: var(--bp-green);
+  color: var(--bp-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 auto 16px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(26,77,46,0.2);
+}
+.process-timeline__connector {
+  display: none;
+}
+.process-timeline__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bp-text);
+  margin: 0 0 6px;
+}
+.process-timeline__description {
+  font-size: 0.85rem;
+  color: var(--bp-text-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 749px) {
+  .process-timeline__steps {
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 48px;
+    max-width: 100%;
+  }
+  .process-timeline__steps::before {
+    left: 23px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+  }
+  .process-timeline__step {
+    text-align: left;
+    padding: 0;
+  }
+  .process-timeline__number {
+    position: absolute;
+    left: -48px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
    WHY CHOOSE US
    ========================================================================== */
 .why-section {
@@ -400,8 +517,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
   margin: 0;
 }
-
-/* Stats visual */
 .why-visual {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -429,13 +544,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 989px) {
-  .why-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .why-visual {
-    max-width: 400px;
-  }
+  .why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .why-visual { max-width: 400px; }
 }
 
 /* ==========================================================================
@@ -524,7 +634,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   ANNOUNCEMENT BAR (Dawn override — blend with header)
+   ANNOUNCEMENT BAR (Dawn override)
    ========================================================================== */
 .shopify-section-group-header-group .announcement-bar-section,
 .shopify-section-group-header-group .utility-bar,
@@ -556,38 +666,37 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    HEADER (Dawn overrides)
    ========================================================================== */
-.section-header,
+.shopify-section-group-header-group .section-header,
 .header-wrapper {
   background-color: var(--bp-green) !important;
   border: none !important;
 }
-/* Kill ALL borders between announcement and header */
 .shopify-section-group-header-group > *,
 .header-wrapper--border-bottom {
   border-top: none !important;
   border-bottom: none !important;
 }
-.section-header a,
-.section-header .header__heading-link,
-.section-header .header__menu-item,
-.section-header .list-menu__item--link {
+.shopify-section-group-header-group .section-header a,
+.shopify-section-group-header-group .section-header .header__heading-link,
+.shopify-section-group-header-group .section-header .header__menu-item,
+.shopify-section-group-header-group .section-header .list-menu__item--link {
   color: var(--bp-white) !important;
   text-decoration: none;
 }
-.section-header .header__menu-item:hover,
-.section-header .list-menu__item--link:hover {
+.shopify-section-group-header-group .section-header .header__menu-item:hover,
+.shopify-section-group-header-group .section-header .list-menu__item--link:hover {
   color: var(--bp-orange) !important;
 }
-.section-header .header__icon,
-.section-header .header__icon .icon {
+.shopify-section-group-header-group .section-header .header__icon,
+.shopify-section-group-header-group .section-header .header__icon .icon {
   color: var(--bp-white) !important;
   fill: var(--bp-white);
 }
-.section-header .header__icon:hover,
-.section-header .header__icon:hover .icon {
+.shopify-section-group-header-group .section-header .header__icon:hover,
+.shopify-section-group-header-group .section-header .header__icon:hover .icon {
   color: var(--bp-orange) !important;
 }
-.section-header .cart-count-bubble {
+.shopify-section-group-header-group .section-header .cart-count-bubble {
   background-color: var(--bp-orange);
   color: var(--bp-white);
 }
@@ -621,8 +730,8 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
   filter: brightness(0) invert(1);
 }
-.section-header .header__heading-link .h2,
-.section-header .header__heading-link span {
+.shopify-section-group-header-group .section-header .header__heading-link .h2,
+.shopify-section-group-header-group .section-header .header__heading-link span {
   color: var(--bp-white) !important;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -683,9 +792,5 @@ h1, h2, h3, h4, h5, h6 {
   transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+  .reveal-on-scroll { opacity: 1; transform: none; transition: none; }
 }
