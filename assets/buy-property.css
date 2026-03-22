@@ -609,18 +609,71 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
 }
 
-/* --- Announcement Bar --- */
+/* --- Announcement Bar (blend with header) --- */
+.shopify-section-group-header-group .announcement-bar-section {
+  background-color: #0D2617 !important;
+  border: none !important;
+}
+.shopify-section-group-header-group .utility-bar,
+.shopify-section-group-header-group .announcement-bar__wrapper {
+  background-color: #0D2617 !important;
+  border: none !important;
+}
+.shopify-section-group-header-group .color-scheme-4 {
+  background: #0D2617 !important;
+}
 .announcement-bar {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
+  border: none !important;
 }
-.announcement-bar-section {
-  background-color: #0D2617 !important;
+.announcement-bar__message,
+.announcement-bar__message span,
+.announcement-bar__message p {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.03em;
+  margin: 0;
 }
-.announcement-bar__message {
-  color: rgba(255, 255, 255, 0.7) !important;
-  font-weight: 400;
+.announcement-bar__link {
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-decoration: none !important;
+}
+/* Kill ALL lines/borders between announcement bar and header */
+.shopify-section-group-header-group > *,
+.shopify-section-group-header-group .section-header,
+.header-wrapper,
+.header-wrapper--border-bottom {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+/* Tighten announcement bar spacing */
+.announcement-bar {
+  padding: 6px 0 !important;
+}
+.announcement-bar-section .announcement-bar {
+  min-height: unset !important;
+}
+
+/* --- Logo on dark header --- */
+.header__heading-logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+.header__heading-logo {
+  max-height: 60px;
+  width: auto;
+  /* Make green logo visible on dark green header */
+  filter: brightness(0) invert(1);
+}
+/* Also handle text fallback if no logo uploaded */
+.section-header .header__heading-link .h2,
+.section-header .header__heading-link span {
+  color: var(--bp-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 /* --- Scroll Reveal --- */
