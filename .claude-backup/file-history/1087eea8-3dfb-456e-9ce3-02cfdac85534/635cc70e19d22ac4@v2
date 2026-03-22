@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 20
+      }
+    },
+    "trust_bar": {
+      "type": "trust-bar",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "500+",
+            "label": "Services Delivered",
+            "icon": "check-circle"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "4.9★",
+            "label": "Average Rating",
+            "icon": "star"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "24hr",
+            "label": "Response Time",
+            "icon": "check-circle"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "settings": {
+        "heading": "Why Choose Us",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "process_timeline": {
+      "type": "process-timeline",
+      "settings": {
+        "heading": "How We Work",
+        "subheading": "Our simple process from start to finish",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "trust_bar",
+    "process_timeline"
+  ]
+}

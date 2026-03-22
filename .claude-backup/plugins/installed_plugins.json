@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "plugins": {
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\colby\\.claude\\plugins\\cache\\claude-plugins-official\\frontend-design\\61c0597779bd",
+        "version": "61c0597779bd",
+        "installedAt": "2026-03-22T14:51:02.684Z",
+        "lastUpdated": "2026-03-22T14:51:02.684Z",
+        "gitCommitSha": "61c0597779bd2d670dcd4fbbf37c66aa19eb2ce6"
+      }
+    ]
+  }
+}

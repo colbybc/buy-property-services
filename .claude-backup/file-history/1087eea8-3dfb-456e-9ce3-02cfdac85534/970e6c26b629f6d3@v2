@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "hero_banner": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Professional Property Services",
+        "subheading": "Expert legal, survey & marketing services for landlords and sellers across the UK",
+        "overlay_opacity": 40,
+        "button_1_label": "I'm Selling",
+        "button_1_link": "",
+        "button_2_label": "I'm Renting",
+        "button_2_link": "",
+        "trust_text_1": "500+ Properties Served",
+        "trust_text_2": "Rated 4.9/5 ★",
+        "trust_text_3": "RICS Accredited",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "trust_bar": {
+      "type": "trust-bar",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "500+",
+            "label": "Services Delivered",
+            "icon": "check-circle"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "4.9★",
+            "label": "Average Rating",
+            "icon": "star"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "24hr",
+            "label": "Response Time",
+            "icon": "check-circle"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "RICS",
+            "label": "Accredited",
+            "icon": "check-circle"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
+      "settings": {
+        "heading": "Trusted by Property Professionals Across the UK",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "service_grid": {
+      "type": "service-grid",
+      "blocks": {
+        "service_1": {
+          "type": "service",
+          "settings": {
+            "title": "Auction Legal Pack",
+            "description": "Comprehensive legal documentation pack for property auctions, including all required searches and certificates.",
+            "price_from": "From £299",
+            "icon_name": "document",
+            "link": ""
+          }
+        },
+        "service_2": {
+          "type": "service",
+          "settings": {
+            "title": "RICS Level 2 Survey",
+            "description": "Professional RICS HomeBuyer Report to identify potential issues before you buy or sell.",
+            "price_from": "From £399",
+            "icon_name": "house-search",
+            "link": ""
+          }
+        },
+        "service_3": {
+          "type": "service",
+          "settings": {
+            "title": "Outlays",
+            "description": "We handle all search fees, Land Registry charges, and local authority costs on your behalf.",
+            "price_from": "From £150",
+            "icon_name": "coins",
+            "link": ""
+          }
+        },
+        "service_4": {
+          "type": "service",
+          "settings": {
+            "title": "Professional Photography",
+            "description": "High-quality property photography to showcase your property at its very best.",
+            "price_from": "From £149",
+            "icon_name": "camera",
+            "link": ""
+          }
+        },
+        "service_5": {
+          "type": "service",
+          "settings": {
+            "title": "Property Title",
+            "description": "Official Land Registry title deeds and title plans for any property in England & Wales.",
+            "price_from": "From £30",
+            "icon_name": "scroll",
+            "link": ""
+          }
+        },
+        "service_6": {
+          "type": "service",
+          "settings": {
+            "title": "Rent Increase",
+            "description": "Legally compliant Section 13 rent increase notices drafted and served correctly.",
+            "price_from": "From £49",
+            "icon_name": "arrow-up",
+            "link": ""
+          }
+        },
+        "service_7": {
+          "type": "service",
+          "settings": {
+            "title": "Tenancy Agreement",
+            "description": "Professionally drafted AST agreements compliant with current UK housing legislation.",
+            "price_from": "From £79",
+            "icon_name": "handshake",
+            "link": ""
+          }
+        },
+        "service_8": {
+          "type": "service",
+          "settings": {
+            "title": "Portal Boosting",
+            "description": "Premium listing placement on Rightmove, Zoopla, and OnTheMarket for maximum exposure.",
+            "price_from": "From £99",
+            "icon_name": "megaphone",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["service_1", "service_2", "service_3", "service_4", "service_5", "service_6", "service_7", "service_8"],
+      "settings": {
+        "heading": "Our Services",
+        "subheading": "Everything you need to sell, let, or manage your property — all in one place",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "process_timeline": {
+      "type": "process-timeline",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "title": "Choose Your Service",
+            "description": "Browse our range of property services and select what you need.",
+            "icon": "check-circle"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "title": "Provide Property Details",
+            "description": "Enter your property address and any specific requirements.",
+            "icon": "house-search"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "title": "Expert Processing",
+            "description": "Our team of professionals handles your service with care.",
+            "icon": "document"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "step_number": "4",
+            "title": "Receive Your Documents",
+            "description": "Get your completed documents delivered to your account.",
+            "icon": "scroll"
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "settings": {
+        "heading": "How It Works",
+        "subheading": "Getting started is simple — just four easy steps",
+        "color_scheme": "scheme-2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cta_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to Get Started?",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Browse our full range of property services or get in touch for a free consultation.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "View All Services",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Contact Us",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "image_overlay_opacity": 50,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    }
+  },
+  "order": [
+    "hero_banner",
+    "trust_bar",
+    "service_grid",
+    "process_timeline",
+    "cta_banner"
+  ]
+}

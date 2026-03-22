@@ -1,0 +1,95 @@
+<section class="testimonials-section section">
+  <div class="page-width">
+    <div class="bp-section-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="testimonials-grid">
+      {%- for block in section.blocks -%}
+        <div class="testimonial-card" {{ block.shopify_attributes }}>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"{{ block.settings.quote }}"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">
+              {{ block.settings.name | slice: 0 }}
+            </div>
+            <div>
+              <div class="testimonial-name">{{ block.settings.name }}</div>
+              <div class="testimonial-role">{{ block.settings.role }}</div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "div",
+  "class": "section-testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Client Reviews"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Our Clients Say"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Trusted by thousands of buyers, sellers and landlords across the UK."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Excellent service from start to finish. Highly recommended."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "John Smith"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role / Location",
+          "default": "Landlord, London"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "testimonial", "settings": { "quote": "Buy Property Services made our auction purchase so smooth. The legal pack was ready within 24 hours and the team explained every document clearly.", "name": "Sarah Thompson", "role": "First-time buyer, Manchester" } },
+        { "type": "testimonial", "settings": { "quote": "The RICS Level 2 Survey flagged issues that saved us from a costly mistake. Absolutely worth every penny. Professional and thorough.", "name": "James Hargreaves", "role": "Property investor, Leeds" } },
+        { "type": "testimonial", "settings": { "quote": "The photography service transformed our listing — we had viewings booked within 24 hours of going live. Couldn't be happier.", "name": "Emily Clarke", "role": "Landlord, Birmingham" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
