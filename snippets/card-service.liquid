@@ -1,0 +1,65 @@
+{% comment %}
+  Renders a service card with glassmorphism styling.
+
+  Accepts:
+  - card_title:        {String} Service name (e.g. "RICS Level 2 Survey")
+  - card_description:  {String} Short description of the service
+  - card_price:        {String} Price text (e.g. "From £299")
+  - card_icon:         {String} Icon name to pass to icon-service snippet
+  - card_link:         {String} URL the card links to
+  - card_color_scheme: {String} Color scheme class (e.g. "scheme-1")
+
+  Usage:
+  {% render 'card-service',
+    card_title: 'Auction Legal Pack',
+    card_description: 'Everything you need for auction.',
+    card_price: 'From £299',
+    card_icon: 'document',
+    card_link: product.url,
+    card_color_scheme: 'scheme-1'
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign title = card_title | default: 'Service'
+  assign description = card_description | default: ''
+  assign price = card_price | default: ''
+  assign icon = card_icon | default: 'check-circle'
+  assign link = card_link | default: '#'
+  assign color_scheme = card_color_scheme | default: 'scheme-1'
+-%}
+
+<a href="{{ link }}" class="glass-card card-service color-{{ color_scheme }} reveal-on-scroll" aria-label="{{ title }}">
+  {%- comment -%} Icon area at top {%- endcomment -%}
+  <div class="card-service__icon">
+    {% render 'icon-service', icon_name: icon %}
+  </div>
+
+  {%- comment -%} Title {%- endcomment -%}
+  <h3 class="card-service__title h3">
+    {{- title | escape -}}
+  </h3>
+
+  {%- comment -%} Description {%- endcomment -%}
+  {%- if description != blank -%}
+    <p class="card-service__description">
+      {{- description | escape -}}
+    </p>
+  {%- endif -%}
+
+  {%- comment -%} Price badge {%- endcomment -%}
+  {%- if price != blank -%}
+    <span class="card-service__price-badge">
+      {{- price | escape -}}
+    </span>
+  {%- endif -%}
+
+  {%- comment -%} Learn More CTA {%- endcomment -%}
+  <span class="card-service__cta btn-link">
+    Learn More
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </span>
+</a>

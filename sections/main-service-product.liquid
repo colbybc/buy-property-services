@@ -1,0 +1,609 @@
+{% comment %}
+  Main Service Product Section
+  ============================
+  A simplified product section designed for SERVICE products (not physical goods).
+  Based on Dawn's main-product.liquid but removes shipping/weight/variant-heavy logic.
+
+  Features:
+  - Product title, price, description
+  - Property Address line item property input
+  - "What's Included" collapsible accordion
+  - "Timescales" collapsible accordion
+  - Important information notice
+  - Sticky mobile bottom CTA
+  - Full Shopify cart/checkout compatibility
+{% endcomment %}
+
+<section
+  id="MainServiceProduct-{{ section.id }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  data-section="{{ section.id }}"
+>
+  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+  <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    /* Service product custom styles */
+    .service-product__info {
+      max-width: 700px;
+    }
+
+    .service-product__address-field {
+      margin: 1.6rem 0;
+    }
+
+    .service-product__address-field label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      font-size: 1.4rem;
+    }
+
+    .service-product__address-field input {
+      width: 100%;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(var(--color-foreground), 0.2);
+      border-radius: 8px;
+      font-size: 1.4rem;
+      background: rgba(var(--color-background), 1);
+      transition: border-color 0.2s ease;
+    }
+
+    .service-product__address-field input:focus {
+      outline: none;
+      border-color: rgba(var(--color-foreground), 0.5);
+      box-shadow: 0 0 0 2px rgba(var(--color-foreground), 0.1);
+    }
+
+    .service-product__notice {
+      background: rgba(var(--color-foreground), 0.04);
+      border-left: 4px solid #d4872e;
+      padding: 1.6rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+
+    .service-product__notice-title {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      font-size: 1.4rem;
+    }
+
+    .service-accordion {
+      border-top: 1px solid rgba(var(--color-foreground), 0.1);
+      margin-top: 1.6rem;
+    }
+
+    .service-accordion__item {
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+    }
+
+    .service-accordion__trigger {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1.6rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgb(var(--color-foreground));
+      text-align: left;
+    }
+
+    .service-accordion__trigger:hover {
+      opacity: 0.8;
+    }
+
+    .service-accordion__icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .service-accordion__item[open] .service-accordion__icon {
+      transform: rotate(180deg);
+    }
+
+    .service-accordion__content {
+      padding: 0 0 1.6rem 0;
+      font-size: 1.4rem;
+      line-height: 1.7;
+    }
+
+    .service-accordion__content .rte {
+      margin: 0;
+    }
+
+    /* Buy button - orange CTA override */
+    .service-product__buy-btn .btn-primary,
+    .service-product__buy-btn .product-form__submit {
+      background-color: #d4872e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 1.4rem 3rem;
+      font-weight: 700;
+      font-size: 1.5rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .service-product__buy-btn .btn-primary:hover,
+    .service-product__buy-btn .product-form__submit:hover {
+      background-color: #c07828;
+      transform: translateY(-1px);
+    }
+
+    .service-product__buy-btn .btn-primary:active,
+    .service-product__buy-btn .product-form__submit:active {
+      transform: translateY(0);
+    }
+
+    /* Sticky mobile bottom CTA */
+    .service-product__sticky-cta {
+      display: none;
+    }
+
+    @media screen and (max-width: 749px) {
+      .service-product__sticky-cta {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background: rgb(var(--color-background));
+        border-top: 1px solid rgba(var(--color-foreground), 0.1);
+        padding: 1.2rem 1.6rem;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .service-product__sticky-cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.2rem;
+      }
+
+      .service-product__sticky-price {
+        font-weight: 700;
+        font-size: 1.6rem;
+        white-space: nowrap;
+      }
+
+      .service-product__sticky-cta .btn-primary {
+        background-color: #d4872e;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 1.2rem 2.4rem;
+        font-weight: 700;
+        font-size: 1.4rem;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* Extra bottom padding on main content so sticky CTA doesn't overlap */
+      #MainServiceProduct-{{ section.id }} {
+        padding-bottom: 80px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="page-width">
+    <div class="product grid grid--1-col grid--2-col-tablet">
+      {%- comment -%}
+        ========================================
+        LEFT COLUMN: Product media (image)
+        ========================================
+      {%- endcomment -%}
+      <div class="grid__item product__media-wrapper">
+        {%- if product.featured_media -%}
+          <div class="product__media-item" data-media-id="{{ product.featured_media.id }}">
+            {%- assign image = product.featured_media.preview_image -%}
+            <img
+              srcset="
+                {%- if image.width >= 550 -%}{{ image | image_url: width: 550 }} 550w,{%- endif -%}
+                {%- if image.width >= 750 -%}{{ image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if image.width >= 1100 -%}{{ image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {{ image | image_url }} {{ image.width }}w
+              "
+              src="{{ image | image_url: width: 750 }}"
+              sizes="(min-width: 750px) 50vw, 100vw"
+              alt="{{ image.alt | escape }}"
+              loading="lazy"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              style="border-radius: 12px; object-fit: {{ section.settings.media_fit }};"
+            >
+          </div>
+        {%- else -%}
+          {%- comment -%} Placeholder if no image is uploaded {%- endcomment -%}
+          <div class="product__media-item product__media-placeholder">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%}
+        ========================================
+        RIGHT COLUMN: Product info
+        ========================================
+      {%- endcomment -%}
+      <div class="product__info-wrapper grid__item">
+        <div
+          id="ServiceProductInfo-{{ section.id }}"
+          class="service-product__info product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+        >
+          {%- assign product_form_id = 'service-product-form-' | append: section.id -%}
+
+          {%- comment -%}
+            Loop through section blocks to render in customizer-defined order
+          {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+
+              {%- comment -%} ---- TITLE BLOCK ---- {%- endcomment -%}
+              {%- when 'title' -%}
+                <div class="product__title" {{ block.shopify_attributes }}>
+                  <h1 class="h1">{{ product.title | escape }}</h1>
+                </div>
+
+              {%- comment -%} ---- PRICE BLOCK ---- {%- endcomment -%}
+              {%- when 'price' -%}
+                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+
+              {%- comment -%} ---- DESCRIPTION BLOCK ---- {%- endcomment -%}
+              {%- when 'description' -%}
+                {%- if product.description != blank -%}
+                  <div class="product__description rte" {{ block.shopify_attributes }}>
+                    {{ product.description }}
+                  </div>
+                {%- endif -%}
+
+              {%- comment -%} ---- PROPERTY ADDRESS INPUT ---- {%- endcomment -%}
+              {%- when 'property_address_input' -%}
+                <div class="service-product__address-field" {{ block.shopify_attributes }}>
+                  <label for="PropertyAddress-{{ section.id }}">
+                    {{ block.settings.label | default: 'Property Address' }}
+                  </label>
+                  <input
+                    type="text"
+                    id="PropertyAddress-{{ section.id }}"
+                    name="properties[{{ block.settings.label | default: 'Property Address' }}]"
+                    form="{{ product_form_id }}"
+                    placeholder="{{ block.settings.placeholder | default: 'Enter the full property address' }}"
+                    {% if block.settings.required %}required{% endif %}
+                  >
+                </div>
+
+              {%- comment -%} ---- COLLAPSIBLE TAB (What's Included, Timescales, etc.) ---- {%- endcomment -%}
+              {%- when 'collapsible_tab' -%}
+                <div class="service-accordion" {{ block.shopify_attributes }}>
+                  <details class="service-accordion__item">
+                    <summary class="service-accordion__trigger">
+                      <span>{{ block.settings.heading | default: 'Details' | escape }}</span>
+                      <svg class="service-accordion__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </summary>
+                    <div class="service-accordion__content rte">
+                      {{ block.settings.content }}
+                    </div>
+                  </details>
+                </div>
+
+              {%- comment -%} ---- BUY BUTTONS BLOCK ---- {%- endcomment -%}
+              {%- when 'buy_buttons' -%}
+                <div class="service-product__buy-btn" {{ block.shopify_attributes }}>
+                  {%- comment -%}
+                    Important information notice - displayed above buy button
+                  {%- endcomment -%}
+                  <div class="service-product__notice">
+                    <div class="service-product__notice-title">Important Information</div>
+                    <p>Our team will contact you within 24 hours of purchase to begin processing your service.</p>
+                  </div>
+
+                  <product-form
+                    class="product-form"
+                    data-hide-errors="false"
+                    data-section-id="{{ section.id }}"
+                  >
+                    <div class="product-form__error-message-wrapper" role="alert" hidden>
+                      <span class="svg-wrapper">
+                        {{- 'icon-error.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="product-form__error-message"></span>
+                    </div>
+
+                    {%- form 'product',
+                      product,
+                      id: product_form_id,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      {%- comment -%}
+                        Hidden variant ID input - required for Shopify cart.
+                        Services typically have one variant (default).
+                      {%- endcomment -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                        {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                        class="product-variant-id"
+                      >
+
+                      {%- comment -%}
+                        If the product has variants (e.g. different service tiers),
+                        show a simple selector.
+                      {%- endcomment -%}
+                      {%- unless product.has_only_default_variant -%}
+                        <div class="service-product__variants" style="margin-bottom: 1.6rem;">
+                          {%- for option in product.options_with_values -%}
+                            <div class="service-product__variant-group">
+                              <label
+                                for="ServiceVariant-{{ section.id }}-{{ forloop.index0 }}"
+                                style="display: block; font-weight: 600; margin-bottom: 0.6rem; font-size: 1.4rem;"
+                              >
+                                {{ option.name | escape }}
+                              </label>
+                              <select
+                                id="ServiceVariant-{{ section.id }}-{{ forloop.index0 }}"
+                                style="width: 100%; padding: 1.2rem 1.4rem; border: 1px solid rgba(var(--color-foreground), 0.2); border-radius: 8px; font-size: 1.4rem; background: rgba(var(--color-background), 1);"
+                              >
+                                {%- for value in option.values -%}
+                                  <option
+                                    value="{{ value | escape }}"
+                                    {% if option.selected_value == value %}selected{% endif %}
+                                  >
+                                    {{ value | escape }}
+                                  </option>
+                                {%- endfor -%}
+                              </select>
+                            </div>
+                          {%- endfor -%}
+                        </div>
+                      {%- endunless -%}
+
+                      <button
+                        type="submit"
+                        name="add"
+                        class="product-form__submit btn-primary"
+                        {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                      >
+                        {%- if product.selected_or_first_available_variant.available -%}
+                          {{ block.settings.button_label | default: 'Book This Service' }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                      </button>
+
+                      {%- if block.settings.show_dynamic_checkout -%}
+                        {{ form | payment_button }}
+                      {%- endif -%}
+                    {%- endform -%}
+                  </product-form>
+                </div>
+
+            {%- endcase -%}
+          {%- endfor -%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%}
+    ========================================
+    STICKY MOBILE BOTTOM CTA
+    Shows a fixed bar at the bottom of the screen on mobile with
+    the price and a quick "Book" button that submits the main form.
+    ========================================
+  {%- endcomment -%}
+  <div class="service-product__sticky-cta">
+    <div class="service-product__sticky-cta-inner page-width">
+      <div class="service-product__sticky-price">
+        {{ product.selected_or_first_available_variant.price | money }}
+      </div>
+      <button
+        type="button"
+        class="btn-primary"
+        onclick="document.querySelector('#{{ product_form_id }} .product-form__submit').click();"
+        {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+      >
+        {%- if product.selected_or_first_available_variant.available -%}
+          Book Now
+        {%- else -%}
+          Sold Out
+        {%- endif -%}
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Service Product",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    },
+    {
+      "type": "property_address_input",
+      "name": "Property Address Input",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Field Label",
+          "default": "Property Address"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder Text",
+          "default": "Enter the full property address"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required field",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "collapsible_tab",
+      "name": "Collapsible Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What's Included"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Book This Service"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "label": "Show dynamic checkout buttons",
+          "info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay.",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_info",
+      "label": "Enable sticky product info on scroll",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "media_fit",
+      "label": "Image fit",
+      "options": [
+        { "value": "contain", "label": "Contain" },
+        { "value": "cover", "label": "Cover" }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Product",
+      "blocks": [
+        { "type": "title" },
+        { "type": "price" },
+        { "type": "description" },
+        { "type": "property_address_input" },
+        {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's Included"
+          }
+        },
+        {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Timescales"
+          }
+        },
+        { "type": "buy_buttons" }
+      ]
+    }
+  ]
+}
+{% endschema %}

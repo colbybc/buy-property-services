@@ -1,0 +1,126 @@
+{% comment %}
+  Renders an inline SVG icon based on the icon_name variable.
+  All icons are 40x40, use currentColor, and are minimal line-art style.
+
+  Accepts:
+  - icon_name: {String} The name of the icon to render.
+
+  Supported icons:
+  - document      : Auction Legal Pack (document/paper)
+  - house-search  : RICS Survey (house with magnifying glass)
+  - coins         : Outlays (stack of coins)
+  - camera        : Photography (camera)
+  - scroll        : Property Title (scroll/certificate)
+  - arrow-up      : Rent Increase (upward arrow with pound sign)
+  - handshake     : Tenancy Agreement (handshake)
+  - megaphone     : Portal Boosting (megaphone)
+  - check-circle  : Generic checkmark circle
+  - star          : Star for ratings
+
+  Usage:
+  {% render 'icon-service', icon_name: 'document' %}
+{% endcomment %}
+
+{%- case icon_name -%}
+
+  {%- when 'document' -%}
+    {%- comment -%} Document / paper icon for Auction Legal Pack {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M24 4H10a2 2 0 0 0-2 2v28a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V12L24 4z"/>
+      <polyline points="24 4 24 12 32 12"/>
+      <line x1="14" y1="18" x2="26" y2="18"/>
+      <line x1="14" y1="23" x2="26" y2="23"/>
+      <line x1="14" y1="28" x2="20" y2="28"/>
+    </svg>
+
+  {%- when 'house-search' -%}
+    {%- comment -%} House with magnifying glass for RICS Survey {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 18L20 5l15 13"/>
+      <path d="M9 16v16h8v-10h6v10h8V16"/>
+      <circle cx="30" cy="28" r="5"/>
+      <line x1="33.5" y1="31.5" x2="37" y2="35"/>
+    </svg>
+
+  {%- when 'coins' -%}
+    {%- comment -%} Stack of coins for Outlays {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <ellipse cx="16" cy="12" rx="10" ry="4"/>
+      <path d="M6 12v6c0 2.2 4.5 4 10 4s10-1.8 10-4v-6"/>
+      <path d="M6 18v6c0 2.2 4.5 4 10 4s10-1.8 10-4v-6"/>
+      <ellipse cx="26" cy="22" rx="8" ry="3"/>
+      <path d="M18 22v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/>
+      <path d="M18 27v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/>
+    </svg>
+
+  {%- when 'camera' -%}
+    {%- comment -%} Camera icon for Photography {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 13a2 2 0 0 1 2-2h4l3-4h14l3 4h4a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V13z"/>
+      <circle cx="20" cy="22" r="7"/>
+      <circle cx="20" cy="22" r="3"/>
+    </svg>
+
+  {%- when 'scroll' -%}
+    {%- comment -%} Scroll / certificate for Property Title {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M8 8a4 4 0 0 1 4-4h20v28H12a4 4 0 0 0-4 4V8z"/>
+      <path d="M8 32a4 4 0 0 1 4-4h20v8H12a4 4 0 0 1-4-4z"/>
+      <line x1="16" y1="12" x2="26" y2="12"/>
+      <line x1="16" y1="17" x2="24" y2="17"/>
+      <line x1="16" y1="22" x2="22" y2="22"/>
+    </svg>
+
+  {%- when 'arrow-up' -%}
+    {%- comment -%} Upward arrow with pound sign for Rent Increase {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="28" y1="32" x2="28" y2="10"/>
+      <polyline points="22 16 28 10 34 16"/>
+      <path d="M8 16c2-2 5-3 7-1s0 5-2 7H8"/>
+      <line x1="6" y1="22" x2="18" y2="22"/>
+      <line x1="8" y1="28" x2="17" y2="28"/>
+    </svg>
+
+  {%- when 'handshake' -%}
+    {%- comment -%} Handshake for Tenancy Agreement {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 16l8-6h5l3 3"/>
+      <path d="M36 16l-8-6h-5l-3 3"/>
+      <path d="M12 28l-8-6v-6"/>
+      <path d="M28 28l8-6v-6"/>
+      <path d="M15 25l5 5 7-7"/>
+      <path d="M20 18l-5 5"/>
+      <circle cx="20" cy="20" r="0.5" fill="currentColor"/>
+    </svg>
+
+  {%- when 'megaphone' -%}
+    {%- comment -%} Megaphone for Portal Boosting {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M32 8L12 16H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6l20 8V8z"/>
+      <path d="M12 24v8a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-6"/>
+      <line x1="36" y1="16" x2="38" y2="16"/>
+      <line x1="36" y1="20" x2="38" y2="20"/>
+      <line x1="36" y1="24" x2="38" y2="24"/>
+    </svg>
+
+  {%- when 'check-circle' -%}
+    {%- comment -%} Checkmark circle - generic success/check {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="20" cy="20" r="16"/>
+      <polyline points="13 20 18 25 27 15"/>
+    </svg>
+
+  {%- when 'star' -%}
+    {%- comment -%} Star for ratings {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="20 4 24.5 14 36 15.5 27.5 23.5 29.5 35 20 29.5 10.5 35 12.5 23.5 4 15.5 15.5 14"/>
+    </svg>
+
+  {%- else -%}
+    {%- comment -%} Fallback: simple circle placeholder {%- endcomment -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="20" cy="20" r="16"/>
+      <circle cx="20" cy="20" r="4"/>
+    </svg>
+
+{%- endcase -%}
