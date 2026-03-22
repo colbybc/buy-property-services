@@ -517,16 +517,35 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
   margin: 0;
 }
+/* Stats panel — green background with cross pattern like hero */
 .why-visual {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  background: linear-gradient(135deg, #0f3d1f 0%, #1A4D2E 40%, #1e5c35 100%);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.why-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
 }
 .why-stat-card {
-  background: var(--bp-bg-light);
+  background: rgba(255,255,255,0.08);
   border-radius: var(--bp-radius);
   padding: 28px 24px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .why-stat-card.full {
   grid-column: 1 / -1;
@@ -534,12 +553,12 @@ h1, h2, h3, h4, h5, h6 {
 .why-stat-card .num {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--bp-green);
+  color: var(--bp-white);
   line-height: 1.2;
 }
 .why-stat-card .lbl {
   font-size: 0.85rem;
-  color: var(--bp-text-light);
+  color: rgba(255,255,255,0.6);
   margin-top: 4px;
 }
 

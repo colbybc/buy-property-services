@@ -185,20 +185,12 @@
         "stat_2": {
           "type": "stat",
           "settings": {
-            "number": "12yr",
-            "label": "Experience",
-            "full_width": false
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
             "number": "98%",
             "label": "Satisfaction Rate",
             "full_width": false
           }
         },
-        "stat_4": {
+        "stat_3": {
           "type": "stat",
           "settings": {
             "number": "£0",
@@ -209,7 +201,7 @@
       },
       "block_order": [
         "feature_1", "feature_2", "feature_3", "feature_4",
-        "stat_1", "stat_2", "stat_3", "stat_4"
+        "stat_1", "stat_2", "stat_3"
       ],
       "settings": {
         "eyebrow": "Why Choose Us",
