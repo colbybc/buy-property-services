@@ -610,9 +610,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- Announcement Bar --- */
-.section-header + .shopify-section-group-header-group .announcement-bar,
 .announcement-bar {
   font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+.announcement-bar-section {
+  background-color: #0D2617 !important;
+}
+.announcement-bar__message {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 400;
 }
 
 /* --- Scroll Reveal --- */
