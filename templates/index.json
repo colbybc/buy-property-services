@@ -3,17 +3,16 @@
     "hero_banner": {
       "type": "hero-banner",
       "settings": {
-        "heading": "Professional Property Services",
-        "subheading": "Expert legal, survey & marketing services for landlords and sellers across the UK",
+        "heading": "Professional Property Services You Can Trust",
+        "subheading": "From legal packs to photography, surveys to tenancy agreements — everything you need to buy, sell or let property in the UK.",
         "overlay_opacity": 40,
-        "button_1_label": "I'm Selling",
-        "button_1_link": "",
-        "button_2_label": "I'm Renting",
+        "button_1_label": "View All Services",
+        "button_1_link": "shopify://collections/all",
+        "button_2_label": "Learn More",
         "button_2_link": "",
-        "trust_text_1": "500+ Properties Served",
-        "trust_text_2": "Rated 4.9/5 ★",
-        "trust_text_3": "RICS Accredited",
-        "color_scheme": "scheme-3"
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "trust_bar": {
@@ -23,38 +22,34 @@
           "type": "stat",
           "settings": {
             "number": "500+",
-            "label": "Services Delivered",
-            "icon": "check-circle"
+            "label": "Happy Clients"
           }
         },
         "stat_2": {
           "type": "stat",
           "settings": {
-            "number": "4.9★",
-            "label": "Average Rating",
-            "icon": "star"
+            "number": "8",
+            "label": "Services Offered"
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "number": "24hr",
-            "label": "Response Time",
-            "icon": "check-circle"
+            "number": "98%",
+            "label": "Satisfaction Rate"
           }
         },
         "stat_4": {
           "type": "stat",
           "settings": {
             "number": "RICS",
-            "label": "Accredited",
-            "icon": "check-circle"
+            "label": "Regulated"
           }
         }
       },
       "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
       "settings": {
-        "heading": "Trusted by Property Professionals Across the UK",
+        "heading": "",
         "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 40
@@ -67,7 +62,7 @@
           "type": "service",
           "settings": {
             "title": "Auction Legal Pack",
-            "description": "Comprehensive legal documentation pack for property auctions, including all required searches and certificates.",
+            "description": "Complete legal documentation pack for property auctions, including all required searches and certificates.",
             "price_from": "From £299",
             "icon_name": "document",
             "link": ""
@@ -147,7 +142,7 @@
       "block_order": ["service_1", "service_2", "service_3", "service_4", "service_5", "service_6", "service_7", "service_8"],
       "settings": {
         "heading": "Our Services",
-        "subheading": "Everything you need to sell, let, or manage your property — all in one place",
+        "subheading": "Everything you need to sell, let, or manage your property — all in one place.",
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
@@ -161,8 +156,7 @@
           "settings": {
             "step_number": "1",
             "title": "Choose Your Service",
-            "description": "Browse our range of property services and select what you need.",
-            "icon": "check-circle"
+            "description": "Browse our range of property services and select what you need."
           }
         },
         "step_2": {
@@ -170,8 +164,7 @@
           "settings": {
             "step_number": "2",
             "title": "Provide Property Details",
-            "description": "Enter your property address and any specific requirements.",
-            "icon": "house-search"
+            "description": "Enter your property address and any specific requirements."
           }
         },
         "step_3": {
@@ -179,8 +172,7 @@
           "settings": {
             "step_number": "3",
             "title": "Expert Processing",
-            "description": "Our team of professionals handles your service with care.",
-            "icon": "document"
+            "description": "Our team of professionals handles your service with care."
           }
         },
         "step_4": {
@@ -188,22 +180,21 @@
           "settings": {
             "step_number": "4",
             "title": "Receive Your Documents",
-            "description": "Get your completed documents delivered to your account.",
-            "icon": "scroll"
+            "description": "Get your completed documents delivered to your account."
           }
         }
       },
       "block_order": ["step_1", "step_2", "step_3", "step_4"],
       "settings": {
         "heading": "How It Works",
-        "subheading": "Getting started is simple — just four easy steps",
-        "color_scheme": "scheme-2",
+        "subheading": "Getting started is simple — just four easy steps.",
+        "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
       }
     },
-    "cta_banner": {
-      "type": "image-banner",
+    "cta_section": {
+      "type": "rich-text",
       "blocks": {
         "heading": {
           "type": "heading",
@@ -215,33 +206,24 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Browse our full range of property services or get in touch for a free consultation.",
-            "text_style": "body"
+            "text": "<p>Browse our full range of property services or get in touch for a free consultation.</p>"
           }
         },
         "button": {
-          "type": "buttons",
+          "type": "button",
           "settings": {
-            "button_label_1": "View All Services",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "Contact Us",
-            "button_link_2": "",
-            "button_style_secondary_2": true
+            "button_label": "Browse All Services",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": ["heading", "text", "button"],
       "settings": {
-        "image_overlay_opacity": 50,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
@@ -250,6 +232,6 @@
     "trust_bar",
     "service_grid",
     "process_timeline",
-    "cta_banner"
+    "cta_section"
   ]
 }

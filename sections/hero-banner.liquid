@@ -1,262 +1,66 @@
-{{ 'section-hero-banner.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+-%}
 
-<div class="hero-banner reveal-on-scroll" style="--overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};">
-  {%- if section.settings.background_image != blank -%}
-    <img
-      class="hero-banner__image"
-      src="{{ section.settings.background_image | image_url: width: 1920 }}"
-      srcset="
-        {{ section.settings.background_image | image_url: width: 768 }} 768w,
-        {{ section.settings.background_image | image_url: width: 1200 }} 1200w,
-        {{ section.settings.background_image | image_url: width: 1920 }} 1920w
-      "
-      sizes="100vw"
-      alt="{{ section.settings.background_image.alt | escape }}"
-      loading="eager"
-      fetchpriority="high"
-      width="{{ section.settings.background_image.width }}"
-      height="{{ section.settings.background_image.height }}"
-    >
-  {%- else -%}
-    <div class="hero-banner__placeholder">
-      {{ 'lifestyle-2' | placeholder_svg_tag: 'hero-banner__placeholder-svg' }}
-    </div>
-  {%- endif -%}
-
-  <div class="hero-banner__overlay"></div>
+<section class="hero-banner" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="hero-banner__media">
+    {%- if section.settings.background_image != blank -%}
+      <img
+        class="hero-banner__image"
+        src="{{ section.settings.background_image | image_url: width: 1920 }}"
+        srcset="{{ section.settings.background_image | image_url: width: 768 }} 768w, {{ section.settings.background_image | image_url: width: 1200 }} 1200w, {{ section.settings.background_image | image_url: width: 1920 }} 1920w"
+        sizes="100vw"
+        alt="{{ section.settings.background_image.alt | escape }}"
+        loading="eager"
+        fetchpriority="high"
+        width="{{ section.settings.background_image.width }}"
+        height="{{ section.settings.background_image.height }}"
+      >
+    {%- else -%}
+      <div class="hero-banner__placeholder"></div>
+    {%- endif -%}
+    <div class="hero-banner__overlay" style="background-color: rgba(26, 77, 46, {{ overlay_opacity }});"></div>
+  </div>
 
   <div class="hero-banner__content page-width">
     <h1 class="hero-banner__heading">{{ section.settings.heading }}</h1>
     <p class="hero-banner__subheading">{{ section.settings.subheading }}</p>
 
-    <div class="hero-banner__cta-group">
-      <a
-        href="{{ section.settings.button_1_link }}"
-        class="hero-banner__cta hero-banner__cta--primary"
-      >
-        {{ section.settings.button_1_label }}
-      </a>
-      <a
-        href="{{ section.settings.button_2_link }}"
-        class="hero-banner__cta hero-banner__cta--secondary"
-      >
-        {{ section.settings.button_2_label }}
-      </a>
-    </div>
-
-    <div class="hero-banner__trust">
-      {%- if section.settings.trust_text_1 != blank -%}
-        <div class="hero-banner__trust-item">
-          <svg class="hero-banner__trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#E8922A"/>
-          </svg>
-          <span>{{ section.settings.trust_text_1 }}</span>
-        </div>
+    <div class="hero-banner__buttons">
+      {%- if section.settings.button_1_label != blank -%}
+        <a href="{{ section.settings.button_1_link }}" class="hero-banner__btn hero-banner__btn--primary">
+          {{ section.settings.button_1_label }}
+        </a>
       {%- endif -%}
-      {%- if section.settings.trust_text_2 != blank -%}
-        <div class="hero-banner__trust-item">
-          <svg class="hero-banner__trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#E8922A"/>
-          </svg>
-          <span>{{ section.settings.trust_text_2 }}</span>
-        </div>
-      {%- endif -%}
-      {%- if section.settings.trust_text_3 != blank -%}
-        <div class="hero-banner__trust-item">
-          <svg class="hero-banner__trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#E8922A"/>
-          </svg>
-          <span>{{ section.settings.trust_text_3 }}</span>
-        </div>
+      {%- if section.settings.button_2_label != blank -%}
+        <a href="{{ section.settings.button_2_link }}" class="hero-banner__btn hero-banner__btn--secondary">
+          {{ section.settings.button_2_label }}
+        </a>
       {%- endif -%}
     </div>
   </div>
-</div>
 
-<style>
-  .hero-banner {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-    color: #FFFFFF;
-  }
-
-  .hero-banner__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
-
-  .hero-banner__placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1A4D2E;
-    z-index: 1;
-  }
-
-  .hero-banner__placeholder-svg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .hero-banner__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to top,
-      rgba(26, 77, 46, var(--overlay-opacity, 0.75)) 0%,
-      rgba(26, 77, 46, calc(var(--overlay-opacity, 0.75) * 0.5)) 40%,
-      rgba(0, 0, 0, calc(var(--overlay-opacity, 0.75) * 0.2)) 100%
-    );
-    z-index: 2;
-  }
-
-  .hero-banner__content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    padding: 0 2rem 6rem;
-    max-width: 800px;
-  }
-
-  .hero-banner__heading {
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 1rem;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-banner__subheading {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin: 0 0 2rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-banner__cta-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-banner__cta {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-  }
-
-  .hero-banner__cta--primary {
-    background-color: #E8922A;
-    color: #FFFFFF;
-    border-color: #E8922A;
-  }
-
-  .hero-banner__cta--primary:hover {
-    background-color: #d17e1e;
-    border-color: #d17e1e;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(232, 146, 42, 0.4);
-  }
-
-  .hero-banner__cta--secondary {
-    background-color: transparent;
-    color: #FFFFFF;
-    border-color: #FFFFFF;
-  }
-
-  .hero-banner__cta--secondary:hover {
-    background-color: #FFFFFF;
-    color: #1A4D2E;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-  }
-
-  .hero-banner__trust {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-banner__trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 500;
-  }
-
-  .hero-banner__trust-icon {
-    flex-shrink: 0;
-  }
-
-  @media screen and (max-width: 749px) {
-    .hero-banner {
-      height: 70vh;
-      align-items: center;
-    }
-
-    .hero-banner__content {
-      padding: 0 1.5rem;
-    }
-
-    .hero-banner__heading {
-      font-size: 2rem;
-    }
-
-    .hero-banner__subheading {
-      font-size: 1rem;
-    }
-
-    .hero-banner__cta {
-      padding: 0.85rem 1.75rem;
-      font-size: 0.95rem;
-      width: 100%;
-      text-align: center;
-    }
-
-    .hero-banner__trust {
-      flex-direction: column;
-      gap: 0.75rem;
-      align-items: center;
-    }
-  }
-</style>
+  <div class="hero-banner__trust-bar">
+    <div class="page-width">
+      <div class="hero-banner__trust-row">
+        {%- if section.settings.trust_text_1 != blank -%}
+          <span class="hero-banner__trust-item">{{ section.settings.trust_text_1 }}</span>
+        {%- endif -%}
+        {%- if section.settings.trust_text_2 != blank -%}
+          <span class="hero-banner__trust-item">{{ section.settings.trust_text_2 }}</span>
+        {%- endif -%}
+        {%- if section.settings.trust_text_3 != blank -%}
+          <span class="hero-banner__trust-item">{{ section.settings.trust_text_3 }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
   "name": "Hero Banner",
-  "tag": "section",
+  "tag": "div",
   "class": "section-hero-banner",
   "settings": [
     {
@@ -283,7 +87,7 @@
       "min": 0,
       "max": 100,
       "step": 5,
-      "default": 75,
+      "default": 40,
       "unit": "%"
     },
     {
@@ -331,6 +135,26 @@
       "id": "color_scheme",
       "label": "Colour scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0,
+      "unit": "px"
     }
   ],
   "presets": [
