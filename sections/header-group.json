@@ -18,8 +18,6 @@
           "type": "announcement",
           "settings": {
             "text": "Trusted by 5000+ Landlords & Sellers Across the UK",
-            "text_alignment": "center",
-            "color_scheme": "scheme-4",
             "link": ""
           }
         }
@@ -27,6 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -39,6 +38,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
