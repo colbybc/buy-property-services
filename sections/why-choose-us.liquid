@@ -1,18 +1,18 @@
 <section class="why-section section">
   <div class="page-width">
+    <div class="bp-section-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
     <div class="why-grid">
       <!-- Features list -->
       <div>
-        <div class="bp-section-header" style="text-align:left;margin-bottom:40px">
-          {%- if section.settings.eyebrow != blank -%}
-            <span class="eyebrow">{{ section.settings.eyebrow }}</span>
-          {%- endif -%}
-          <h2>{{ section.settings.heading }}</h2>
-          {%- if section.settings.subheading != blank -%}
-            <p>{{ section.settings.subheading }}</p>
-          {%- endif -%}
-        </div>
-
         <div class="why-features">
           {%- for block in section.blocks -%}
             {%- if block.type == 'feature' -%}

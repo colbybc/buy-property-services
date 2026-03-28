@@ -11,31 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Trusted by 5000+ Landlords & Sellers Across the UK",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
-      "disabled": true,
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "",
-        "show_line_separator": false,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -49,7 +24,7 @@
         "menu_color_scheme": "",
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "enable_customer_avatar": true,
+        "enable_customer_avatar": false,
         "margin_bottom": 0,
         "padding_top": 16,
         "padding_bottom": 16
@@ -57,7 +32,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "header"
   ]
 }

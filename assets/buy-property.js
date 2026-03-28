@@ -22,16 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Header Scroll
+  // Header Scroll — adds scrolled class for shadow/color transition
   var header = document.querySelector('.section-header');
   if (header) {
     var ticking = false;
     function updateHeader() {
-      if (window.scrollY > 100) {
-        header.classList.add('header--scrolled');
-      } else {
-        header.classList.remove('header--scrolled');
-      }
+      var scrolled = window.scrollY > 50;
+      header.classList.toggle('header--scrolled', scrolled);
       ticking = false;
     }
     window.addEventListener('scroll', function () {
