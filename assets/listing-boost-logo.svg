@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#1A4D2E" opacity="0.06"/>
+  <circle cx="100" cy="100" r="80" fill="#1A4D2E" opacity="0.06"/>
+
+  <!-- House shape -->
+  <path d="M100 38 L156 82 L156 152 L44 152 L44 82 Z" fill="#ffffff" stroke="#1A4D2E" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Roof -->
+  <path d="M36 86 L100 34 L164 86" fill="none" stroke="#1A4D2E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Window left -->
+  <rect x="60" y="92" width="28" height="24" rx="3" fill="#e8f5ee" stroke="#1A4D2E" stroke-width="2.5"/>
+  <line x1="74" y1="92" x2="74" y2="116" stroke="#1A4D2E" stroke-width="1.5"/>
+  <line x1="60" y1="104" x2="88" y2="104" stroke="#1A4D2E" stroke-width="1.5"/>
+
+  <!-- Window right -->
+  <rect x="112" y="92" width="28" height="24" rx="3" fill="#e8f5ee" stroke="#1A4D2E" stroke-width="2.5"/>
+  <line x1="126" y1="92" x2="126" y2="116" stroke="#1A4D2E" stroke-width="1.5"/>
+  <line x1="112" y1="104" x2="140" y2="104" stroke="#1A4D2E" stroke-width="1.5"/>
+
+  <!-- Door -->
+  <rect x="86" y="120" width="28" height="32" rx="3" fill="#e8f5ee" stroke="#1A4D2E" stroke-width="2.5"/>
+  <circle cx="108" cy="138" r="2.5" fill="#1A4D2E"/>
+
+  <!-- Camera lens overlay -->
+  <circle cx="148" cy="56" r="24" fill="#ffffff" stroke="#E8922A" stroke-width="3.5"/>
+  <circle cx="148" cy="56" r="16" fill="none" stroke="#E8922A" stroke-width="2" opacity="0.6"/>
+  <circle cx="148" cy="56" r="8" fill="#E8922A" opacity="0.2"/>
+  <circle cx="148" cy="56" r="4" fill="#E8922A" opacity="0.4"/>
+
+  <!-- Camera flash lines -->
+  <line x1="148" y1="28" x2="148" y2="22" stroke="#E8922A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="170" y1="40" x2="175" y2="36" stroke="#E8922A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="126" y1="40" x2="121" y2="36" stroke="#E8922A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Upward arrow / boost -->
+  <g transform="translate(52, 42)">
+    <polyline points="0,20 10,6 20,14 30,0" stroke="#8FB339" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polyline points="22,0 30,0 30,8" stroke="#8FB339" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Star badge -->
+  <circle cx="44" cy="140" r="14" fill="#8FB339" opacity="0.15"/>
+  <polygon points="44,129 46.5,136 54,136 48,140.5 50,148 44,144 38,148 40,140.5 34,136 41.5,136" fill="#8FB339" opacity="0.7"/>
+</svg>

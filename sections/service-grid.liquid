@@ -41,11 +41,29 @@
             <div class="service-card__price">
               {{ block.settings.price_from }}
             </div>
-            {%- if block.settings.link != blank -%}
-              <a href="{{ block.settings.link }}" class="btn btn--primary btn--sm">View</a>
-            {%- else -%}
-              <a href="/collections" class="btn btn--primary btn--sm">View</a>
-            {%- endif -%}
+            {%- liquid
+              assign card_handle = block.settings.title | handleize
+              if block.settings.link != blank
+                assign card_url = block.settings.link
+              elsif card_handle == 'auction-legal-pack'
+                assign card_url = '/products/auction-tenanted-property-pre-sale-legal-pack'
+              elsif card_handle == 'rics-level-2-survey'
+                assign card_url = '/products/listing-boost-survey-photography-service'
+              elsif card_handle == 'professional-photography'
+                assign card_url = '/products/photography-service'
+              elsif card_handle == 'tenancy-agreement'
+                assign card_url = '/collections/let-property'
+              elsif card_handle == 'boosting-listing'
+                assign card_url = '/collections/let-property'
+              elsif card_handle == 'rent-increase-service'
+                assign card_url = '/collections/let-property'
+              elsif card_handle == 'property-title'
+                assign card_url = '/collections/tenanted-property-auctions'
+              else
+                assign card_url = '/products/' | append: card_handle
+              endif
+            -%}
+            <a href="{{ card_url }}" class="btn btn--primary btn--sm">View</a>
           </div>
         </div>
       {%- endfor -%}

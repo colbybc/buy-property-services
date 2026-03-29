@@ -14,14 +14,159 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+{%- assign page_handle = page.handle -%}
+
+{%- if page_handle == 'tenancy-agreement' or page_handle == 'boosting-listing' -%}
+
+  {%- comment -%}--- SERVICE PAGE LAYOUT ---{%- endcomment -%}
+
+  {%- if page_handle == 'tenancy-agreement' -%}
+    {%- assign svc_logo = 'tenancy-agreement-logo.svg' -%}
+    {%- assign svc_title = 'Tenancy Agreement' -%}
+    {%- assign svc_price = 'From £79' -%}
+    {%- assign svc_desc = 'Professionally drafted AST agreements compliant with current UK housing legislation. Customised to your property and terms — ready to sign and use immediately.' -%}
+  {%- elsif page_handle == 'boosting-listing' -%}
+    {%- assign svc_logo = 'boosting-listing-logo.svg' -%}
+    {%- assign svc_title = 'Boosting Listing' -%}
+    {%- assign svc_price = 'From £99' -%}
+    {%- assign svc_desc = 'Premium listing placement on Rightmove, Zoopla, and OnTheMarket for maximum exposure. Get your property seen first by serious buyers and generate more viewings, faster.' -%}
+  {%- endif -%}
+
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="service-page__grid">
+      <div class="service-page__media">
+        <div class="product-service-logo">
+          <img src="{{ svc_logo | asset_url }}" alt="{{ svc_title | escape }}" width="180" height="180">
+        </div>
+      </div>
+      <div class="service-page__info">
+        <h1 class="service-page__title">{{ svc_title }}</h1>
+        <div class="service-page__price">{{ svc_price }}</div>
+        <p class="service-page__desc">{{ svc_desc }}</p>
+        <a href="/pages/contact" class="btn btn--primary btn--lg">Get in Touch</a>
+      </div>
+    </div>
   </div>
-</div>
+
+  {%- comment -%}--- TENANCY AGREEMENT DETAILS ---{%- endcomment -%}
+  {%- if page_handle == 'tenancy-agreement' -%}
+  <div class="service-details section">
+    <div class="page-width">
+      <div class="service-details__grid">
+        <div class="service-details__block">
+          <div class="service-details__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="12" y2="17"></line></svg>
+          </div>
+          <h2>What's Included</h2>
+          <ul>
+            <li>Professionally drafted Assured Shorthold Tenancy (AST) agreement.</li>
+            <li>Fully compliant with current UK housing legislation including the Housing Act 1988.</li>
+            <li>Customised to your property, rent amount, deposit, and preferred terms.</li>
+            <li>Covers responsibilities, break clauses, permitted occupiers, and pets policy.</li>
+            <li>Includes all required prescribed information and notices.</li>
+            <li>Compatible with Rightmove, Zoopla, and OnTheMarket letting requirements.</li>
+            <li>Digital delivery — ready to sign and use immediately.</li>
+          </ul>
+        </div>
+        <div class="service-details__block">
+          <div class="service-details__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h2>Why a Professional Agreement Matters</h2>
+          <div class="service-details__benefits">
+            <div class="service-details__benefit">
+              <h4>Legal Protection for Landlords</h4>
+              <p>A properly drafted agreement protects your rights and ensures you can regain possession when needed — essential for Section 21 and Section 8 notices.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Always Up to Date</h4>
+              <p>Housing law changes frequently. Our agreements reflect the latest legislation so you're never caught out by outdated clauses.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Clear Terms for Both Parties</h4>
+              <p>Well-defined responsibilities reduce misunderstandings and disputes between landlord and tenant, protecting both sides.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Accepted by All Major Portals</h4>
+              <p>Our agreements meet the standards required by Rightmove, Zoopla, and OnTheMarket — ready to use whether you're listing yourself or through an agent.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Required for Section 21 Notices</h4>
+              <p>Without a compliant tenancy agreement, you may not be able to serve a valid Section 21 notice to regain possession of your property.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+  {%- comment -%}--- BOOSTING LISTING DETAILS ---{%- endcomment -%}
+  {%- if page_handle == 'boosting-listing' -%}
+  <div class="service-details section">
+    <div class="page-width">
+      <div class="service-details__grid">
+        <div class="service-details__block">
+          <div class="service-details__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+          </div>
+          <h2>What's Included</h2>
+          <ul>
+            <li>Premium listing placement on Rightmove, Zoopla, and OnTheMarket.</li>
+            <li>Enhanced visibility — your property appears higher in search results across all portals.</li>
+            <li>Featured listing badges on Rightmove and Zoopla to attract more attention from buyers.</li>
+            <li>Extended reach across multiple property portals simultaneously.</li>
+            <li>Performance tracking so you can see the impact of the boost in real time.</li>
+            <li>Flexible duration options to match your selling or letting timeline.</li>
+            <li>Works for both sales and lettings properties.</li>
+          </ul>
+        </div>
+        <div class="service-details__block">
+          <div class="service-details__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h2>Why Boost Your Listing</h2>
+          <div class="service-details__benefits">
+            <div class="service-details__benefit">
+              <h4>Stand Out on Rightmove & Zoopla</h4>
+              <p>Thousands of properties are listed every day. A boosted listing ensures yours appears at the top of search results where serious buyers are looking.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>More Viewings, Faster</h4>
+              <p>Boosted properties receive up to 3x more enquiries and viewings in the critical first weeks on the market.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Multi-Portal Exposure</h4>
+              <p>Your property is promoted across Rightmove, Zoopla, and OnTheMarket at the same time — maximum coverage with a single order.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Proven Results</h4>
+              <p>Boosted listings on Rightmove and Zoopla consistently achieve faster sales and stronger offers compared to standard listings.</p>
+            </div>
+            <div class="service-details__benefit">
+              <h4>Works for Sales & Lettings</h4>
+              <p>Whether you're selling or letting, a listing boost gets your property in front of the right audience across all major UK portals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+{%- else -%}
+
+  {%- comment -%}--- DEFAULT PAGE LAYOUT ---{%- endcomment -%}
+  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
+    <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ page.title | escape }}
+    </h1>
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ page.content }}
+    </div>
+  </div>
+
+{%- endif -%}
 
 {% schema %}
 {

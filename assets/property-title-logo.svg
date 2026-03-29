@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="#1A4D2E" opacity="0.06"/>
+  <circle cx="100" cy="100" r="80" fill="#1A4D2E" opacity="0.06"/>
+  <!-- Main document -->
+  <rect x="48" y="36" width="80" height="108" rx="6" fill="#ffffff" stroke="#1A4D2E" stroke-width="4"/>
+  <!-- Document fold -->
+  <path d="M104 36 L128 36 L104 60 Z" fill="#e8f5ee" stroke="#1A4D2E" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Title heading line -->
+  <line x1="64" y1="74" x2="112" y2="74" stroke="#1A4D2E" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Content lines -->
+  <line x1="64" y1="88" x2="108" y2="88" stroke="#1A4D2E" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="64" y1="98" x2="100" y2="98" stroke="#1A4D2E" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="64" y1="108" x2="108" y2="108" stroke="#1A4D2E" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="64" y1="118" x2="92" y2="118" stroke="#1A4D2E" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <!-- Official seal / stamp -->
+  <circle cx="148" cy="132" r="28" fill="#ffffff" stroke="#E8922A" stroke-width="3"/>
+  <circle cx="148" cy="132" r="20" fill="none" stroke="#E8922A" stroke-width="1.5" opacity="0.5"/>
+  <text x="148" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#E8922A" opacity="0.8">HM</text>
+  <!-- Ribbon -->
+  <path d="M136 156 L140 168 L148 162 L156 168 L160 156" stroke="#E8922A" stroke-width="2.5" fill="#E8922A" opacity="0.2" stroke-linejoin="round"/>
+  <!-- Small house icon -->
+  <path d="M58 152 L70 142 L82 152 L82 164 L58 164 Z" fill="#8FB339" opacity="0.15" stroke="#8FB339" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="66" y="154" width="8" height="10" rx="1" fill="#8FB339" opacity="0.3"/>
+</svg>

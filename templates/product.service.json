@@ -12,14 +12,54 @@
         "description": {
           "type": "description"
         },
+        "collapsible-whats-included": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's Included",
+            "icon": "clipboard",
+            "content": "<ul><li>Official Title Documents confirming ownership and any rights, covenants, or restrictions.<\/li><li>Searches such as Local Authority, Drainage & Water, and Environmental reports.<\/li><li>Special Conditions of Sale tailored to your property and your preferred terms.<\/li><li>Property Information Forms & Fixtures and Fittings List (where applicable).<\/li><li>Lease Documents for leasehold properties.<\/li><li>Planning and Building Regulation Certificates, if relevant.<\/li><li>Any additional documents your solicitor considers necessary.<\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "collapsible-benefits": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why Sellers Benefit",
+            "icon": "check_mark",
+            "content": "<ul><li><strong>Increases Buyer Confidence<\/strong> — Providing a full set of legal documents upfront gives bidders the certainty they need to commit to strong, competitive bidding.<\/li><li><strong>Faster, Smoother Sale<\/strong> — Because buyers complete due diligence before the auction, there is far less risk of delays or complications after the hammer falls.<\/li><li><strong>Reduces Fall-Through Risk<\/strong> — Serious buyers review the pack in advance, so only committed bidders take part — dramatically lowering the chance of post-auction withdrawal.<\/li><li><strong>Strengthens Your Final Sale Price<\/strong> — Confident buyers bid higher. A clear, complete legal pack creates a competitive environment that often drives up the final sale price.<\/li><li><strong>Ensures Full Legal Compliance<\/strong> — You meet all auction requirements by providing the necessary documents upfront, protecting you from future disputes.<\/li><li><strong>Saves You Time & Stress<\/strong> — Early preparation of the pack means fewer last-minute issues and a smoother overall selling experience.<\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "collapsible-how-it-works": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How It Works",
+            "icon": "truck",
+            "content": "<ul><li><strong>Order Online<\/strong> — Select the Auction Legal Pack and complete your purchase.<\/li><li><strong>We Prepare Your Pack<\/strong> — Our solicitors compile all required documents, searches, and certificates.<\/li><li><strong>Review & Approve<\/strong> — You review the completed pack before it goes to the auction house.<\/li><li><strong>Ready for Auction<\/strong> — Your legal pack is made available to prospective bidders ahead of the auction.<\/li><\/ul>",
+            "page": ""
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector"
         },
         "buy_buttons": {
-          "type": "buy_buttons"
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
         }
       },
-      "block_order": ["title", "price", "description", "quantity_selector", "buy_buttons"],
+      "block_order": [
+        "title",
+        "price",
+        "description",
+        "collapsible-whats-included",
+        "collapsible-benefits",
+        "collapsible-how-it-works",
+        "quantity_selector",
+        "buy_buttons"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -28,24 +68,15 @@
         "gallery_layout": "stacked",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
-      }
-    },
-    "process_timeline": {
-      "type": "process-timeline",
-      "settings": {
-        "heading": "How This Service Works",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 48,
+        "padding_bottom": 24
       }
     },
     "related_services": {
-      "type": "featured-collection",
+      "type": "related-products",
       "settings": {
-        "title": "Related Services",
+        "heading": "Related Services",
         "heading_size": "h2",
-        "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -58,5 +89,5 @@
       }
     }
   },
-  "order": ["main", "process_timeline", "related_services"]
+  "order": ["main", "related_services"]
 }

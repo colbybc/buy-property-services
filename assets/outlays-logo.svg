@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#1A4D2E" opacity="0.06"/>
+  <circle cx="100" cy="100" r="80" fill="#1A4D2E" opacity="0.06"/>
+
+  <!-- Pound coin — main -->
+  <circle cx="100" cy="100" r="48" fill="#ffffff" stroke="#1A4D2E" stroke-width="4"/>
+  <circle cx="100" cy="100" r="40" fill="none" stroke="#1A4D2E" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Pound symbol -->
+  <text x="100" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#1A4D2E">£</text>
+
+  <!-- Stacked coins behind -->
+  <ellipse cx="68" cy="148" rx="28" ry="8" fill="#8FB339" opacity="0.2"/>
+  <rect x="40" y="136" width="56" height="12" rx="0" fill="#8FB339" opacity="0.12"/>
+  <ellipse cx="68" cy="136" rx="28" ry="8" fill="#8FB339" opacity="0.3" stroke="#8FB339" stroke-width="1.5"/>
+
+  <ellipse cx="136" cy="148" rx="28" ry="8" fill="#E8922A" opacity="0.2"/>
+  <rect x="108" y="136" width="56" height="12" rx="0" fill="#E8922A" opacity="0.12"/>
+  <ellipse cx="136" cy="136" rx="28" ry="8" fill="#E8922A" opacity="0.25" stroke="#E8922A" stroke-width="1.5"/>
+
+  <!-- Checklist / receipt -->
+  <rect x="40" y="36" width="36" height="48" rx="4" fill="#ffffff" stroke="#1A4D2E" stroke-width="2.5"/>
+  <line x1="48" y1="48" x2="68" y2="48" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="48" y1="56" x2="64" y2="56" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <line x1="48" y1="64" x2="68" y2="64" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="48" y1="72" x2="60" y2="72" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Checkmarks on receipt -->
+  <polyline points="44,47 46,49 50,44" stroke="#8FB339" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="44,63 46,65 50,60" stroke="#8FB339" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Shield / protection icon -->
+  <path d="M152 40 L152 56 C152 66 144 72 140 74 C136 72 128 66 128 56 L128 40 L140 36 Z" fill="#ffffff" stroke="#1A4D2E" stroke-width="2.5" stroke-linejoin="round"/>
+  <polyline points="134,54 138,58 146,48" stroke="#8FB339" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

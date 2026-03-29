@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="#1A4D2E" opacity="0.06"/>
+  <circle cx="100" cy="100" r="80" fill="#1A4D2E" opacity="0.06"/>
+  <!-- Main contract document -->
+  <rect x="44" y="32" width="88" height="120" rx="6" fill="#ffffff" stroke="#1A4D2E" stroke-width="4"/>
+  <!-- Document fold -->
+  <path d="M108 32 L132 32 L108 56 Z" fill="#e8f5ee" stroke="#1A4D2E" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Title line -->
+  <line x1="60" y1="68" x2="116" y2="68" stroke="#1A4D2E" stroke-width="3" stroke-linecap="round"/>
+  <!-- Content lines -->
+  <line x1="60" y1="82" x2="112" y2="82" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="60" y1="92" x2="104" y2="92" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <line x1="60" y1="102" x2="112" y2="102" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="60" y1="112" x2="96" y2="112" stroke="#1A4D2E" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <!-- Signature line -->
+  <line x1="60" y1="136" x2="100" y2="136" stroke="#1A4D2E" stroke-width="1.5" opacity="0.5"/>
+  <!-- Signature scribble -->
+  <path d="M64 132 Q72 124 80 132 Q88 140 96 130" stroke="#E8922A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Handshake / two people -->
+  <circle cx="148" cy="72" r="12" fill="#ffffff" stroke="#1A4D2E" stroke-width="2.5"/>
+  <circle cx="148" cy="68" r="6" fill="#e8f5ee" stroke="#1A4D2E" stroke-width="2"/>
+  <path d="M136 84 C136 78 148 76 148 84" stroke="#1A4D2E" stroke-width="2" fill="#e8f5ee"/>
+  <path d="M148 84 C148 78 160 76 160 84" stroke="#1A4D2E" stroke-width="2" fill="#e8f5ee"/>
+  <!-- Key icon -->
+  <circle cx="152" cy="136" r="14" fill="#8FB339" opacity="0.12" stroke="#8FB339" stroke-width="2"/>
+  <circle cx="152" cy="136" r="6" fill="none" stroke="#8FB339" stroke-width="2.5"/>
+  <line x1="158" y1="136" x2="174" y2="136" stroke="#8FB339" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="170" y1="136" x2="170" y2="142" stroke="#8FB339" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="166" y1="136" x2="166" y2="140" stroke="#8FB339" stroke-width="2" stroke-linecap="round"/>
+  <!-- Checkmark -->
+  <circle cx="48" cy="160" r="12" fill="#8FB339" opacity="0.15"/>
+  <polyline points="42,160 46,164 54,154" stroke="#8FB339" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

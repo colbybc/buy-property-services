@@ -1,0 +1,510 @@
+{%- liquid
+  assign handle = product.handle
+-%}
+
+<!-- Product logo graphic injected into media area -->
+<style>
+  .product-service-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+{%- if handle == 'auction-tenanted-property-pre-sale-legal-pack' or handle == 'auction-legal-pack' -%}
+  {%- assign logo_file = 'auction-legal-pack-logo.svg' -%}
+  {%- assign logo_alt = 'Auction Legal Pack' -%}
+{%- elsif handle == 'listing-boost-survey-photography-service' or handle == 'rics-level-2-survey' -%}
+  {%- assign logo_file = 'listing-boost-logo.svg' -%}
+  {%- assign logo_alt = 'Listing Boost, Survey & Photography' -%}
+{%- elsif handle == 'outlays' -%}
+  {%- assign logo_file = 'outlays-logo.svg' -%}
+  {%- assign logo_alt = 'Outlays' -%}
+{%- elsif handle == 'photography-service' or handle == 'professional-photography' -%}
+  {%- assign logo_file = 'photography-service-logo.svg' -%}
+  {%- assign logo_alt = 'Professional Photography Service' -%}
+{%- elsif handle == 'property-title' -%}
+  {%- assign logo_file = 'property-title-logo.svg' -%}
+  {%- assign logo_alt = 'Property Title' -%}
+{%- elsif handle == 'rent-increase-service' -%}
+  {%- assign logo_file = 'rent-increase-logo.svg' -%}
+  {%- assign logo_alt = 'Rent Increase Service' -%}
+{%- elsif handle == 'tenancy-agreement' -%}
+  {%- assign logo_file = 'tenancy-agreement-logo.svg' -%}
+  {%- assign logo_alt = 'Tenancy Agreement' -%}
+{%- elsif handle == 'boosting-listing' -%}
+  {%- assign logo_file = 'boosting-listing-logo.svg' -%}
+  {%- assign logo_alt = 'Boosting Listing' -%}
+{%- else -%}
+  {%- assign logo_file = '' -%}
+{%- endif -%}
+
+{%- if handle == 'auction-tenanted-property-pre-sale-legal-pack' or handle == 'auction-legal-pack' -%}
+  {%- capture service_desc -%}Complete legal documentation pack for property auctions, including all required searches, title documents, and certificates. Everything your solicitor needs — prepared and ready for auction day.{%- endcapture -%}
+{%- elsif handle == 'listing-boost-survey-photography-service' or handle == 'rics-level-2-survey' -%}
+  {%- capture service_desc -%}Professional RICS Level 2 HomeBuyer Survey combined with high-quality property photography and a listing boost across major UK portals. One order, three essential services.{%- endcapture -%}
+{%- elsif handle == 'outlays' -%}
+  {%- capture service_desc -%}We handle all search fees, Land Registry charges, and local authority costs on your behalf. Pay upfront with full transparency — no hidden fees, no surprises at completion.{%- endcapture -%}
+{%- elsif handle == 'photography-service' or handle == 'professional-photography' -%}
+  {%- capture service_desc -%}High-quality property photography to showcase your property at its very best. Professional interior and exterior shots, edited and optimised for all major listing portals.{%- endcapture -%}
+{%- elsif handle == 'property-title' -%}
+  {%- capture service_desc -%}Official Land Registry title deeds and title plans for any property in England & Wales. Verify ownership, check restrictions, and get the documents you need — delivered digitally.{%- endcapture -%}
+{%- elsif handle == 'rent-increase-service' -%}
+  {%- capture service_desc -%}Legally compliant Section 13 rent increase notices drafted and served correctly on your behalf. We handle the paperwork so you can increase your rental income with confidence.{%- endcapture -%}
+{%- elsif handle == 'tenancy-agreement' -%}
+  {%- capture service_desc -%}Professionally drafted AST agreements compliant with current UK housing legislation. Customised to your property and terms — ready to sign and use immediately.{%- endcapture -%}
+{%- elsif handle == 'boosting-listing' -%}
+  {%- capture service_desc -%}Premium listing placement on Rightmove, Zoopla, and OnTheMarket for maximum exposure. Get your property seen first by serious buyers and generate more viewings.{%- endcapture -%}
+{%- else -%}
+  {%- capture service_desc -%}{%- endcapture -%}
+{%- endif -%}
+
+{%- if logo_file != '' -%}
+<script>
+  function bpServiceInit() {
+    var logoHTML = '<div class="product-service-logo"><img src="{{ logo_file | asset_url }}" alt="{{ logo_alt | escape }}" width="180" height="180"></div>';
+    var descHTML = '<p>' + {{ service_desc | json }} + '</p>';
+
+    function applyLogo() {
+      var mediaWrapper = document.querySelector('.product__media-wrapper');
+      if (mediaWrapper) {
+        // Remove any media-gallery web component and slider
+        var gallery = mediaWrapper.querySelector('media-gallery');
+        if (gallery) gallery.remove();
+        var slider = mediaWrapper.querySelector('.product__media-list');
+        if (slider) slider.remove();
+        // Only set logo if not already present
+        if (!mediaWrapper.querySelector('.product-service-logo')) {
+          mediaWrapper.innerHTML = logoHTML;
+        }
+      }
+    }
+
+    function applyDesc() {
+      var desc = document.querySelector('.product__description');
+      if (!desc) desc = document.querySelector('.product__info-container .rte');
+      if (!desc) desc = document.querySelector('.product__info-wrapper .rte');
+      if (desc) {
+        desc.className = 'product__description rte quick-add-hidden';
+        desc.innerHTML = descHTML;
+      }
+    }
+
+    applyLogo();
+    applyDesc();
+
+    // Re-apply after delays in case web components re-render
+    setTimeout(function() { applyLogo(); applyDesc(); }, 300);
+    setTimeout(function() { applyLogo(); applyDesc(); }, 800);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bpServiceInit);
+  } else {
+    bpServiceInit();
+  }
+</script>
+{%- endif -%}
+
+{%- comment -%}--- AUCTION LEGAL PACK ---{%- endcomment -%}
+{%- if handle == 'auction-tenanted-property-pre-sale-legal-pack' or handle == 'auction-legal-pack' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="12" y2="17"></line></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>Official Title Documents confirming ownership and any rights, covenants, or restrictions.</li>
+          <li>Searches such as Local Authority, Drainage & Water, and Environmental reports.</li>
+          <li>Special Conditions of Sale tailored to your property and your preferred terms.</li>
+          <li>Property Information Forms & Fixtures and Fittings List (where applicable).</li>
+          <li>Lease Documents for leasehold properties.</li>
+          <li>Planning and Building Regulation Certificates, if relevant.</li>
+          <li>Any additional documents your solicitor considers necessary.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2>Why Sellers Benefit from an Auction Legal Pack</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>Increases Buyer Confidence</h4>
+            <p>Providing a full set of legal documents upfront gives bidders the certainty they need to commit to strong, competitive bidding.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Faster, Smoother Sale</h4>
+            <p>Because buyers complete due diligence before the auction, there is far less risk of delays or complications after the hammer falls.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Reduces Fall-Through Risk</h4>
+            <p>Serious buyers review the pack in advance, so only committed bidders take part — dramatically lowering the chance of post-auction withdrawal.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Strengthens Your Final Sale Price</h4>
+            <p>Confident buyers bid higher. A clear, complete legal pack creates a competitive environment that often drives up the final sale price.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Ensures Full Legal Compliance</h4>
+            <p>You meet all auction requirements by providing the necessary documents upfront, protecting you from future disputes.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Saves You Time & Stress</h4>
+            <p>Early preparation of the pack means fewer last-minute issues and a smoother overall selling experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- RICS LEVEL 2 SURVEY / LISTING BOOST BUNDLE ---{%- endcomment -%}
+{%- if handle == 'listing-boost-survey-photography-service' or handle == 'rics-level-2-survey' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><path d="M8 11h6M11 8v6"></path></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>RICS Level 2 HomeBuyer Survey carried out by a qualified RICS-registered surveyor.</li>
+          <li>Professional property photography — high-quality interior and exterior images.</li>
+          <li>Listing boost across major property portals to maximise exposure.</li>
+          <li>Detailed survey report covering the condition of the property, any defects, and recommended actions.</li>
+          <li>Edited, print-ready photographs delivered digitally.</li>
+          <li>Coordinated scheduling — survey and photography arranged together for convenience.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2>Why Choose This Bundle</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>Save Money with a Bundle</h4>
+            <p>Get all three services at a reduced rate compared to booking them individually.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Attract More Buyers</h4>
+            <p>Professional photos and boosted listings generate significantly more interest and viewings.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>RICS-Regulated Surveyor</h4>
+            <p>Your survey is carried out by a fully regulated professional, giving buyers and lenders confidence.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>One Order, Everything Handled</h4>
+            <p>We coordinate the survey and photography visit so you only need to arrange access once.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Faster Sale</h4>
+            <p>Properties with professional photos sell faster. Combined with a listing boost, your property gets maximum exposure from day one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- OUTLAYS ---{%- endcomment -%}
+{%- if handle == 'outlays' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v2m0 8v2M9.5 9.5A2.5 2.5 0 0112 8a2.5 2.5 0 010 5 2.5 2.5 0 000 5 2.5 2.5 0 002.5-1.5"></path></svg>
+        </div>
+        <h2>What's Covered</h2>
+        <ul>
+          <li>Local Authority Search — checks planning history, building control, and road schemes affecting the property.</li>
+          <li>Drainage & Water Search — confirms connections to mains water and sewerage systems.</li>
+          <li>Environmental Search — identifies flood risk, contamination, and other environmental factors.</li>
+          <li>All standard conveyancing searches required for a property transaction.</li>
+          <li>Disbursements paid directly on your behalf — no hidden admin fees.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h2>Why Pay Outlays Upfront</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>No Surprises at Completion</h4>
+            <p>Paying outlays upfront means you know the full cost from the start — no unexpected invoices later.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Speeds Up the Process</h4>
+            <p>Searches can be ordered immediately without waiting for funds to clear, keeping your transaction on track.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Transparent Pricing</h4>
+            <p>Every outlay is itemised so you can see exactly what you're paying for — no hidden fees, ever.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Required for All Transactions</h4>
+            <p>Searches are a mandatory part of buying or selling property. Getting them done early avoids delays.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- PROFESSIONAL PHOTOGRAPHY ---{%- endcomment -%}
+{%- if handle == 'photography-service' or handle == 'professional-photography' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>Professional interior and exterior photography of your property.</li>
+          <li>High-resolution, edited images optimised for online listings.</li>
+          <li>Wide-angle shots to showcase room size and layout.</li>
+          <li>Natural lighting techniques for warm, inviting images.</li>
+          <li>Digital delivery of all photos — ready to upload to any portal.</li>
+          <li>Quick turnaround — images typically delivered within 48 hours.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2>Why Professional Photography Matters</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>First Impressions Count</h4>
+            <p>The majority of buyers search online first. Professional photos make your property stand out and generate more clicks.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Sell Faster</h4>
+            <p>Properties with professional photography receive significantly more viewings and sell up to 32% faster.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Higher Offers</h4>
+            <p>Quality images present your property at its best, attracting serious buyers willing to pay the right price.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Works Across All Platforms</h4>
+            <p>Images are optimised for Rightmove, Zoopla, OnTheMarket, and social media — ready to use everywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- PROPERTY TITLE ---{%- endcomment -%}
+{%- if handle == 'property-title' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M9 3v18"></path><path d="M13 8h4M13 12h4M13 16h2"></path></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>Official Land Registry title deeds for any property in England & Wales.</li>
+          <li>Title plan showing the extent of the registered property.</li>
+          <li>Details of ownership, charges, and any registered interests.</li>
+          <li>Information on rights of way, easements, and restrictive covenants.</li>
+          <li>Digital delivery — documents sent directly to your email.</li>
+          <li>Available for freehold and leasehold properties.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2>Why You Need Title Documents</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>Verify Ownership</h4>
+            <p>Confirm exactly who owns a property and what rights or restrictions are attached before making any decisions.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Essential for Transactions</h4>
+            <p>Title documents are required for buying, selling, remortgaging, or resolving boundary disputes.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Identify Issues Early</h4>
+            <p>Spot potential problems like restrictive covenants, charges, or shared access before they become costly surprises.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Fast & Affordable</h4>
+            <p>We obtain official Land Registry documents quickly and at a fraction of the cost of instructing a solicitor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- RENT INCREASE SERVICE ---{%- endcomment -%}
+{%- if handle == 'rent-increase-service' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>Legally compliant Section 13 rent increase notice drafted and prepared.</li>
+          <li>Notice served correctly on your tenant in line with current legislation.</li>
+          <li>Market rent assessment to support the proposed increase.</li>
+          <li>Guidance on timing and notice periods required by law.</li>
+          <li>Full compliance with the Housing Act 1988 requirements.</li>
+          <li>Support if the tenant refers the notice to a Tribunal.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h2>Why Use a Professional Service</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>Legally Compliant</h4>
+            <p>Incorrect notices can be challenged and rejected. We ensure every notice meets current legal requirements.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Maximise Your Rental Income</h4>
+            <p>We assess the market to propose a fair increase that reflects current rental values in your area.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Avoid Disputes</h4>
+            <p>A properly drafted and served notice reduces the risk of tenant disputes and tribunal referrals.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Save Time</h4>
+            <p>We handle the paperwork and serving process — you just approve the proposed increase and we do the rest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- TENANCY AGREEMENT ---{%- endcomment -%}
+{%- if handle == 'tenancy-agreement' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>Professionally drafted Assured Shorthold Tenancy (AST) agreement.</li>
+          <li>Fully compliant with current UK housing legislation.</li>
+          <li>Customised to your property and tenancy terms.</li>
+          <li>Covers rent, deposit, responsibilities, and break clauses.</li>
+          <li>Includes all required prescribed information and notices.</li>
+          <li>Digital delivery — ready to sign and use immediately.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h2>Why a Professional Agreement Matters</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>Legal Protection</h4>
+            <p>A properly drafted agreement protects your rights as a landlord and ensures you can regain possession when needed.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Always Up to Date</h4>
+            <p>Housing law changes frequently. Our agreements reflect the latest legislation so you're never caught out.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Clear Terms for Both Parties</h4>
+            <p>Well-defined responsibilities reduce misunderstandings and disputes between landlord and tenant.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Required for Section 21 Notices</h4>
+            <p>Without a compliant tenancy agreement, you may not be able to serve a valid Section 21 notice to regain possession.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%}--- BOOSTING LISTING ---{%- endcomment -%}
+{%- if handle == 'boosting-listing' -%}
+<section class="service-details section">
+  <div class="page-width">
+    <div class="service-details__grid">
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+        </div>
+        <h2>What's Included</h2>
+        <ul>
+          <li>Premium listing placement on Rightmove, Zoopla, and OnTheMarket.</li>
+          <li>Enhanced visibility — your property appears higher in search results.</li>
+          <li>Featured listing badges to attract more attention from buyers.</li>
+          <li>Extended reach across multiple property portals simultaneously.</li>
+          <li>Performance tracking so you can see the impact of the boost.</li>
+          <li>Flexible duration options to match your selling timeline.</li>
+        </ul>
+      </div>
+      <div class="service-details__block">
+        <div class="service-details__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2>Why Boost Your Listing</h2>
+        <div class="service-details__benefits">
+          <div class="service-details__benefit">
+            <h4>Stand Out from the Crowd</h4>
+            <p>Thousands of properties are listed every day. A boosted listing ensures yours gets seen first by serious buyers.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>More Viewings, Faster</h4>
+            <p>Boosted properties receive significantly more enquiries and viewings in the critical first weeks on the market.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Multi-Portal Exposure</h4>
+            <p>Your property is promoted across all major UK portals — Rightmove, Zoopla, and OnTheMarket — at the same time.</p>
+          </div>
+          <div class="service-details__benefit">
+            <h4>Proven Results</h4>
+            <p>Boosted listings consistently achieve faster sales and stronger offers compared to standard listings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Service Details",
+  "tag": "div",
+  "class": "section-service-details"
+}
+{% endschema %}
