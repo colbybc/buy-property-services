@@ -848,7 +848,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__heading-logo-wrapper {
   display: flex;
   align-items: center;
-  margin-left: -5px;
+  margin-left: -12px;
 }
 .header--scrolled .header__heading-logo-wrapper {
   margin-left: 12px;
