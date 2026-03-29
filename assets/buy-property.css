@@ -831,11 +831,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-/* Align header with page content — remove extra padding, let page-width handle it */
 @media screen and (min-width: 990px) {
   .shopify-section-group-header-group .header.page-width {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 @media screen and (max-width: 989px) {
@@ -857,7 +856,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__heading-logo-wrapper {
   display: flex;
   align-items: center;
-  margin-left: -10px;
+  margin-left: 0;
 }
 .header__heading-logo {
   max-height: 160px;
