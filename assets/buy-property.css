@@ -850,6 +850,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   margin-left: -5px;
 }
+.header--scrolled .header__heading-logo-wrapper {
+  margin-left: 5px;
+}
 .header__heading-logo {
   max-height: 160px;
   width: auto;
