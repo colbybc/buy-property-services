@@ -821,7 +821,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 990px) {
   .header--scrolled .header.page-width,
   .shopify-section-group-header-group .header--scrolled .header.page-width {
-    padding-left: 2.5rem;
+    padding-left: 2.3rem;
     padding-right: 1.5rem;
   }
 }
@@ -833,7 +833,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 990px) {
   .shopify-section-group-header-group .header.page-width {
-    padding-left: 0.7rem;
+    padding-left: 0.5rem;
     padding-right: 1.5rem;
   }
 }
