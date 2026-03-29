@@ -817,11 +817,11 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bp-white) !important;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
 }
-/* Scrolled state padding matches page-width */
+/* Scrolled state — nudge logo right to align with content */
 @media screen and (min-width: 990px) {
   .header--scrolled .header.page-width,
   .shopify-section-group-header-group .header--scrolled .header.page-width {
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     padding-right: 1.5rem;
   }
 }
@@ -833,7 +833,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 990px) {
   .shopify-section-group-header-group .header.page-width {
-    padding-left: 1.5rem;
+    padding-left: 1.1rem;
     padding-right: 1.5rem;
   }
 }
