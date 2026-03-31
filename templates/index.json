@@ -50,7 +50,7 @@
           "settings": {
             "title": "Auction Legal Pack",
             "description": "Complete legal documentation pack for property auctions, including all required searches and certificates.",
-            "price_from": "From £299",
+            "price_from": "£250",
             "icon_name": "document",
             "link": ""
           }
@@ -60,7 +60,7 @@
           "settings": {
             "title": "RICS Level 2 Survey",
             "description": "Professional RICS HomeBuyer Report to identify potential issues before you buy or sell.",
-            "price_from": "From £399",
+            "price_from": "From £487.50",
             "icon_name": "house-search",
             "link": ""
           }
@@ -70,7 +70,7 @@
           "settings": {
             "title": "Outlays",
             "description": "We handle all search fees, Land Registry charges, and local authority costs on your behalf.",
-            "price_from": "From £150",
+            "price_from": "£380",
             "icon_name": "coins",
             "link": ""
           }
@@ -80,7 +80,7 @@
           "settings": {
             "title": "Professional Photography",
             "description": "High-quality property photography to showcase your property at its very best.",
-            "price_from": "From £149",
+            "price_from": "£150",
             "icon_name": "camera",
             "link": ""
           }
@@ -90,7 +90,7 @@
           "settings": {
             "title": "Property Title",
             "description": "Official Land Registry title deeds and title plans for any property in England & Wales.",
-            "price_from": "From £30",
+            "price_from": "£15",
             "icon_name": "scroll",
             "link": ""
           }
@@ -100,7 +100,7 @@
           "settings": {
             "title": "Rent Increase Service",
             "description": "Legally compliant Section 13 rent increase notices drafted and served correctly.",
-            "price_from": "From £49",
+            "price_from": "£200",
             "icon_name": "arrow-up",
             "link": ""
           }
@@ -110,7 +110,7 @@
           "settings": {
             "title": "Tenancy Agreement",
             "description": "Professionally drafted AST agreements compliant with current UK housing legislation.",
-            "price_from": "From £79",
+            "price_from": "£100",
             "icon_name": "handshake",
             "link": ""
           }
@@ -120,7 +120,7 @@
           "settings": {
             "title": "Boosting Listing",
             "description": "Premium listing placement on Rightmove, Zoopla, and OnTheMarket for maximum exposure.",
-            "price_from": "From £99",
+            "price_from": "£195",
             "icon_name": "megaphone",
             "link": ""
           }
