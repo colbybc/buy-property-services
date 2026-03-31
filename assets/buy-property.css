@@ -161,8 +161,7 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(ellipse 60% 50% at 85% 20%, rgba(232, 146, 42, 0.06) 0%, transparent 50%),
     linear-gradient(160deg, #051a0d 0%, #0c3119 20%, #1A4D2E 45%, #1e5c35 65%, #1A4D2E 80%, #0f3d1f 100%);
   overflow: hidden;
-  padding: 120px 0 160px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), 0 100%);
+  padding: 120px 0 100px;
 }
 
 /* Cross / grid pattern overlay */
@@ -437,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 989px) {
-  .hero { padding: 48px 0 100px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%); }
+  .hero { padding: 48px 0 56px; }
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -800,9 +799,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .testimonials-section--dark {
   background: linear-gradient(160deg, #051a0d 0%, #0c3119 30%, #1A4D2E 70%, #0f3d1f 100%);
-  clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
-  padding-top: 140px;
-  margin-top: -2px;
 }
 .testimonials-section--dark .bp-section-header h2 {
   color: var(--bp-white);
