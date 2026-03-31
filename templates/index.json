@@ -10,13 +10,6 @@
             "label": "Happy Clients"
           }
         },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "8",
-            "label": "Services Offered"
-          }
-        },
         "stat_3": {
           "type": "stat",
           "settings": {
@@ -25,7 +18,7 @@
           }
         }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": ["stat_1", "stat_3"],
       "settings": {
         "eyebrow": "UK Property Services",
         "heading_line_1": "Professional Property",
