@@ -1,154 +1,231 @@
-Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Image Src,SEO Title,SEO Description,Template Suffix
-auction-legal-pack,Auction Legal Pack,"<h2>Complete Legal Documentation for Property Auctions</h2>
-<p>Our Auction Legal Pack provides everything you need to sell your property at auction with confidence. We compile all the required legal documents, searches, and certificates into one comprehensive pack — ready for your auction house.</p>
-
-<h3>What's Included</h3>
-<ul>
-<li>Official Land Registry Title Deeds &amp; Title Plan</li>
-<li>Local Authority Search</li>
-<li>Environmental Search</li>
-<li>Water &amp; Drainage Search</li>
-<li>Chancel Repair Liability Search</li>
-<li>Property Information Form (TA6)</li>
-<li>Fittings &amp; Contents Form (TA10)</li>
-<li>Leasehold Information (if applicable)</li>
-<li>Energy Performance Certificate (EPC) guidance</li>
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Image Src,SEO Title,SEO Description,Template Suffix
+rent-increase-service,Rent Increase Service,"<p data-start=""151"" data-end=""252"">A simple, professional way to increase rent <strong data-start=""195"" data-end=""222"">legally and compliantly</strong> — without disputes or delays.</p>
+<p data-start=""254"" data-end=""424"">We manage the entire rent increase process for you, ensuring it is <strong data-start=""321"" data-end=""357"">fair, affordable, and defensible</strong>, particularly where a property may be sold with a tenant in place.</p>
+<h3 data-start=""426"" data-end=""445"">Our stages of service:</h3>
+<ul data-start=""447"" data-end=""1016"">
+<li data-start=""447"" data-end=""597"">
+<p data-start=""449"" data-end=""597""><strong data-start=""449"" data-end=""482"">Affordability &amp; Market Review</strong><br data-start=""482"" data-end=""485"">We assess what rent increase is realistic based on market data, tenant affordability, and sale considerations.</p>
+</li>
+<li data-start=""599"" data-end=""716"">
+<p data-start=""601"" data-end=""716""><strong data-start=""601"" data-end=""642"">Professional Rent Increase Assessment</strong><br data-start=""642"" data-end=""645"">A formal, evidence-based assessment to support the proposed increase.</p>
+</li>
+<li data-start=""718"" data-end=""873"">
+<p data-start=""720"" data-end=""873""><strong data-start=""720"" data-end=""744"">Tenant Communication</strong><br data-start=""744"" data-end=""747"">Official email and <strong data-start=""768"" data-end=""794"">recorded postal notice</strong> sent to the tenant, clearly explaining the increase and any intention to sell.</p>
+</li>
+<li data-start=""875"" data-end=""1016"">
+<p data-start=""877"" data-end=""1016""><strong data-start=""877"" data-end=""902"">Legally Served Notice</strong><br data-start=""902"" data-end=""905"">Rent increase issued in the correct legal format and with the required notice period for England or Scotland. 1 months notice for England and 3 months notice for Scotland typically.</p>
+</li>
 </ul>
-
-<h3>Timescales</h3>
-<p>Once you place your order, our team will contact you within 24 hours to begin processing. A typical Auction Legal Pack takes 10–15 working days to compile, depending on local authority response times.</p>
-
-<h3>Important Information</h3>
-<p>This is a professional service — our experienced conveyancers handle everything on your behalf. No progress bar or automated tracking; we keep you updated via email at every stage.</p>",Buy Property Services,Service,"auction, legal pack, property auction, conveyancing, selling",TRUE,Title,Default Title,BPS-ALP-001,0,,continue,manual,299.00,,FALSE,TRUE,,Auction Legal Pack | Buy Property Services,Complete auction legal pack for UK property sales. Includes all searches and legal documents. Professional service from £299.,service
-rics-level-2-survey,RICS Level 2 Survey,"<h2>Professional RICS HomeBuyer Report</h2>
-<p>A RICS Level 2 Survey (formerly the HomeBuyer Report) is the most popular survey for conventional properties in reasonable condition. Our RICS-accredited surveyors provide a thorough assessment of the property's condition.</p>
-
-<h3>What's Included</h3>
+<h3 data-start=""1018"" data-end=""1043"">Why Use This Service?</h3>
+<ul data-start=""1045"" data-end=""1212"">
+<li data-start=""1092"" data-end=""1124"">
+<p data-start=""1094"" data-end=""1124"">Protect tenant relationships</p>
+</li>
+<li data-start=""1092"" data-end=""1124"">
+<p data-start=""1094"" data-end=""1124"">Maximise rental income during the sale process</p>
+</li>
+<li data-start=""1092"" data-end=""1124"">
+<p data-start=""1094"" data-end=""1124"">Ensure your property fits eligibility to be sold to another investor for listing success.</p>
+</li>
+<li data-start=""1159"" data-end=""1212"">
+<p data-start=""1161"" data-end=""1212"">Ideal preparation for selling a tenanted property</p>
+</li>
+</ul>",Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,200.00,,FALSE,TRUE,,,,service
+listing-boost-survey-photography-service,"Listing Boost, RICS Level 2 Survey & Professional Photography Service","<p><strong>Included In Service</strong></p>
+<p>Photography:</p>
 <ul>
-<li>Full visual inspection of the property</li>
-<li>Assessment of the property's condition using a traffic-light rating system</li>
-<li>Identification of significant defects and potential issues</li>
-<li>Advice on urgent repairs and ongoing maintenance</li>
-<li>Damp and timber assessment</li>
-<li>Roof, walls, windows, and doors inspection</li>
-<li>Services assessment (electrics, gas, plumbing)</li>
-<li>Insurance rebuild cost valuation</li>
+<li>Full Listing Service</li>
+<li>Professional Photographer Schedule &amp; Visit</li>
+<li>Photos Edited &amp; Resized for Property Portals</li>
+<li>3D Rendered Walkthroughs powered by Matterport</li>
+<li>Walkthrough Smartphone Video</li>
+<li>Property Floorplans</li>
 </ul>
-
-<h3>Timescales</h3>
-<p>Our team will contact you within 24 hours of your order to schedule the survey at a time that works for you and the property occupier. The report is typically delivered within 3–5 working days of the inspection.</p>
-
-<h3>Important Information</h3>
-<p>All surveys are conducted by RICS-accredited surveyors. We do not offer an online date picker — our team personally coordinates the best time for the inspection to ensure thorough access to the property.</p>",Buy Property Services,Service,"RICS survey, level 2 survey, homebuyer report, property survey, house survey",TRUE,Title,Default Title,BPS-RLS-001,0,,continue,manual,399.00,,FALSE,TRUE,,RICS Level 2 Survey | Buy Property Services,Professional RICS Level 2 HomeBuyer Survey for UK properties. Accredited surveyors. Book from £399.,service
-outlays,Outlays,"<h2>Disbursement Costs Handled For You</h2>
-<p>Outlays cover the essential third-party fees required during the conveyancing process. Rather than juggling multiple payments to different authorities, we handle all disbursements on your behalf — one simple payment covers everything.</p>
-
-<h3>What's Included</h3>
+<p><span>Survey:</span></p>
 <ul>
-<li>Local Authority Search fees</li>
-<li>Environmental Search fees</li>
-<li>Water &amp; Drainage Search fees</li>
-<li>Land Registry fees</li>
-<li>Chancel Repair Search</li>
-<li>Bankruptcy Search (where required)</li>
-<li>Land Charges Search</li>
-<li>All administration and processing fees</li>
+<li>RICS Level 2 Survey Visit</li>
+<li>Full Property Valuation</li>
+<li>EPC Rating (Scotland only)</li>
 </ul>
-
-<h3>Timescales</h3>
-<p>Once payment is received, we submit all searches immediately. Local authority searches typically take 5–10 working days, though this varies by council. We provide receipts and confirmations for all disbursements made on your behalf.</p>
-
-<h3>Important Information</h3>
-<p>Outlay costs can vary depending on the local authority area and property type. The price shown is a standard estimate — we will confirm exact costs before proceeding and notify you of any significant variations.</p>",Buy Property Services,Service,"outlays, disbursements, search fees, conveyancing costs, land registry",TRUE,Title,Default Title,BPS-OUT-001,0,,continue,manual,150.00,,FALSE,TRUE,,Property Outlays &amp; Disbursements | Buy Property Services,We handle all conveyancing outlays and disbursement fees on your behalf. Simple one-payment solution from £150.,service
-professional-photography-service,Professional Photography Service,"<h2>High-Quality Property Photography</h2>
-<p>First impressions matter. Our professional photographers capture your property at its absolute best with high-resolution images optimised for property portals, brochures, and marketing materials.</p>
-
-<h3>What's Included</h3>
+<p><span>Featured Listing Service:</span></p>
 <ul>
-<li>Professional photographer visit to your property</li>
-<li>Wide-angle interior photography of all key rooms</li>
-<li>Exterior and kerb appeal shots</li>
-<li>Garden and outdoor space photography</li>
-<li>Professional editing and colour correction</li>
-<li>High-resolution images for print and web</li>
-<li>Portal-optimised images (Rightmove, Zoopla, OnTheMarket)</li>
-<li>Delivered via secure download link</li>
+<li>Rightmove Featured Listing Service 7 Days</li>
+<li>Zoopla Featured Listing Service 7 Days</li>
+<li>OnTheMarket Featured Listing Service 7 Days</li>
 </ul>
-
-<h3>Timescales</h3>
-<p>After ordering, our team will contact you within 24 hours to schedule the photography visit. Edited images are typically delivered within 48 hours of the shoot via a secure download link.</p>
-
-<h3>Important Information</h3>
-<p>We recommend preparing your property before the shoot — decluttering, cleaning, and ensuring good lighting makes a significant difference. Our photographer will advise on the day. Coverage area applies; we will confirm availability for your postcode.</p>",Buy Property Services,Service,"property photography, professional photos, estate agent photography, property marketing",TRUE,Title,Default Title,BPS-PHO-001,0,,continue,manual,149.00,,FALSE,TRUE,,Professional Property Photography | Buy Property Services,Professional property photography for landlords and sellers. High-res portal-ready images from £149.,service
-property-title,Property Title,"<h2>Official Land Registry Title Documents</h2>
-<p>Need to know who owns a property, its boundaries, or any charges against it? We obtain official Land Registry title documents for any registered property in England and Wales — quickly and hassle-free.</p>
-
-<h3>What's Included</h3>
+<p>--</p>
+<p><meta charset=""utf-8""><span>Accelerated timeframe sale with Rightmove, Zoopla &amp; OnTheMarket Featured Listings ranking your property higher and giving it </span><u>more than 130% property views the first 7 days</u><span> of listing! Along with the entire service and automatically sending buyers your RICS Level 2 Survey for the best possible service. </span><a href=""https://hub.rightmove.co.uk/how-to-make-the-most-of-featured-property/"" target=""_blank"">Learn more here.</a></p>
+<p>--</p>
+<p><span>Process for RICS Level 2 Survey:</span></p>
 <ul>
-<li>Official Title Register (ownership details, charges, restrictions)</li>
-<li>Title Plan (property boundaries)</li>
-<li>Delivered as official PDF documents</li>
-<li>Valid for legal and professional use</li>
+<li><span>Visual inspection of all accessible areas (inside &amp; outside)</span></li>
+<li><span>Assessment of building condition with colour-coded ratings</span></li>
+<li><span>Identification of defects, damp, subsidence, and structural concerns</span></li>
+<li><span>Evaluation of fittings, services, and grounds (non-intrusive)</span></li>
+<li><span>Advice on repair priorities and ongoing maintenance</span></li>
+<li><span>Estimated market valuation and reinstatement cost</span></li>
 </ul>
-
-<h3>Timescales</h3>
-<p>We manually retrieve your title documents from the Land Registry. Most requests are completed and delivered to your email within 1–2 working days.</p>
-
-<h3>Important Information</h3>
-<p>This service covers registered properties in England and Wales only. If a property is unregistered, we will notify you and advise on next steps. The title documents are official Land Registry copies suitable for legal proceedings, mortgage applications, and conveyancing.</p>",Buy Property Services,Service,"property title, land registry, title deeds, title plan, property ownership",TRUE,Title,Default Title,BPS-PTL-001,0,,continue,manual,30.00,,FALSE,TRUE,,Property Title Deeds | Buy Property Services,Official Land Registry title deeds and title plans for any UK property. Fast delivery from just £30.,service
-rent-increase-service,Rent Increase Service,"<h2>Legally Compliant Rent Increase Notices</h2>
-<p>Increasing rent on a periodic tenancy requires a properly drafted and served Section 13 notice. Get it wrong and the increase is invalid. Our team ensures your rent increase is legally watertight and correctly served.</p>
-
-<h3>What's Included</h3>
+<p>Selling your investment property with a Survey increases your chance of a sale being agreed by over 30% and almost doubles your completion rate as buyers have much more confidence in the purchase especially when making an investment decision.</p>
+<p>The service is completely hands off and Let Property will schedule the survey and photography at the same time with 1 hours of access to cause as little disruption to your tenant as possible.</p>",Buy Property Services,Service,,TRUE,Property Value,Up to £100k Value,Location,England,,0,,continue,manual,637.50,,FALSE,TRUE,,,,service
+listing-boost-survey-photography-service,,,,,,,Property Value,Up to £100k Value,Location,Scotland,,0,,continue,manual,650.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£100k - £150k Value,Location,England,,0,,continue,manual,656.25,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£100k - £150k Value,Location,Scotland,,0,,continue,manual,725.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£150k - £200k Value,Location,England,,0,,continue,manual,675.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£150k - £200k Value,Location,Scotland,,0,,continue,manual,725.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£200k - £300k Value,Location,England,,0,,continue,manual,712.50,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£200k - £300k Value,Location,Scotland,,0,,continue,manual,825.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£300k - £400k Value,Location,England,,0,,continue,manual,750.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£300k - £400k Value,Location,Scotland,,0,,continue,manual,925.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£400k - £500k Value,Location,England,,0,,continue,manual,787.50,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£400k - £500k Value,Location,Scotland,,0,,continue,manual,1025.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£500k - £600k Value,Location,England,,0,,continue,manual,825.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£500k - £600k Value,Location,Scotland,,0,,continue,manual,1100.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£600k - £700k Value,Location,England,,0,,continue,manual,862.50,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£600k - £700k Value,Location,Scotland,,0,,continue,manual,1210.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£700k - £800k Value,Location,England,,0,,continue,manual,937.50,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£700k - £800k Value,Location,Scotland,,0,,continue,manual,1310.00,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£800k - £900k Value,Location,England,,0,,continue,manual,1012.50,,FALSE,TRUE,,,,
+listing-boost-survey-photography-service,,,,,,,Property Value,£800k - £900k Value,Location,Scotland,,0,,continue,manual,1400.00,,FALSE,TRUE,,,,
+survey-photography-service,RICS Level 2 Survey + Professional Photography Service,"<p><strong>Included In Service</strong></p>
+<p>Photography:</p>
 <ul>
-<li>Assessment of your current tenancy type and terms</li>
-<li>Market rent research for your area</li>
-<li>Professionally drafted Section 13 notice</li>
-<li>Guidance on correct service method and timing</li>
-<li>Advice on tenant rights and the tribunal process</li>
-<li>Digital copy of the completed notice for your records</li>
+<li>Professional Photographer Schedule &amp; Visit</li>
+<li>Photos Edited &amp; Resized for Property Portals</li>
+<li>3D Rendered Walkthroughs powered by Matterport</li>
+<li>Walkthrough Smartphone Video</li>
+<li>Property Floorplans</li>
 </ul>
-
-<h3>Timescales</h3>
-<p>Once you provide your tenancy details and current rent information, we typically draft and deliver your Section 13 notice within 2–3 working days.</p>
-
-<h3>Important Information</h3>
-<p>A Section 13 notice must give the tenant at least one month's notice (for monthly tenancies) and can only take effect on a rent payment date. We will advise you on the correct timing to ensure compliance with the Housing Act 1988.</p>",Buy Property Services,Service,"rent increase, section 13, landlord, tenancy, rent review",TRUE,Title,Default Title,BPS-RIS-001,0,,continue,manual,49.00,,FALSE,TRUE,,Rent Increase Service | Section 13 Notice | Buy Property Services,Legally compliant Section 13 rent increase notices for UK landlords. Professionally drafted from £49.,service
-tenancy-agreement,Tenancy Agreement,"<h2>Professionally Drafted Tenancy Agreements</h2>
-<p>A solid tenancy agreement protects both landlord and tenant. Our professionally drafted Assured Shorthold Tenancy (AST) agreements are fully compliant with current UK housing legislation and tailored to your specific property and circumstances.</p>
-
-<h3>What's Included</h3>
+<p><span>Survey:</span></p>
 <ul>
-<li>Professionally drafted AST agreement</li>
-<li>Compliant with the Housing Act 1988 (as amended)</li>
-<li>Tailored clauses for your property type (house, flat, HMO)</li>
-<li>Break clause options</li>
-<li>Pet and smoking clauses (if required)</li>
-<li>Deposit protection guidance</li>
-<li>Right to Rent checklist</li>
-<li>Digital copy ready for signing</li>
+<li>RICS Level 2 Survey Visit</li>
+<li>Full Property Valuation</li>
+<li>EPC Rating (Scotland only)</li>
 </ul>
-
-<h3>Timescales</h3>
-<p>After you provide your property and tenancy details, we typically deliver your drafted agreement within 3–5 working days. The agreement is sent digitally, ready for you and your tenant to sign.</p>
-
-<h3>Important Information</h3>
-<p>Our tenancy agreements are drafted by legal professionals with expertise in UK housing law. We ensure compliance with all current legislation including the Tenant Fees Act 2019, Deregulation Act 2015, and relevant statutory instruments.</p>",Buy Property Services,Service,"tenancy agreement, AST, assured shorthold tenancy, landlord, rental agreement",TRUE,Title,Default Title,BPS-TNA-001,0,,continue,manual,79.00,,FALSE,TRUE,,Tenancy Agreement | AST | Buy Property Services,Professionally drafted Assured Shorthold Tenancy agreements compliant with UK housing law. From £79.,service
-boosting-list-for-rightmove-zoopla-onthemarket,Boosting List for Rightmove/Zoopla/Onthemarket,"<h2>Premium Portal Listing Placement</h2>
-<p>Stand out from the crowd. Our portal boosting service gives your property premium placement and featured listing status on the UK's biggest property portals — Rightmove, Zoopla, and OnTheMarket — for maximum exposure and faster results.</p>
-
-<h3>What's Included</h3>
+<p>--</p>
+<p><span>Process for RICS Level 2 Survey:</span></p>
 <ul>
-<li>Premium or Featured listing upgrade</li>
-<li>Available on Rightmove, Zoopla, and OnTheMarket</li>
-<li>Choose individual portals or all three</li>
-<li>Enhanced listing visibility and priority positioning</li>
-<li>Increased click-through rates and enquiries</li>
-<li>Duration options available (7-day, 14-day, or until sold/let)</li>
+<li><span>Visual inspection of all accessible areas (inside &amp; outside)</span></li>
+<li><span>Assessment of building condition with colour-coded ratings</span></li>
+<li><span>Identification of defects, damp, subsidence, and structural concerns</span></li>
+<li><span>Evaluation of fittings, services, and grounds (non-intrusive)</span></li>
+<li><span>Advice on repair priorities and ongoing maintenance</span></li>
+<li><span>Estimated market valuation and reinstatement cost</span></li>
 </ul>
-
-<h3>Timescales</h3>
-<p>Once your order is placed, our team manually applies the premium listing credit to your chosen portal(s). Boosting is typically active within 24–48 hours of your order.</p>
-
-<h3>Important Information</h3>
-<p>Your property must already be listed on the relevant portal(s) before boosting can be applied. If you need help getting your property listed, speak to our team about our full marketing packages. Boosting increases your listing's visibility but does not guarantee viewings or offers.</p>",Buy Property Services,Service,"portal boosting, rightmove, zoopla, onthemarket, featured listing, property marketing",TRUE,Title,Default Title,BPS-BLR-001,0,,continue,manual,99.00,,FALSE,TRUE,,Boost Your Property Listing | Rightmove Zoopla OnTheMarket | Buy Property Services,Premium listing placement on Rightmove Zoopla and OnTheMarket. Get more views and enquiries from £99.,service
+<p>Selling your investment property with a Survey increases your chance of a sale being agreed by over 30% and almost doubles your completion rate as buyers have much more confidence in the purchase especially when making an investment decision.</p>
+<p>The service is completely hands off and Let Property will schedule the survey and photography at the same time with 1 hours of access to cause as little disruption to your tenant as possible.</p>",Buy Property Services,Service,,TRUE,Property Value,Up to £100k Value,Location,England,,0,,continue,manual,487.50,,FALSE,TRUE,,,,service
+survey-photography-service,,,,,,,Property Value,Up to £100k Value,Location,Scotland,,0,,continue,manual,500.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£100k - £150k Value,Location,England,,0,,continue,manual,506.25,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£100k - £150k Value,Location,Scotland,,0,,continue,manual,575.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£150k - £200k Value,Location,England,,0,,continue,manual,525.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£150k - £200k Value,Location,Scotland,,0,,continue,manual,575.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£200k - £300k Value,Location,England,,0,,continue,manual,562.50,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£200k - £300k Value,Location,Scotland,,0,,continue,manual,675.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£300k - £400k Value,Location,England,,0,,continue,manual,600.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£300k - £400k Value,Location,Scotland,,0,,continue,manual,775.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£400k - £500k Value,Location,England,,0,,continue,manual,637.50,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£400k - £500k Value,Location,Scotland,,0,,continue,manual,875.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£500k - £600k Value,Location,England,,0,,continue,manual,675.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£500k - £600k Value,Location,Scotland,,0,,continue,manual,950.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£600k - £700k Value,Location,England,,0,,continue,manual,712.50,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£600k - £700k Value,Location,Scotland,,0,,continue,manual,1060.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£700k - £800k Value,Location,England,,0,,continue,manual,787.50,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£700k - £800k Value,Location,Scotland,,0,,continue,manual,1160.00,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£800k - £900k Value,Location,England,,0,,continue,manual,862.50,,FALSE,TRUE,,,,
+survey-photography-service,,,,,,,Property Value,£800k - £900k Value,Location,Scotland,,0,,continue,manual,1250.00,,FALSE,TRUE,,,,
+photography-service,Professional Photography Service,"<p><strong>Included In Service</strong></p>
+<p>Photography:</p>
+<ul>
+<li>Professional Photographer Schedule &amp; Visit</li>
+<li>Photos Edited &amp; Resized for Property Portals</li>
+<li>3D Rendered Walkthroughs powered by Matterport</li>
+<li>Walkthrough Smartphone Video</li>
+<li>Property Floorplans</li>
+</ul>",Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,150.00,,FALSE,TRUE,,,,service
+outlays,Outlays,<p>Outlays for auction pack.</p>,Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,380.00,,FALSE,TRUE,,,,service
+auction-tenanted-property-pre-sale-legal-pack,Auction Tenanted Property Pre-Sale Legal Pack,"<p data-start=""292"" data-end=""702"">Purchasing an <strong data-start=""306"" data-end=""328"">Auction Legal Pack</strong> is an essential step for any seller looking to achieve a smooth, confident, and successful sale at auction. The pack is professionally prepared to compile all legal documents, searches, and disclosures required by buyers before bidding. Providing this information upfront not only protects you as the seller, but also maximises buyer interest and encourages strong bidding.</p>
+<h3 data-start=""704"" data-end=""748""><strong data-start=""708"" data-end=""748"">What the Auction Legal Pack Includes</strong></h3>
+<ul data-start=""749"" data-end=""1289"">
+<li data-start=""749"" data-end=""846"">
+<p data-start=""751"" data-end=""846""><strong data-start=""751"" data-end=""779"">Official Title Documents</strong> confirming ownership and any rights, covenants, or restrictions.</p>
+</li>
+<li data-start=""847"" data-end=""933"">
+<p data-start=""849"" data-end=""933""><strong data-start=""849"" data-end=""861"">Searches</strong> such as Local Authority, Drainage &amp; Water, and Environmental reports.</p>
+</li>
+<li data-start=""934"" data-end=""1020"">
+<p data-start=""936"" data-end=""1020""><strong data-start=""936"" data-end=""966"">Special Conditions of Sale</strong> tailored to your property and your preferred terms.</p>
+</li>
+<li data-start=""1021"" data-end=""1104"">
+<p data-start=""1023"" data-end=""1104""><strong data-start=""1023"" data-end=""1082"">Property Information Forms &amp; Fixtures and Fittings List</strong> (where applicable).</p>
+</li>
+<li data-start=""1105"" data-end=""1154"">
+<p data-start=""1107"" data-end=""1154""><strong data-start=""1107"" data-end=""1126"">Lease Documents</strong> for leasehold properties.</p>
+</li>
+<li data-start=""1155"" data-end=""1222"">
+<p data-start=""1157"" data-end=""1222""><strong data-start=""1157"" data-end=""1206"">Planning and Building Regulation Certificates</strong>, if relevant.</p>
+</li>
+<li data-start=""1223"" data-end=""1289"">
+<p data-start=""1225"" data-end=""1289"">Any <strong data-start=""1229"" data-end=""1253"">additional documents</strong> your solicitor considers necessary.</p>
+</li>
+</ul>
+<h3 data-start=""1291"" data-end=""1345""><strong data-start=""1295"" data-end=""1345"">Why Sellers Benefit from an Auction Legal Pack</strong></h3>
+<ul data-start=""1346"" data-end=""2331"">
+<li data-start=""1346"" data-end=""1510"">
+<p data-start=""1348"" data-end=""1510""><strong data-start=""1348"" data-end=""1378"">Increases Buyer Confidence</strong><br data-start=""1378"" data-end=""1381"">Providing a full set of legal documents upfront gives bidders the certainty they need to commit to strong, competitive bidding.</p>
+</li>
+<li data-start=""1512"" data-end=""1675"">
+<p data-start=""1514"" data-end=""1675""><strong data-start=""1514"" data-end=""1539"">Faster, Smoother Sale</strong><br data-start=""1539"" data-end=""1542"">Because buyers complete due diligence before the auction, there is far less risk of delays or complications after the hammer falls.</p>
+</li>
+<li data-start=""1677"" data-end=""1854"">
+<p data-start=""1679"" data-end=""1854""><strong data-start=""1679"" data-end=""1708"">Reduces Fall-Through Risk</strong><br data-start=""1708"" data-end=""1711"">Serious buyers review the pack in advance, so only committed bidders take part — dramatically lowering the chance of post-auction withdrawal.</p>
+</li>
+<li data-start=""1856"" data-end=""2034"">
+<p data-start=""1858"" data-end=""2034""><strong data-start=""1858"" data-end=""1895"">Strengthens Your Final Sale Price</strong><br data-start=""1895"" data-end=""1898"">Confident buyers bid higher. A clear, complete legal pack creates a competitive environment that often drives up the final sale price.</p>
+</li>
+<li data-start=""2036"" data-end=""2192"">
+<p data-start=""2038"" data-end=""2192""><strong data-start=""2038"" data-end=""2071"">Ensures Full Legal Compliance</strong><br data-start=""2071"" data-end=""2074"">You meet all auction requirements by providing the necessary documents upfront, protecting you from future disputes.</p>
+</li>
+<li data-start=""2194"" data-end=""2331"">
+<p data-start=""2196"" data-end=""2331""><strong data-start=""2196"" data-end=""2223"">Saves You Time &amp; Stress</strong><br data-start=""2223"" data-end=""2226"">Early preparation of the pack means fewer last-minute issues and a smoother overall selling experience.</p>
+</li>
+</ul>",Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,250.00,,FALSE,TRUE,,,,service
+tenancy-agreement-digital-signature,Tenancy Agreement + Digital Signature,"<div class=""de elHeadlineWrapper ui-droppable de-editable"" id=""tmp_subheadline-38478"" data-de-type=""headline"" data-de-editing=""false"" data-title=""sub-headline"" data-ce=""true"" data-trigger=""none"" data-animate=""fade"" data-delay=""500"" data-gramm=""false"" aria-disabled=""false"" data-google-font=""Source+Sans+Pro"">
+<div class=""ne elHeadline hsSize2 elMargin0 elBGStyle0 hsTextShadow0 lh2"" data-bold=""inherit"" data-gramm=""false"">
+<div>When you order we'll create a fully compliant tenancy agreement and send it out for a digital signature between you and your tenant.</div>
+<div><br></div>
+<div>Tenancy agreements are available for both Scottish and English tenants. Once you make the payment via Credit Card we will send the tenancy agreement via an online digital signature:</div>
+<div><br></div>
+<div>Step 1 - Once you have made the payment we will send you a form to ask for some basic details in order for us to create the tenancy agreement. </div>
+<div>Step 2 - The tenancy agreement will then be sent to your email for a digital signature by yourself as the landlord.</div>
+<div>Step 3 - Only once you have signed and agreed to the tenancy agreement will it be sent for digital signature to your tenant.</div>
+<div>Step 4 - You will receive a copy of the tenancy agreement and we will have it on our system to process your property listing too.</div>
+<div><br></div>
+<div>A valid tenancy agreement is required by law and is required in order to list your property for sale through the Let Property Investment Property Marketplace.</div>
+<div><br></div>
+<div>If you have multiple tenants on the one tenancy agreement then you only need to buy 1 tenancy agreement from us. If you have multiple tenants on separate agreements, then please purchase multiple agreements using the quantity selector on the checkout page.</div>
+</div>
+</div>",Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,100.00,,FALSE,TRUE,,,,service
+upgraded-featured-listings-boost-on-rightmove-zoopla-onthemarket,"Upgraded Premium Listing Boost On Rightmove, Zoopla & OnTheMarket","<p data-start=""1006"" data-end=""1224"">Unlock the highest-impact marketing upgrade available.</p>
+<p data-start=""1006"" data-end=""1224""><strong data-start=""1067"" data-end=""1103"">Upgraded Premium Listings Boost</strong> places your property in a more prominent position on Rightmove, Zoopla and OnTheMarket — delivering:</p>
+<ul data-start=""1226"" data-end=""1349"">
+<li data-start=""1226"" data-end=""1251"">
+<p data-start=""1228"" data-end=""1251""><meta charset=""utf-8"">A “Premium Listing” is an enhanced advert upgrade (vs. the standard listing) that makes your property more prominent in search results. <span class="""" data-state=""closed""><span class=""ms-1 inline-flex max-w-full items-center relative top-[-0.094rem] animate-[show_150ms_ease-in]"" data-testid=""webpage-citation-pill""><a href=""https://customerfaq.rightmove.co.uk/support/solutions/articles/7000056783-what-is-a-premium-listing-?utm_source=chatgpt.com"" rel=""noopener"" alt=""https://customerfaq.rightmove.co.uk/support/solutions/articles/7000056783-what-is-a-premium-listing-?utm_source=chatgpt.com"" class=""flex h-4.5 overflow-hidden rounded-xl px-2 text-[9px] font-medium transition-colors duration-150 ease-in-out text-token-text-secondary! bg-[#F4F4F4]! dark:bg-[#303030]!"" target=""_blank""><span class=""relative start-0 bottom-0 flex h-full w-full items-center""><span class=""flex h-4 w-full items-center justify-between""><span class=""max-w-[15ch] grow truncate overflow-hidden text-center""></span></span></span></a></span></span></p>
+</li>
+<li data-start=""1252"" data-end=""1279"">
+<p data-start=""1254"" data-end=""1279"">Up to 10x more exposure.</p>
+</li>
+<li data-start=""1280"" data-end=""1308"">
+<p data-start=""1282"" data-end=""1308"">Increased enquiry volume.</p>
+</li>
+<li data-start=""1309"" data-end=""1349"">
+<p data-start=""1311"" data-end=""1349"">Stronger perceived value and urgency from prospective investors.</p>
+</li>
+</ul>
+<p data-start=""1351"" data-end=""1421"">Perfect for sellers who want faster traction and maximum market reach.</p>
+<p data-start=""1351"" data-end=""1421"">This listing Boost applies for all of the following platforms:</p>
+<ul>
+<li data-start=""1351"" data-end=""1421"">Rightmove.co.uk (lasts 6 months)</li>
+<li data-start=""1351"" data-end=""1421"">Zoopla.co.uk (lasts 12 months)</li>
+<li data-start=""1351"" data-end=""1421"">OnTheMarket.co.uk (lasts 12 months)</li>
+</ul>
+<p data-start=""1351"" data-end=""1421"">We list your property for free through all of these portals but this is an additional 3rd party service that you can add on in order to achieve a faster sale as your listing is better placed with relevant search terms.</p>",Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,195.00,,FALSE,TRUE,,,,service
+property-title,Property Title,<p>We will request your property title from HMRC and verify it against your ID. This is required in order to list a property in the UK and prove that you are the owner of the property.</p>,Buy Property Services,Service,,TRUE,Title,Default Title,,,,0,,continue,manual,15.00,,FALSE,TRUE,,,,service
