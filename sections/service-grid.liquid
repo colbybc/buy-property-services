@@ -40,7 +40,7 @@
             <p class="service-card__desc">{{ block.settings.description }}</p>
           </div>
           <div class="service-card__footer">
-            <div class="service-card__price">{{ block.settings.price_from }}</div>
+            <div class="service-card__price"><span class="price-badge">{{ block.settings.price_from }}</span></div>
             {%- liquid
               assign card_handle = block.settings.title | handleize
               if block.settings.link != blank

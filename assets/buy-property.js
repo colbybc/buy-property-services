@@ -42,6 +42,42 @@ document.addEventListener('DOMContentLoaded', function () {
     updateHeader();
   }
 
+  // Stat Counters
+  function animateCounter(el) {
+    var raw = el.dataset.target || '';
+    var suffix = raw.replace(/[\d,\.]+/, '');
+    var numStr = raw.replace(/[^\d\.]/g, '');
+    var target = parseFloat(numStr);
+    if (isNaN(target)) return;
+    var isFloat = numStr.indexOf('.') !== -1;
+    var decimals = isFloat ? (numStr.split('.')[1] || '').length : 0;
+    var duration = 1400;
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = target * ease;
+      var display = isFloat ? current.toFixed(decimals) : Math.floor(current).toLocaleString();
+      el.textContent = display + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-counter').forEach(function(el) {
+    counterObserver.observe(el);
+  });
+
   // Smooth Scroll
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="#"]');

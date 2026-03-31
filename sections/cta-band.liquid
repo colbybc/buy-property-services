@@ -1,12 +1,38 @@
 <section class="cta-band">
+  <div class="cta-band__pattern" aria-hidden="true"></div>
   <div class="page-width">
-    <h2>{{ section.settings.heading }}</h2>
-    {%- if section.settings.subheading != blank -%}
-      <p>{{ section.settings.subheading }}</p>
-    {%- endif -%}
-    {%- if section.settings.button_label != blank -%}
-      <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_label }}</a>
-    {%- endif -%}
+    <div class="cta-band__inner">
+      <div class="cta-band__left reveal-on-scroll">
+        <span class="cta-band__eyebrow">Get Started Today</span>
+        <h2>{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p>{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+      <div class="cta-band__right reveal-on-scroll" data-reveal-delay="150" aria-hidden="true">
+        <div class="cta-band__cards">
+          <div class="cta-band__card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>RICS Regulated</span>
+          </div>
+          <div class="cta-band__card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Fast Turnaround</span>
+          </div>
+          <div class="cta-band__card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>5-Star Rated</span>
+          </div>
+          <div class="cta-band__card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
+            <span>No Hidden Fees</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
