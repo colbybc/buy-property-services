@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
     reveals.forEach(function (el) {
+      var delay = el.dataset.revealDelay;
+      if (delay) el.style.transitionDelay = delay + 'ms';
       var rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         el.classList.add('is-visible');

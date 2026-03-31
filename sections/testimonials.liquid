@@ -1,6 +1,6 @@
 <section class="testimonials-section section testimonials-section--dark">
   <div class="page-width">
-    <div class="bp-section-header">
+    <div class="bp-section-header reveal-on-scroll">
       {%- if section.settings.eyebrow != blank -%}
         <span class="eyebrow">{{ section.settings.eyebrow }}</span>
       {%- endif -%}
@@ -12,7 +12,7 @@
 
     <div class="testimonials-grid">
       {%- for block in section.blocks -%}
-        <div class="testimonial-card" {{ block.shopify_attributes }}>
+        <div class="testimonial-card reveal-on-scroll" data-reveal-delay="{{ forloop.index0 | times: 120 }}" {{ block.shopify_attributes }}>
           <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-text">"{{ block.settings.quote }}"</p>
           <div class="testimonial-author">

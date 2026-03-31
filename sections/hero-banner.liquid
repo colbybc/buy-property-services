@@ -7,7 +7,7 @@
   <div class="hero__geo" aria-hidden="true"></div>
   <div class="page-width">
     <div class="hero__inner">
-      <div class="hero__text">
+      <div class="hero__text reveal-on-scroll">
         <span class="hero__eyebrow">{{ section.settings.eyebrow }}</span>
         <h1>{{ section.settings.heading_line_1 }} <em>{{ section.settings.heading_line_2 }}</em> {{ section.settings.heading_line_3 }}</h1>
         <p class="hero__sub">{{ section.settings.subheading }}</p>
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div class="hero__image-wrap" aria-hidden="true">
+      <div class="hero__image-wrap reveal-on-scroll" data-reveal-delay="200" aria-hidden="true">
         {%- if section.settings.background_image != blank -%}
           <img
             src="{{ section.settings.background_image | image_url: width: 800 }}"
@@ -56,6 +56,16 @@
             </div>
           </div>
         {%- endif -%}
+
+        <div class="hero__float-card">
+          <div class="hero__float-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div>
+            <strong>5-Star Rated</strong>
+            <span>98% client satisfaction</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

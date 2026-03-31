@@ -9,7 +9,7 @@
 
     <div class="process-timeline__steps">
       {%- for block in section.blocks -%}
-        <div class="process-timeline__step" {{ block.shopify_attributes }}>
+        <div class="process-timeline__step reveal-on-scroll" data-reveal-delay="{{ forloop.index0 | times: 120 }}" {{ block.shopify_attributes }}>
           <div class="process-timeline__number">
             {{ block.settings.step_number | default: forloop.index }}
           </div>

@@ -3,6 +3,22 @@
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll { opacity: 1; transform: none; transition: none; }
+}
+
 /* --- Brand Variables --- */
 :root {
   --bp-green: #1A4D2E;
@@ -145,7 +161,8 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(ellipse 60% 50% at 85% 20%, rgba(232, 146, 42, 0.06) 0%, transparent 50%),
     linear-gradient(160deg, #051a0d 0%, #0c3119 20%, #1A4D2E 45%, #1e5c35 65%, #1A4D2E 80%, #0f3d1f 100%);
   overflow: hidden;
-  padding: 120px 0 100px;
+  padding: 120px 0 160px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), 0 100%);
 }
 
 /* Cross / grid pattern overlay */
@@ -369,8 +386,58 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--bp-text-light);
 }
 
+/* Second floating card — top right of hero image */
+.hero__float-card {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  background: var(--bp-green);
+  border-radius: var(--bp-radius);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  animation: hero-float 3.5s ease-in-out infinite;
+}
+.hero__float-card__icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  flex-shrink: 0;
+  color: var(--bp-orange);
+}
+.hero__float-card__icon svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--bp-orange);
+  stroke: var(--bp-orange);
+}
+.hero__float-card strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--bp-white);
+}
+.hero__float-card span {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
 @media (max-width: 989px) {
-  .hero { padding: 48px 0 56px; }
+  .hero__float-card { display: none; }
+}
+
+@media (max-width: 989px) {
+  .hero { padding: 48px 0 100px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%); }
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -425,6 +492,14 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-5px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.10);
 }
+.service-card:hover::before {
+  background: linear-gradient(90deg, var(--bp-orange), var(--bp-orange-hover));
+}
+.service-card:hover .service-card__icon {
+  background: linear-gradient(135deg, rgba(232,146,42,0.15) 0%, rgba(232,146,42,0.07) 100%);
+  color: var(--bp-orange);
+  transition: background 0.25s ease, color 0.25s ease;
+}
 .service-card__body {
   padding: 28px 24px 20px;
   flex: 1;
@@ -441,6 +516,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px;
   margin-bottom: 18px;
   color: var(--bp-green);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 .service-card__icon svg {
   width: 28px;
@@ -724,6 +800,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .testimonials-section--dark {
   background: linear-gradient(160deg, #051a0d 0%, #0c3119 30%, #1A4D2E 70%, #0f3d1f 100%);
+  clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
+  padding-top: 140px;
+  margin-top: -2px;
 }
 .testimonials-section--dark .bp-section-header h2 {
   color: var(--bp-white);
