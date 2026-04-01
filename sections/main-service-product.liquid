@@ -213,6 +213,19 @@
     }
   {%- endstyle -%}
 
+  <!-- Breadcrumb strip -->
+  <div class="sp-breadcrumb">
+    <div class="page-width">
+      <nav class="sp-breadcrumb__nav" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/collections/all">Services</a>
+        <span aria-hidden="true">›</span>
+        <span>{{ product.title | escape }}</span>
+      </nav>
+    </div>
+  </div>
+
   <div class="page-width">
     <div class="product grid grid--1-col grid--2-col-tablet">
       {%- comment -%}
@@ -326,12 +339,12 @@
               {%- comment -%} ---- BUY BUTTONS BLOCK ---- {%- endcomment -%}
               {%- when 'buy_buttons' -%}
                 <div class="service-product__buy-btn" {{ block.shopify_attributes }}>
-                  {%- comment -%}
-                    Important information notice - displayed above buy button
-                  {%- endcomment -%}
                   <div class="service-product__notice">
-                    <div class="service-product__notice-title">Important Information</div>
-                    <p>Our team will contact you within 24 hours of purchase to begin processing your service.</p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <div>
+                      <div class="service-product__notice-title">What happens next?</div>
+                      <p>Our team will contact you within 24 hours of purchase to begin processing your service.</p>
+                    </div>
                   </div>
 
                   <product-form
@@ -353,10 +366,6 @@
                       novalidate: 'novalidate',
                       data-type: 'add-to-cart-form'
                     -%}
-                      {%- comment -%}
-                        Hidden variant ID input - required for Shopify cart.
-                        Services typically have one variant (default).
-                      {%- endcomment -%}
                       <input
                         type="hidden"
                         name="id"
@@ -365,29 +374,16 @@
                         class="product-variant-id"
                       >
 
-                      {%- comment -%}
-                        If the product has variants (e.g. different service tiers),
-                        show a simple selector.
-                      {%- endcomment -%}
                       {%- unless product.has_only_default_variant -%}
-                        <div class="service-product__variants" style="margin-bottom: 1.6rem;">
+                        <div class="service-product__variants">
                           {%- for option in product.options_with_values -%}
                             <div class="service-product__variant-group">
-                              <label
-                                for="ServiceVariant-{{ section.id }}-{{ forloop.index0 }}"
-                                style="display: block; font-weight: 600; margin-bottom: 0.6rem; font-size: 1.4rem;"
-                              >
+                              <label class="sp-variant-label" for="ServiceVariant-{{ section.id }}-{{ forloop.index0 }}">
                                 {{ option.name | escape }}
                               </label>
-                              <select
-                                id="ServiceVariant-{{ section.id }}-{{ forloop.index0 }}"
-                                style="width: 100%; padding: 1.2rem 1.4rem; border: 1px solid rgba(var(--color-foreground), 0.2); border-radius: 8px; font-size: 1.4rem; background: rgba(var(--color-background), 1);"
-                              >
+                              <select class="sp-variant-select" id="ServiceVariant-{{ section.id }}-{{ forloop.index0 }}">
                                 {%- for value in option.values -%}
-                                  <option
-                                    value="{{ value | escape }}"
-                                    {% if option.selected_value == value %}selected{% endif %}
-                                  >
+                                  <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
                                     {{ value | escape }}
                                   </option>
                                 {%- endfor -%}
@@ -400,7 +396,7 @@
                       <button
                         type="submit"
                         name="add"
-                        class="product-form__submit btn-primary"
+                        class="product-form__submit btn btn--primary btn--lg sp-buy-btn"
                         {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
                       >
                         {%- if product.selected_or_first_available_variant.available -%}
@@ -415,6 +411,22 @@
                       {%- endif -%}
                     {%- endform -%}
                   </product-form>
+
+                  <!-- Trust signals -->
+                  <div class="sp-trust">
+                    <div class="sp-trust__item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      <span>RICS Regulated</span>
+                    </div>
+                    <div class="sp-trust__item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                      <span>Fast Turnaround</span>
+                    </div>
+                    <div class="sp-trust__item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
+                      <span>No Hidden Fees</span>
+                    </div>
+                  </div>
                 </div>
 
             {%- endcase -%}
