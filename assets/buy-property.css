@@ -887,6 +887,7 @@ h1, h2, h3, h4, h5, h6 {
 .sp-breadcrumb {
   background: var(--bp-green);
   padding: 12px 0;
+  margin-bottom: 48px;
 }
 .sp-breadcrumb__nav {
   display: flex;
