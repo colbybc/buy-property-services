@@ -14,6 +14,19 @@
   - Full Shopify cart/checkout compatibility
 {% endcomment %}
 
+<!-- Breadcrumb strip — outside section padding box so it's always flush with header -->
+<div class="sp-breadcrumb">
+  <div class="page-width">
+    <nav class="sp-breadcrumb__nav" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="/collections/all">Services</a>
+      <span aria-hidden="true">›</span>
+      <span>{{ product.title | escape }}</span>
+    </nav>
+  </div>
+</div>
+
 <section
   id="MainServiceProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -212,19 +225,6 @@
       }
     }
   {%- endstyle -%}
-
-  <!-- Breadcrumb strip -->
-  <div class="sp-breadcrumb">
-    <div class="page-width">
-      <nav class="sp-breadcrumb__nav" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span aria-hidden="true">›</span>
-        <a href="/collections/all">Services</a>
-        <span aria-hidden="true">›</span>
-        <span>{{ product.title | escape }}</span>
-      </nav>
-    </div>
-  </div>
 
   <div class="page-width">
     <div class="product grid grid--1-col grid--2-col-tablet">
