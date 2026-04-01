@@ -883,6 +883,11 @@ h1, h2, h3, h4, h5, h6 {
    PRODUCT / SERVICE PAGES
    ========================================================================== */
 
+/* Kill Dawn's section spacing above product pages */
+.section-main-service-product {
+  margin-top: 0 !important;
+}
+
 /* Breadcrumb strip */
 .sp-breadcrumb {
   background: var(--bp-green);
