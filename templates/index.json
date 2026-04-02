@@ -45,7 +45,7 @@
             "description": "Complete legal documentation pack for property auctions, including all required searches and certificates.",
             "price_from": "£250",
             "icon_name": "document",
-            "link": ""
+            "link": "shopify://products/auction-tenanted-property-pre-sale-legal-pack"
           }
         },
         "service_2": {
@@ -55,7 +55,7 @@
             "description": "Professional RICS HomeBuyer Report to identify potential issues before you buy or sell.",
             "price_from": "From £487.50",
             "icon_name": "house-search",
-            "link": ""
+            "link": "shopify://products/survey-photography-service"
           }
         },
         "service_3": {
@@ -65,7 +65,7 @@
             "description": "We handle all search fees, Land Registry charges, and local authority costs on your behalf.",
             "price_from": "£380",
             "icon_name": "coins",
-            "link": ""
+            "link": "shopify://products/outlays"
           }
         },
         "service_4": {
@@ -75,7 +75,7 @@
             "description": "High-quality property photography to showcase your property at its very best.",
             "price_from": "£150",
             "icon_name": "camera",
-            "link": ""
+            "link": "shopify://products/photography-service"
           }
         },
         "service_5": {
@@ -85,7 +85,7 @@
             "description": "Official Land Registry title deeds and title plans for any property in England & Wales.",
             "price_from": "£15",
             "icon_name": "scroll",
-            "link": ""
+            "link": "shopify://products/property-title"
           }
         },
         "service_6": {
@@ -95,7 +95,7 @@
             "description": "Legally compliant Section 13 rent increase notices drafted and served correctly.",
             "price_from": "£200",
             "icon_name": "arrow-up",
-            "link": ""
+            "link": "shopify://products/rent-increase-service"
           }
         },
         "service_7": {
@@ -105,7 +105,7 @@
             "description": "Professionally drafted AST agreements compliant with current UK housing legislation.",
             "price_from": "£100",
             "icon_name": "handshake",
-            "link": ""
+            "link": "shopify://products/tenancy-agreement-digital-signature"
           }
         },
         "service_8": {
@@ -115,7 +115,7 @@
             "description": "Premium listing placement on Rightmove, Zoopla, and OnTheMarket for maximum exposure.",
             "price_from": "£195",
             "icon_name": "megaphone",
-            "link": ""
+            "link": "shopify://products/upgraded-featured-listings-boost-on-rightmove-zoopla-onthemarket"
           }
         }
       },
@@ -202,41 +202,6 @@
         "subheading": "We work with buyers, sellers and landlords across the UK to make property transactions smooth and stress-free."
       }
     },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_1": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Buy Property Services made our auction purchase so smooth. The legal pack was ready within 24 hours and the team explained every document clearly.",
-            "name": "Sarah Thompson",
-            "role": "First-time buyer, Manchester"
-          }
-        },
-        "testimonial_2": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "The RICS Level 2 Survey flagged issues that saved us from a costly mistake. Absolutely worth every penny. Professional and thorough.",
-            "name": "James Hargreaves",
-            "role": "Property investor, Leeds"
-          }
-        },
-        "testimonial_3": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "The photography service transformed our listing — we had viewings booked within 24 hours of going live. Couldn't be happier.",
-            "name": "Emily Clarke",
-            "role": "Landlord, Birmingham"
-          }
-        }
-      },
-      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
-      "settings": {
-        "eyebrow": "Client Reviews",
-        "heading": "What Our Clients Say",
-        "subheading": "Trusted by thousands of buyers, sellers and landlords across the UK."
-      }
-    },
     "how_it_works": {
       "type": "process-timeline",
       "blocks": {
@@ -281,6 +246,99 @@
         "padding_bottom": 80
       }
     },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Buy Property Services made our auction purchase so smooth. The legal pack was ready within 24 hours and the team explained every document clearly.",
+            "name": "Sarah Thompson",
+            "role": "First-time buyer, Manchester"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The RICS Level 2 Survey flagged issues that saved us from a costly mistake. Absolutely worth every penny. Professional and thorough.",
+            "name": "James Hargreaves",
+            "role": "Property investor, Leeds"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The photography service transformed our listing — we had viewings booked within 24 hours of going live. Couldn't be happier.",
+            "name": "Emily Clarke",
+            "role": "Landlord, Birmingham"
+          }
+        }
+      },
+      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "settings": {
+        "eyebrow": "Client Reviews",
+        "heading": "What Our Clients Say",
+        "subheading": "Trusted by thousands of buyers, sellers and landlords across the UK."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What is an Auction Legal Pack?",
+            "answer": "<p>An Auction Legal Pack is a set of legal documents prepared by a solicitor that allows potential buyers to carry out their due diligence before bidding. It typically includes official title documents, property searches (Local Authority, Drainage & Water), Special Conditions of Sale, and any relevant certificates. Having a complete pack ready increases buyer confidence and can significantly raise your final sale price.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "How long does it take to receive my documents?",
+            "answer": "<p>Most of our services are delivered within 48–72 hours of placing your order. For more complex services such as RICS surveys or auction legal packs, we'll confirm a specific timeframe with you. We understand that speed is critical in property transactions and work hard to meet your deadlines.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Are your surveyors RICS regulated?",
+            "answer": "<p>Yes. All surveys are carried out by fully qualified, RICS-regulated surveyors. The Royal Institution of Chartered Surveyors (RICS) sets the professional standards for the property industry, so you can trust that every report is thorough, impartial, and compliant with current guidelines.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need a tenancy agreement even for short-term lets?",
+            "answer": "<p>Yes — a valid tenancy agreement is required by law for all residential lets in England and Scotland, regardless of duration. Our agreements are fully compliant with current UK housing legislation and are sent via digital signature, making the process quick and hassle-free for both landlord and tenant.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "What are Outlays and do I need to pay them?",
+            "answer": "<p>Outlays are third-party costs incurred during property transactions — such as Local Authority search fees, Land Registry charges, and Drainage & Water searches. Rather than you having to track and pay these individually, we handle all outlay payments on your behalf and provide a full breakdown with your completed pack.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "How does the Listing Boost service work?",
+            "answer": "<p>Our Listing Boost service places your property as a Featured Listing on Rightmove, Zoopla, and OnTheMarket simultaneously. Featured listings receive significantly more views than standard listings — Rightmove data shows over 130% more views in the first 7 days. This translates directly into more enquiries, faster offers, and stronger sale prices.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "settings": {
+        "eyebrow": "Got Questions?",
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about our property services.",
+        "show_cta": true,
+        "cta_heading": "Still have questions?",
+        "cta_text": "Our UK-based team is on hand to help. Get in touch and we'll walk you through everything.",
+        "cta_button_label": "Contact Us",
+        "cta_button_link": "shopify://pages/contact"
+      }
+    },
     "cta": {
       "type": "cta-band",
       "settings": {
@@ -294,9 +352,10 @@
   "order": [
     "hero",
     "services",
-    "how_it_works",
     "why_choose_us",
+    "how_it_works",
     "testimonials",
+    "faq",
     "cta"
   ]
 }

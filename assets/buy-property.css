@@ -2109,6 +2109,189 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
+   SERVICE CARD — stretched link (whole card clickable)
+   ========================================================================== */
+.service-card {
+  position: relative;
+}
+.service-card__stretched-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--bp-radius);
+}
+/* Keep the button visually on top of the stretched link */
+.service-card__footer .btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq-section {
+  background: var(--bp-bg-light);
+  border-top: 1px solid var(--bp-border);
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq-item {
+  border-bottom: 1px solid var(--bp-border);
+}
+.faq-item:first-child {
+  border-top: 1px solid var(--bp-border);
+}
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+.faq-item__question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bp-text);
+  line-height: 1.4;
+  flex: 1;
+  transition: color 0.2s ease;
+}
+.faq-item__trigger:hover .faq-item__question,
+.faq-item--open .faq-item__question {
+  color: var(--bp-green);
+}
+.faq-item__icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,77,46,0.07);
+  border-radius: 50%;
+  color: var(--bp-green);
+  transition: background 0.2s ease, transform 0.3s ease;
+}
+.faq-item__icon svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+.faq-item--open .faq-item__icon {
+  background: var(--bp-green);
+  color: var(--bp-white);
+}
+.faq-item--open .faq-item__icon svg {
+  transform: rotate(180deg);
+}
+.faq-item__answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+.faq-item__answer[hidden] {
+  display: block !important; /* override hidden so CSS transition works */
+  max-height: 0;
+  visibility: hidden;
+}
+.faq-item--open .faq-item__answer {
+  visibility: visible;
+}
+.faq-item__answer-inner {
+  padding: 0 0 20px;
+  font-size: 0.975rem;
+  color: var(--bp-text-light);
+  line-height: 1.75;
+}
+.faq-item__answer-inner p {
+  margin: 0;
+}
+.faq-item__answer-inner p + p {
+  margin-top: 12px;
+}
+
+/* Contact aside card */
+.faq-aside__card {
+  background: var(--bp-white);
+  border: 1px solid var(--bp-border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: sticky;
+  top: 24px;
+  text-align: center;
+}
+.faq-aside__icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(26,77,46,0.10) 0%, rgba(26,77,46,0.05) 100%);
+  border-radius: 14px;
+  color: var(--bp-green);
+  margin: 0 auto 20px;
+  border: 1px solid rgba(26,77,46,0.1);
+}
+.faq-aside__icon svg {
+  width: 26px;
+  height: 26px;
+}
+.faq-aside__card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bp-text);
+  margin: 0 0 10px;
+}
+.faq-aside__card p {
+  font-size: 0.9rem;
+  color: var(--bp-text-light);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+.faq-aside__card .btn {
+  width: 100%;
+}
+
+@media (max-width: 989px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .faq-aside__card {
+    position: static;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  .faq-aside__icon {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .faq-aside__card .btn {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+/* ==========================================================================
    PRODUCT PAGE (service style)
    ========================================================================== */
 

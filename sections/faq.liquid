@@ -1,0 +1,214 @@
+<section class="faq-section section">
+  <div class="page-width">
+    <div class="bp-section-header reveal-on-scroll">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'question' -%}
+            <div class="faq-item reveal-on-scroll" data-reveal-delay="{{ forloop.index0 | times: 60 }}" {{ block.shopify_attributes }}>
+              <button
+                class="faq-item__trigger"
+                aria-expanded="false"
+                aria-controls="faq-answer-{{ section.id }}-{{ forloop.index }}"
+                id="faq-trigger-{{ section.id }}-{{ forloop.index }}"
+              >
+                <span class="faq-item__question">{{ block.settings.question }}</span>
+                <span class="faq-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </button>
+              <div
+                class="faq-item__answer"
+                id="faq-answer-{{ section.id }}-{{ forloop.index }}"
+                role="region"
+                aria-labelledby="faq-trigger-{{ section.id }}-{{ forloop.index }}"
+                hidden
+              >
+                <div class="faq-item__answer-inner">
+                  {{ block.settings.answer }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_cta -%}
+        <div class="faq-aside reveal-on-scroll" data-reveal-delay="200">
+          <div class="faq-aside__card">
+            <div class="faq-aside__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>{{ section.settings.cta_heading }}</h3>
+            <p>{{ section.settings.cta_text }}</p>
+            {%- if section.settings.cta_button_label != blank -%}
+              <a href="{{ section.settings.cta_button_link }}" class="btn btn--primary">{{ section.settings.cta_button_label }}</a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-item__trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      var answerId = this.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+      var item = this.closest('.faq-item');
+
+      // Close all others
+      document.querySelectorAll('.faq-item__trigger').forEach(function(t) {
+        t.setAttribute('aria-expanded', 'false');
+        t.closest('.faq-item').classList.remove('faq-item--open');
+        var a = document.getElementById(t.getAttribute('aria-controls'));
+        a.hidden = true;
+        a.style.maxHeight = null;
+      });
+
+      if (!expanded) {
+        this.setAttribute('aria-expanded', 'true');
+        item.classList.add('faq-item--open');
+        answer.hidden = false;
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "div",
+  "class": "section-faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Got Questions?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Everything you need to know about our property services."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show contact card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "Contact card heading",
+      "default": "Still have questions?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "Contact card text",
+      "default": "Our UK-based team is on hand to help. Get in touch and we'll walk you through everything."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_label",
+      "label": "Contact button label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "Contact button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What does your service include?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Our services are fully managed from start to finish. Once you place your order, our team handles everything and keeps you updated throughout.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is an Auction Legal Pack?",
+            "answer": "<p>An Auction Legal Pack is a set of legal documents prepared by a solicitor that allows potential buyers to carry out their due diligence before bidding. It typically includes official title documents, property searches (Local Authority, Drainage & Water), Special Conditions of Sale, and any relevant certificates. Having a complete pack ready increases buyer confidence and can significantly raise your final sale price.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How long does it take to receive my documents?",
+            "answer": "<p>Most of our services are delivered within 48–72 hours of placing your order. For more complex services such as RICS surveys or auction legal packs, we'll confirm a specific timeframe with you. We understand that speed is critical in property transactions and work hard to meet your deadlines.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Are your surveyors RICS regulated?",
+            "answer": "<p>Yes. All surveys are carried out by fully qualified, RICS-regulated surveyors. The Royal Institution of Chartered Surveyors (RICS) sets the professional standards for the property industry, so you can trust that every report is thorough, impartial, and compliant with current guidelines.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do I need a tenancy agreement even for short-term lets?",
+            "answer": "<p>Yes — a valid tenancy agreement is required by law for all residential lets in England and Scotland, regardless of duration. Our agreements are fully compliant with current UK housing legislation and are sent via digital signature, making the process quick and hassle-free for both landlord and tenant.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What are Outlays and do I need to pay them?",
+            "answer": "<p>Outlays are third-party costs incurred during property transactions — such as Local Authority search fees, Land Registry charges, and Drainage & Water searches. Rather than you having to track and pay these individually, we handle all outlay payments on your behalf and provide a full breakdown with your completed pack.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How does the Listing Boost service work?",
+            "answer": "<p>Our Listing Boost service places your property as a Featured Listing on Rightmove, Zoopla, and OnTheMarket simultaneously. Featured listings receive significantly more views than standard listings — Rightmove data shows over 130% more views in the first 7 days. This translates directly into more enquiries, faster offers, and stronger sale prices.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
