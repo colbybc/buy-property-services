@@ -35,12 +35,6 @@
         "badge_subtitle": "UK Property Experts"
       }
     },
-    "partner_logos": {
-      "type": "partner-logos",
-      "settings": {
-        "heading": "Trusted & Listed On"
-      }
-    },
     "services": {
       "type": "service-grid",
       "blocks": {
@@ -361,7 +355,6 @@
   },
   "order": [
     "hero",
-    "partner_logos",
     "services",
     "why_choose_us",
     "how_it_works",
