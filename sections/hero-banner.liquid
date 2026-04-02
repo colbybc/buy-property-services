@@ -17,7 +17,9 @@
             <a href="{{ section.settings.button_1_link }}" class="btn btn--primary btn--lg">{{ section.settings.button_1_label }}</a>
           {%- endif -%}
           {%- if section.settings.button_2_label != blank -%}
-            <a href="{{ section.settings.button_2_link }}" class="btn btn--outline-white btn--lg">{{ section.settings.button_2_label }}</a>
+            {%- assign btn2_href = section.settings.button_2_link -%}
+            {%- if btn2_href == blank -%}{%- assign btn2_href = '#how-it-works' -%}{%- endif -%}
+            <a href="{{ btn2_href }}" class="btn btn--outline-white btn--lg">{{ section.settings.button_2_label }}</a>
           {%- endif -%}
         </div>
 

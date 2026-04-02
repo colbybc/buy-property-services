@@ -43,16 +43,39 @@
         </div>
       </div>
 
-      <!-- Stats visual panel -->
+      <!-- Stats visual panel / image -->
       <div class="why-visual reveal-on-scroll" data-reveal-delay="150">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'stat' -%}
-            <div class="why-stat-card{% if block.settings.full_width %} full{% endif %}" {{ block.shopify_attributes }}>
-              <div class="num stat-counter" data-target="{{ block.settings.number }}">{{ block.settings.number }}</div>
-              <div class="lbl">{{ block.settings.label }}</div>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
+        {%- if section.settings.side_image != blank -%}
+          <div class="why-image-wrap">
+            <img
+              src="{{ section.settings.side_image | image_url: width: 640 }}"
+              srcset="{{ section.settings.side_image | image_url: width: 480 }} 480w, {{ section.settings.side_image | image_url: width: 640 }} 640w"
+              alt="{{ section.settings.side_image.alt | default: 'Professional property services' | escape }}"
+              width="640"
+              height="520"
+              loading="lazy"
+            >
+            {%- assign stat_index = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'stat' and stat_index < 3 -%}
+                <div class="why-image-badge why-image-badge--{{ stat_index }}" {{ block.shopify_attributes }}>
+                  <div class="num">{{ block.settings.number }}</div>
+                  <div class="lbl">{{ block.settings.label }}</div>
+                </div>
+                {%- assign stat_index = stat_index | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'stat' -%}
+              <div class="why-stat-card{% if block.settings.full_width %} full{% endif %}" {{ block.shopify_attributes }}>
+                <div class="num stat-counter" data-target="{{ block.settings.number }}">{{ block.settings.number }}</div>
+                <div class="lbl">{{ block.settings.label }}</div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -81,6 +104,11 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "We work with buyers, sellers and landlords across the UK to make property transactions smooth and stress-free."
+    },
+    {
+      "type": "image_picker",
+      "id": "side_image",
+      "label": "Side image (optional — replaces stat grid with photo)"
     }
   ],
   "blocks": [

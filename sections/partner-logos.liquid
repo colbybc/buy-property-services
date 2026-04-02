@@ -1,0 +1,99 @@
+<div class="partner-logos">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <p class="partner-logos__label">{{ section.settings.heading }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="partner-logos__viewport" aria-hidden="true">
+    <div class="partner-logos__track">
+      <!-- Set 1 -->
+      <div class="partner-logos__set">
+        <span class="partner-logos__item partner-logos__item--rightmove">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
+          Rightmove
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--zoopla">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
+          Zoopla
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--otm">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
+          OnTheMarket
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--rics">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2l2.5 5.5 5.5.8-4 3.9 1 5.5L10 15l-5 2.7 1-5.5-4-3.9 5.5-.8z"/></svg>
+          RICS Regulated
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--lr">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2 6h6l-5 3.6 2 6L10 13l-5 3.6 2-6L2 7h6z"/></svg>
+          Land Registry
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--google">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2l.5 1.5 1 .3-1 .7.3 1L10 4.8 9.2 5.5l.3-1-1-.7 1-.3z"/><path d="M5 8l.3 1 .9.3-.9.6.3 1L5 10.2l-.6.7.3-1-.9-.6.9-.3z"/></svg>
+          5★ Google Reviews
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+      </div>
+      <!-- Set 2 — duplicate for seamless infinite scroll -->
+      <div class="partner-logos__set" aria-hidden="true">
+        <span class="partner-logos__item partner-logos__item--rightmove">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
+          Rightmove
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--zoopla">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
+          Zoopla
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--otm">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
+          OnTheMarket
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--rics">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2l2.5 5.5 5.5.8-4 3.9 1 5.5L10 15l-5 2.7 1-5.5-4-3.9 5.5-.8z"/></svg>
+          RICS Regulated
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--lr">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2 6h6l-5 3.6 2 6L10 13l-5 3.6 2-6L2 7h6z"/></svg>
+          Land Registry
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+        <span class="partner-logos__item partner-logos__item--google">
+          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2l.5 1.5 1 .3-1 .7.3 1L10 4.8 9.2 5.5l.3-1-1-.7 1-.3z"/><path d="M5 8l.3 1 .9.3-.9.6.3 1L5 10.2l-.6.7.3-1-.9-.6.9-.3z"/></svg>
+          5★ Google Reviews
+        </span>
+        <span class="partner-logos__divider" aria-hidden="true">·</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Partner Logos",
+  "tag": "div",
+  "class": "section-partner-logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Label text",
+      "default": "Trusted & Listed On"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partner Logos"
+    }
+  ]
+}
+{% endschema %}

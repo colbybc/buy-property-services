@@ -35,6 +35,12 @@
         "badge_subtitle": "UK Property Experts"
       }
     },
+    "partner_logos": {
+      "type": "partner-logos",
+      "settings": {
+        "heading": "Trusted & Listed On"
+      }
+    },
     "services": {
       "type": "service-grid",
       "blocks": {
@@ -209,6 +215,7 @@
           "type": "step",
           "settings": {
             "step_number": "1",
+            "icon_name": "browse",
             "title": "Choose Your Service",
             "description": "Browse our range of property services and select what you need."
           }
@@ -217,6 +224,7 @@
           "type": "step",
           "settings": {
             "step_number": "2",
+            "icon_name": "pin",
             "title": "Provide Property Details",
             "description": "Enter your property address and any specific requirements."
           }
@@ -225,6 +233,7 @@
           "type": "step",
           "settings": {
             "step_number": "3",
+            "icon_name": "cog",
             "title": "Expert Processing",
             "description": "Our team of professionals handles your service with care."
           }
@@ -233,6 +242,7 @@
           "type": "step",
           "settings": {
             "step_number": "4",
+            "icon_name": "inbox",
             "title": "Receive Your Documents",
             "description": "Get your completed documents delivered to your account."
           }
@@ -351,6 +361,7 @@
   },
   "order": [
     "hero",
+    "partner_logos",
     "services",
     "why_choose_us",
     "how_it_works",

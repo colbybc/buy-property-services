@@ -460,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
    SERVICES GRID
    ========================================================================== */
 .services-section {
-  background: var(--bp-bg-light);
+  background: var(--bp-white);
 }
 .services-grid {
   display: grid;
@@ -671,7 +671,7 @@ h1, h2, h3, h4, h5, h6 {
    WHY CHOOSE US
    ========================================================================== */
 .why-section {
-  background: var(--bp-white);
+  background: var(--bp-bg-light);
   border-top: 1px solid var(--bp-border);
 }
 .why-grid {
@@ -2752,4 +2752,164 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================================
+   PARTNER LOGOS MARQUEE
+   ========================================================================== */
+@keyframes bp-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.section-partner-logos {
+  background: var(--bp-white);
+  border-top: 1px solid var(--bp-border);
+  border-bottom: 1px solid var(--bp-border);
+  padding: 28px 0;
+}
+
+.partner-logos__label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bp-text-light);
+  margin: 0 0 18px;
+}
+
+.partner-logos__viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.partner-logos__track {
+  display: flex;
+  width: max-content;
+  animation: bp-marquee 32s linear infinite;
+}
+
+.partner-logos__track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-logos__track { animation: none; }
+}
+
+.partner-logos__set {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.partner-logos__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 36px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--bp-text-light);
+  opacity: 0.55;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  cursor: default;
+}
+
+.partner-logos__item:hover {
+  opacity: 1;
+  color: var(--bp-green);
+}
+
+.partner-logos__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.partner-logos__divider {
+  color: var(--bp-border);
+  font-size: 1.5rem;
+  line-height: 1;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* Brand accent colours on hover */
+.partner-logos__item--rightmove:hover { color: #00BF9A; }
+.partner-logos__item--zoopla:hover    { color: #7B2D8B; }
+.partner-logos__item--otm:hover       { color: #E03A27; }
+.partner-logos__item--rics:hover      { color: #003087; }
+.partner-logos__item--lr:hover        { color: #1D70B8; }
+.partner-logos__item--google:hover    { color: #E8922A; }
+
+/* ==========================================================================
+   WHY CHOOSE US — IMAGE VARIANT
+   ========================================================================== */
+.why-image-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(10,40,20,0.3);
+  height: 100%;
+  min-height: 360px;
+}
+
+.why-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.why-image-badge {
+  position: absolute;
+  background: rgba(26,77,46,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--bp-white);
+  padding: 14px 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 110px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.why-image-badge .num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--bp-orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.why-image-badge .lbl {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.85;
+  line-height: 1.3;
+}
+
+.why-image-badge--0 { bottom: 24px; left: 24px; }
+.why-image-badge--1 { top: 24px; right: 24px; }
+.why-image-badge--2 { bottom: 24px; right: 24px; }
+
+/* ==========================================================================
+   PROCESS TIMELINE — ICON CIRCLES
+   ========================================================================== */
+.process-timeline__number svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 749px) {
+  .process-timeline__number svg {
+    width: 20px;
+    height: 20px;
+  }
 }
