@@ -11,17 +11,91 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "trust_bar": {
+      "type": "trust-bar",
+      "blocks": {
+        "trust_1": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "label": "RICS Regulated",
+            "sublabel": "Fully accredited surveyors"
+          }
+        },
+        "trust_2": {
+          "type": "item",
+          "settings": {
+            "icon": "clock",
+            "label": "48–72hr Turnaround",
+            "sublabel": "Fast, reliable delivery"
+          }
+        },
+        "trust_3": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "label": "5-Star Rated",
+            "sublabel": "5,000+ happy clients"
+          }
+        },
+        "trust_4": {
+          "type": "item",
+          "settings": {
+            "icon": "users",
+            "label": "UK-Based Team",
+            "sublabel": "Expert local support"
+          }
+        },
+        "trust_5": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "label": "Secure Payments",
+            "sublabel": "SSL encrypted checkout"
+          }
+        }
+      },
+      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4", "trust_5"],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "services_col": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Our Services",
+            "menu": "main-menu"
+          }
+        },
+        "company_col": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Company",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": ["services_col", "company_col"],
       "settings": {
+        "tagline": "Professional Property Services You Can Trust",
+        "description": "From legal packs to photography, surveys to tenancy agreements — everything you need to buy, sell or let property in the UK.",
+        "phone": "0800 000 0000",
+        "email": "info@buypropertyservices.co.uk",
+        "address": "Buy Property Services Ltd\nUnited Kingdom",
+        "hours": "Mon–Fri: 9am – 5:30pm",
+        "show_rics_badge": true,
+        "show_policy": true,
+        "payment_enable": true,
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
         "newsletter_heading": "",
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": false,
-        "show_policy": false,
         "margin_top": 0,
         "padding_top": 0,
         "padding_bottom": 0
@@ -29,6 +103,7 @@
     }
   },
   "order": [
+    "trust_bar",
     "footer"
   ]
 }
