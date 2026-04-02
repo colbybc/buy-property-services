@@ -888,16 +888,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0 !important;
 }
 
-/* Breadcrumb strip — rendered outside section, directly below header */
+/* Breadcrumb strip — rendered in theme.liquid directly below header */
 .sp-breadcrumb {
   background: var(--bp-green);
-  padding: 12px 0;
-  margin-top: 0 !important;
-  margin-bottom: 0;
-  /* Extend green upward to fill any gap between header and breadcrumb */
-  box-shadow: 0 -300px 0 300px var(--bp-green);
-  position: relative;
-  z-index: 1;
+  padding: 10px 0;
 }
 .sp-breadcrumb__nav {
   display: flex;
