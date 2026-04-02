@@ -2763,32 +2763,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-partner-logos {
-  background: var(--bp-white);
+  background: var(--bp-bg-light);
   border-top: 1px solid var(--bp-border);
   border-bottom: 1px solid var(--bp-border);
-  padding: 28px 0;
+  padding: 32px 0;
 }
 
 .partner-logos__label {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bp-text-light);
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 }
 
 .partner-logos__viewport {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .partner-logos__track {
   display: flex;
   width: max-content;
-  animation: bp-marquee 32s linear infinite;
+  animation: bp-marquee 36s linear infinite;
 }
 
 .partner-logos__track:hover {
@@ -2802,50 +2802,57 @@ h1, h2, h3, h4, h5, h6 {
 .partner-logos__set {
   display: flex;
   align-items: center;
-  gap: 0;
 }
 
 .partner-logos__item {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 36px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
+  gap: 12px;
+  padding: 0 32px;
   white-space: nowrap;
-  color: var(--bp-text-light);
-  opacity: 0.55;
-  transition: opacity 0.25s ease, color 0.25s ease;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
   cursor: default;
 }
 
 .partner-logos__item:hover {
   opacity: 1;
-  color: var(--bp-green);
 }
 
-.partner-logos__icon {
-  width: 16px;
-  height: 16px;
+.partner-logos__mark {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.partner-logos__item:hover .partner-logos__mark {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
+
+.partner-logos__mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.partner-logos__name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--bp-text);
+}
+
+.partner-logos__sep {
+  width: 1px;
+  height: 32px;
+  background: var(--bp-border);
   flex-shrink: 0;
 }
-
-.partner-logos__divider {
-  color: var(--bp-border);
-  font-size: 1.5rem;
-  line-height: 1;
-  opacity: 0.6;
-  flex-shrink: 0;
-}
-
-/* Brand accent colours on hover */
-.partner-logos__item--rightmove:hover { color: #00BF9A; }
-.partner-logos__item--zoopla:hover    { color: #7B2D8B; }
-.partner-logos__item--otm:hover       { color: #E03A27; }
-.partner-logos__item--rics:hover      { color: #003087; }
-.partner-logos__item--lr:hover        { color: #1D70B8; }
-.partner-logos__item--google:hover    { color: #E8922A; }
 
 /* ==========================================================================
    WHY CHOOSE US — IMAGE VARIANT

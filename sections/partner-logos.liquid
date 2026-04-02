@@ -1,78 +1,175 @@
 <div class="partner-logos">
-  <div class="page-width">
-    {%- if section.settings.heading != blank -%}
-      <p class="partner-logos__label">{{ section.settings.heading }}</p>
-    {%- endif -%}
-  </div>
+  {%- if section.settings.heading != blank -%}
+    <p class="partner-logos__label">{{ section.settings.heading }}</p>
+  {%- endif -%}
 
   <div class="partner-logos__viewport" aria-hidden="true">
     <div class="partner-logos__track">
+
       <!-- Set 1 -->
       <div class="partner-logos__set">
-        <span class="partner-logos__item partner-logos__item--rightmove">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
-          Rightmove
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--zoopla">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
-          Zoopla
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--otm">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
-          OnTheMarket
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--rics">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2l2.5 5.5 5.5.8-4 3.9 1 5.5L10 15l-5 2.7 1-5.5-4-3.9 5.5-.8z"/></svg>
-          RICS Regulated
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--lr">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2 6h6l-5 3.6 2 6L10 13l-5 3.6 2-6L2 7h6z"/></svg>
-          Land Registry
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--google">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2l.5 1.5 1 .3-1 .7.3 1L10 4.8 9.2 5.5l.3-1-1-.7 1-.3z"/><path d="M5 8l.3 1 .9.3-.9.6.3 1L5 10.2l-.6.7.3-1-.9-.6.9-.3z"/></svg>
-          5★ Google Reviews
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--rightmove">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#E00000"/>
+              <path d="M8 26V12l10-4 10 4v14H21v-7h-6v7H8z" fill="white"/>
+            </svg>
+          </div>
+          <span class="partner-logos__name">Rightmove</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--zoopla">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#7B2D8B"/>
+              <text x="18" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="white">Z</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">Zoopla</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--otm">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#E8922A"/>
+              <circle cx="18" cy="16" r="7" fill="white" opacity="0.9"/>
+              <path d="M18 9l2 5h5l-4 3 1.5 5L18 19l-4.5 3 1.5-5-4-3h5z" fill="#E8922A"/>
+            </svg>
+          </div>
+          <span class="partner-logos__name">OnTheMarket</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--rics">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#003087"/>
+              <text x="18" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="white">RICS</text>
+              <line x1="6" y1="19" x2="30" y2="19" stroke="white" stroke-width="1" opacity="0.4"/>
+              <text x="18" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="6.5" fill="white" opacity="0.85">REGULATED</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">RICS Regulated</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--lr">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#1D70B8"/>
+              <path d="M18 5l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" fill="white" opacity="0.9"/>
+              <text x="18" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="6" fill="white" opacity="0.9" letter-spacing="0.3">LAND REG</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">Land Registry</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--google">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+              <text x="18" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#555">Google</text>
+              <text x="18" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#FFC107">★★★★★</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">5★ Google Reviews</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
       </div>
+
       <!-- Set 2 — duplicate for seamless infinite scroll -->
       <div class="partner-logos__set" aria-hidden="true">
-        <span class="partner-logos__item partner-logos__item--rightmove">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
-          Rightmove
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--zoopla">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
-          Zoopla
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--otm">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="10"/></svg>
-          OnTheMarket
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--rics">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2l2.5 5.5 5.5.8-4 3.9 1 5.5L10 15l-5 2.7 1-5.5-4-3.9 5.5-.8z"/></svg>
-          RICS Regulated
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--lr">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2 6h6l-5 3.6 2 6L10 13l-5 3.6 2-6L2 7h6z"/></svg>
-          Land Registry
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
-        <span class="partner-logos__item partner-logos__item--google">
-          <svg class="partner-logos__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2l.5 1.5 1 .3-1 .7.3 1L10 4.8 9.2 5.5l.3-1-1-.7 1-.3z"/><path d="M5 8l.3 1 .9.3-.9.6.3 1L5 10.2l-.6.7.3-1-.9-.6.9-.3z"/></svg>
-          5★ Google Reviews
-        </span>
-        <span class="partner-logos__divider" aria-hidden="true">·</span>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--rightmove">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#E00000"/>
+              <path d="M8 26V12l10-4 10 4v14H21v-7h-6v7H8z" fill="white"/>
+            </svg>
+          </div>
+          <span class="partner-logos__name">Rightmove</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--zoopla">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#7B2D8B"/>
+              <text x="18" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="white">Z</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">Zoopla</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--otm">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#E8922A"/>
+              <circle cx="18" cy="16" r="7" fill="white" opacity="0.9"/>
+              <path d="M18 9l2 5h5l-4 3 1.5 5L18 19l-4.5 3 1.5-5-4-3h5z" fill="#E8922A"/>
+            </svg>
+          </div>
+          <span class="partner-logos__name">OnTheMarket</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--rics">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#003087"/>
+              <text x="18" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="white">RICS</text>
+              <line x1="6" y1="19" x2="30" y2="19" stroke="white" stroke-width="1" opacity="0.4"/>
+              <text x="18" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="6.5" fill="white" opacity="0.85">REGULATED</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">RICS Regulated</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--lr">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#1D70B8"/>
+              <path d="M18 5l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" fill="white" opacity="0.9"/>
+              <text x="18" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="6" fill="white" opacity="0.9" letter-spacing="0.3">LAND REG</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">Land Registry</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
+        <div class="partner-logos__item">
+          <div class="partner-logos__mark partner-logos__mark--google">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+              <text x="18" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#555">Google</text>
+              <text x="18" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#FFC107">★★★★★</text>
+            </svg>
+          </div>
+          <span class="partner-logos__name">5★ Google Reviews</span>
+        </div>
+
+        <div class="partner-logos__sep"></div>
+
       </div>
+
     </div>
   </div>
 </div>
