@@ -1,5 +1,5 @@
 <section class="collection-bp-hero">
-  <div class="page-width collection-bp-hero__inner">
+  <div class="page-width">
     <div class="collection-bp-hero__text reveal-on-scroll">
       <span class="eyebrow">{{ section.settings.eyebrow }}</span>
       <h1>{{ collection.title }}</h1>
@@ -8,20 +8,6 @@
       {%- elsif section.settings.fallback_desc != blank -%}
         <p>{{ section.settings.fallback_desc }}</p>
       {%- endif -%}
-    </div>
-    <div class="collection-bp-hero__meta reveal-on-scroll" data-reveal-delay="100">
-      <div class="collection-bp-hero__stat">
-        <span class="num">{{ collection.products_count }}</span>
-        <span class="lbl">Services Available</span>
-      </div>
-      <div class="collection-bp-hero__stat">
-        <span class="num">RICS</span>
-        <span class="lbl">Regulated Surveyors</span>
-      </div>
-      <div class="collection-bp-hero__stat">
-        <span class="num">48hr</span>
-        <span class="lbl">Avg. Turnaround</span>
-      </div>
     </div>
   </div>
 </section>

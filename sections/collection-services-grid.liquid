@@ -6,6 +6,7 @@
       {%- if collection.products.size > 0 -%}
         <div class="services-grid">
           {%- for product in collection.products -%}
+            {%- if product.tags contains 'hidden' -%}{%- continue -%}{%- endif -%}
             {%- liquid
               assign product_type_handle = product.type | handleize
               assign icon = 'document'
