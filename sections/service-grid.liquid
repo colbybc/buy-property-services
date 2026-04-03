@@ -34,7 +34,10 @@
             assign card_url = '/products/' | append: card_handle
           endif
         -%}
-        <div class="service-card reveal-on-scroll" data-reveal-delay="{{ forloop.index0 | times: 80 }}" {{ block.shopify_attributes }}>
+        <div class="service-card{% if card_handle == 'rics-level-2-survey' %} service-card--featured{% endif %} reveal-on-scroll" data-reveal-delay="{{ forloop.index0 | times: 80 }}" {{ block.shopify_attributes }}>
+          {%- if card_handle == 'rics-level-2-survey' -%}
+            <div class="service-card__badge">Most Popular</div>
+          {%- endif -%}
           <div class="service-card__body">
             <div class="service-card__icon">
               {%- case block.settings.icon_name -%}
