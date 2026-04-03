@@ -1,0 +1,76 @@
+<section class="about-story section">
+  <div class="page-width about-story__grid">
+
+    <div class="about-story__text reveal-on-scroll">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <div class="about-story__body">
+        {{ section.settings.body }}
+      </div>
+    </div>
+
+    <div class="about-story__values reveal-on-scroll" data-reveal-delay="120">
+      {%- for block in section.blocks -%}
+        <div class="about-story__value" {{ block.shopify_attributes }}>
+          <div class="about-story__value-icon">
+            {%- case block.settings.icon -%}
+              {%- when 'shield' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              {%- when 'star' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              {%- when 'users' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              {%- when 'pound' -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            {%- endcase -%}
+          </div>
+          <div>
+            <h4>{{ block.settings.title }}</h4>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Story",
+  "tag": "div",
+  "class": "section-about-story",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our Story" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built on Trust, Driven by Results" },
+    { "type": "richtext", "id": "body", "label": "Body text", "default": "<p>Buy Property Services was founded with a simple mission: to make professional property services accessible, affordable, and straightforward for everyone — whether you're a first-time buyer, an experienced investor, or a landlord managing multiple properties.</p><p>We work with a network of RICS-regulated surveyors, solicitors, and property professionals to deliver services that meet the highest industry standards. Every service is handled with care, transparency, and a commitment to your outcome.</p><p>We believe property transactions shouldn't be complicated or costly. That's why we offer fixed, transparent prices with no hidden fees — and a team that's always on hand to help.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "shield", "label": "Shield" },
+          { "value": "star", "label": "Star" },
+          { "value": "users", "label": "People" },
+          { "value": "pound", "label": "Pound" }
+        ], "default": "shield" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Our Value" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Description of this core value." }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "About Story",
+    "blocks": [
+      { "type": "value", "settings": { "icon": "shield", "title": "Regulated & Trustworthy", "description": "All our professional services are delivered to RICS and industry standards. You can trust every document and report we produce." } },
+      { "type": "value", "settings": { "icon": "pound", "title": "Transparent Pricing", "description": "Fixed prices with no hidden fees, ever. You always know exactly what you're paying before you order." } },
+      { "type": "value", "settings": { "icon": "star", "title": "5-Star Service", "description": "Thousands of satisfied clients across England and Wales trust us with their most important property decisions." } },
+      { "type": "value", "settings": { "icon": "users", "title": "Real People, Real Help", "description": "Our UK-based team is available to answer questions and support you throughout every step of the process." } }
+    ]
+  }]
+}
+{% endschema %}

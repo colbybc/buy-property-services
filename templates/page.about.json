@@ -1,62 +1,51 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "hero": {
+      "type": "about-hero",
       "settings": {
-        "padding_top": 60,
-        "padding_bottom": 20
+        "eyebrow": "About Us",
+        "heading": "The Trusted Name in UK Property Services",
+        "subheading": "We help buyers, sellers and landlords across the UK navigate property transactions with confidence — providing professional, regulated services at fair, transparent prices."
       }
     },
-    "trust_bar": {
-      "type": "trust-bar",
+    "story": {
+      "type": "about-story",
       "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "500+",
-            "label": "Services Delivered",
-            "icon": "check-circle"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "4.9★",
-            "label": "Average Rating",
-            "icon": "star"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "number": "24hr",
-            "label": "Response Time",
-            "icon": "check-circle"
-          }
-        }
+        "v1": { "type": "value", "settings": { "icon": "shield", "title": "Regulated & Trustworthy", "description": "All our professional services are delivered to RICS and industry standards. You can trust every document and report we produce." } },
+        "v2": { "type": "value", "settings": { "icon": "pound", "title": "Transparent Pricing", "description": "Fixed prices with no hidden fees, ever. You always know exactly what you're paying before you order." } },
+        "v3": { "type": "value", "settings": { "icon": "star", "title": "5-Star Service", "description": "Thousands of satisfied clients across England and Wales trust us with their most important property decisions." } },
+        "v4": { "type": "value", "settings": { "icon": "users", "title": "Real People, Real Help", "description": "Our UK-based team is available to answer questions and support you throughout every step of the process." } }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": ["v1", "v2", "v3", "v4"],
       "settings": {
-        "heading": "Why Choose Us",
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "eyebrow": "Our Story",
+        "heading": "Built on Trust, Driven by Results",
+        "body": "<p>Buy Property Services was founded with a simple mission: to make professional property services accessible, affordable, and straightforward for everyone — whether you're a first-time buyer, an experienced investor, or a landlord managing multiple properties.</p><p>We work with a network of RICS-regulated surveyors, solicitors, and property professionals to deliver services that meet the highest industry standards. Every service is handled with care, transparency, and a commitment to your outcome.</p><p>We believe property transactions shouldn't be complicated or costly. That's why we offer fixed, transparent prices with no hidden fees — and a team that's always on hand to help.</p>"
       }
     },
-    "process_timeline": {
-      "type": "process-timeline",
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": { "type": "testimonial", "settings": { "quote": "Buy Property Services made our auction purchase so smooth. The legal pack was ready within 24 hours and the team explained every document clearly.", "name": "Sarah Thompson", "role": "First-time buyer, Manchester" } },
+        "t2": { "type": "testimonial", "settings": { "quote": "The RICS Level 2 Survey flagged issues that saved us from a costly mistake. Absolutely worth every penny. Professional and thorough.", "name": "James Hargreaves", "role": "Property investor, Leeds" } },
+        "t3": { "type": "testimonial", "settings": { "quote": "The photography service transformed our listing — we had viewings booked within 24 hours of going live. Couldn't be happier.", "name": "Emily Clarke", "role": "Landlord, Birmingham" } }
+      },
+      "block_order": ["t1", "t2", "t3"],
       "settings": {
-        "heading": "How We Work",
-        "subheading": "Our simple process from start to finish",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 60
+        "eyebrow": "Client Reviews",
+        "heading": "What Our Clients Say",
+        "subheading": "Trusted by thousands of buyers, sellers and landlords across the UK."
+      }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "heading": "Ready to Get Started?",
+        "subheading": "Browse our full range of professional property services and order online in minutes.",
+        "button_label": "Browse All Services",
+        "button_link": "shopify://collections/all"
       }
     }
   },
-  "order": [
-    "main",
-    "trust_bar",
-    "process_timeline"
-  ]
+  "order": ["hero", "story", "testimonials", "cta"]
 }

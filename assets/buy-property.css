@@ -3318,3 +3318,174 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 40px;
   font-family: 'Poppins', sans-serif;
 }
+
+/* ==========================================================================
+   ABOUT PAGE
+   ========================================================================== */
+
+/* Hero */
+.about-hero {
+  background: linear-gradient(135deg, #051a0d 0%, #0c3119 40%, #1A4D2E 100%);
+  padding: 72px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+.about-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero__text h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: var(--bp-white);
+  margin: 10px 0 18px;
+  line-height: 1.15;
+}
+
+.about-hero__text p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 540px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-hero__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.about-hero__stat {
+  padding: 20px 32px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.about-hero__stat:last-child { border-bottom: none; }
+
+.about-hero__stat .num {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--bp-orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.about-hero__stat .lbl {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+}
+
+@media (max-width: 989px) {
+  .about-hero__inner { grid-template-columns: 1fr; gap: 36px; }
+  .about-hero__stats { flex-direction: row; }
+  .about-hero__stat { border-bottom: none; border-right: 1px solid rgba(255,255,255,0.08); flex: 1; }
+  .about-hero__stat:last-child { border-right: none; }
+}
+
+@media (max-width: 599px) {
+  .about-hero__stats { flex-direction: column; }
+  .about-hero__stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+
+/* Story */
+.about-story {
+  background: var(--bp-white);
+}
+
+.about-story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.about-story__text h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--bp-text);
+  margin: 10px 0 24px;
+  line-height: 1.2;
+}
+
+.about-story__body p {
+  font-size: 0.975rem;
+  color: var(--bp-text-light);
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+.about-story__body p:last-child { margin-bottom: 0; }
+
+.about-story__values {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-story__value {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.about-story__value-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(26,77,46,0.1) 0%, rgba(26,77,46,0.05) 100%);
+  border: 1px solid rgba(26,77,46,0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bp-green);
+  flex-shrink: 0;
+}
+
+.about-story__value-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.about-story__value h4 {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--bp-text);
+  margin: 0 0 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-story__value p {
+  font-size: 0.875rem;
+  color: var(--bp-text-light);
+  margin: 0;
+  line-height: 1.65;
+}
+
+@media (max-width: 989px) {
+  .about-story__grid { grid-template-columns: 1fr; gap: 48px; }
+}
