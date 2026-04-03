@@ -3293,3 +3293,11 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255,255,255,0.35);
   flex-shrink: 0;
 }
+
+/* Hide Dawn's auto-rendered breadcrumb on product pages — we use our own */
+.template-product .breadcrumbs,
+.template-product nav[aria-label="breadcrumbs"],
+.template-product .breadcrumb,
+.template-product [class*="breadcrumb"]:not(.product-breadcrumb):not(.product-breadcrumb__nav):not(.product-breadcrumb__list) {
+  display: none !important;
+}
