@@ -318,7 +318,14 @@
                       </svg>
                     </summary>
                     <div class="service-accordion__content rte">
-                      {{ block.settings.content }}
+                      {%- assign tab_heading = block.settings.heading | downcase -%}
+                      {%- if tab_heading contains 'included' -%}
+                        {%- render 'service-whats-included', product: product -%}
+                      {%- elsif tab_heading contains 'how' or tab_heading contains 'works' -%}
+                        {%- render 'service-how-it-works', product: product -%}
+                      {%- else -%}
+                        {{ block.settings.content }}
+                      {%- endif -%}
                     </div>
                   </details>
                 </div>

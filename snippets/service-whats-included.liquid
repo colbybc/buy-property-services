@@ -1,0 +1,84 @@
+{%- comment -%}
+  Renders "What's Included" list for a given product handle.
+  Usage: {%- render 'service-whats-included', product: product -%}
+{%- endcomment -%}
+
+{%- assign h = product.handle -%}
+
+{%- if h == 'auction-tenanted-property-pre-sale-legal-pack' or h == 'auction-legal-pack' -%}
+  <ul>
+    <li>Official Title Documents confirming ownership, rights, covenants, and restrictions</li>
+    <li>Searches — Local Authority, Drainage & Water, and Environmental reports</li>
+    <li>Special Conditions of Sale tailored to your property</li>
+    <li>Property Information Forms &amp; Fixtures and Fittings List</li>
+    <li>Lease Documents (leasehold properties)</li>
+    <li>Planning and Building Regulation Certificates, where applicable</li>
+    <li>Any additional documents required by your solicitor</li>
+  </ul>
+
+{%- elsif h == 'survey-photography-service' or h == 'rics-level-2-survey' -%}
+  <ul>
+    <li>RICS Level 2 HomeBuyer Survey by a qualified RICS-registered surveyor</li>
+    <li>Full written survey report covering condition, defects, and recommended actions</li>
+    <li>Professional interior and exterior photography</li>
+    <li>Edited, portal-ready images delivered digitally</li>
+    <li>Listing boost across Rightmove, Zoopla, and OnTheMarket</li>
+  </ul>
+
+{%- elsif h == 'photography-service' or h == 'professional-photography' -%}
+  <ul>
+    <li>Professional interior and exterior property photographs</li>
+    <li>Fully edited and optimised images</li>
+    <li>High-resolution digital downloads</li>
+    <li>Portal-ready formats for Rightmove, Zoopla, and OnTheMarket</li>
+    <li>Fast turnaround — typically within 48 hours of shoot</li>
+  </ul>
+
+{%- elsif h == 'tenancy-agreement' or h == 'tenancy-agreement-digital-signature' -%}
+  <ul>
+    <li>Professionally drafted Assured Shorthold Tenancy (AST) agreement</li>
+    <li>Compliant with current UK housing legislation</li>
+    <li>Customised to your property, tenants, and agreed terms</li>
+    <li>Digital signature facility for landlord and tenant</li>
+    <li>PDF copies provided to all parties</li>
+  </ul>
+
+{%- elsif h == 'rent-increase-service' -%}
+  <ul>
+    <li>Legally compliant Section 13 rent increase notice</li>
+    <li>Reviewed against current legislation for full compliance</li>
+    <li>Correctly served on your behalf</li>
+    <li>Digital copies provided for your records</li>
+    <li>Guidance on effective date and notice periods</li>
+  </ul>
+
+{%- elsif h == 'property-title' -%}
+  <ul>
+    <li>Official Land Registry title register (Title Deeds)</li>
+    <li>Title plan showing property boundaries</li>
+    <li>Ownership history and registered proprietor details</li>
+    <li>Any charges, restrictions, or covenants on the title</li>
+    <li>Delivered digitally within 24 hours</li>
+  </ul>
+
+{%- elsif h == 'outlays' -%}
+  <ul>
+    <li>Land Registry search and registration fees</li>
+    <li>Local Authority search fees</li>
+    <li>Drainage &amp; Water search fees</li>
+    <li>Environmental search fees</li>
+    <li>Full itemised receipt and breakdown provided</li>
+  </ul>
+
+{%- elsif h == 'boosting-listing' or h == 'upgraded-featured-listings-boost-on-rightmove-zoopla-onthemarket' -%}
+  <ul>
+    <li>Featured listing placement on Rightmove</li>
+    <li>Featured listing placement on Zoopla</li>
+    <li>Featured listing placement on OnTheMarket</li>
+    <li>Extended boost period for maximum visibility</li>
+    <li>Priority positioning in search results</li>
+  </ul>
+
+{%- else -%}
+  <p>Contact us for a full breakdown of what's included with this service.</p>
+{%- endif -%}

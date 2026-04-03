@@ -1,0 +1,73 @@
+{%- comment -%}
+  Renders "How It Works" steps for a given product handle.
+  Usage: {%- render 'service-how-it-works', product: product -%}
+{%- endcomment -%}
+
+{%- assign h = product.handle -%}
+
+{%- if h == 'auction-tenanted-property-pre-sale-legal-pack' or h == 'auction-legal-pack' -%}
+  <ol>
+    <li><strong>Order online</strong> — complete your purchase and provide the property address.</li>
+    <li><strong>We gather documents</strong> — our solicitors pull together all required title documents, searches, and certificates.</li>
+    <li><strong>Review &amp; approve</strong> — we send you a draft pack within 5–7 working days for your approval.</li>
+    <li><strong>Pack delivered</strong> — your completed legal pack is sent to you and your auctioneer, ready for auction day.</li>
+  </ol>
+
+{%- elsif h == 'survey-photography-service' or h == 'rics-level-2-survey' -%}
+  <ol>
+    <li><strong>Order online</strong> — select your preferred date and provide the property address.</li>
+    <li><strong>Survey &amp; photography booked</strong> — we schedule both a RICS surveyor and a photographer to visit the property.</li>
+    <li><strong>Visit carried out</strong> — the surveyor and photographer attend, usually on the same day.</li>
+    <li><strong>Report &amp; images delivered</strong> — you receive the full survey report and edited images, ready to use.</li>
+    <li><strong>Listing boosted</strong> — we activate your premium listing placement across major portals.</li>
+  </ol>
+
+{%- elsif h == 'photography-service' or h == 'professional-photography' -%}
+  <ol>
+    <li><strong>Order online</strong> — provide the property address and your preferred date/time.</li>
+    <li><strong>Photographer assigned</strong> — we match you with a professional property photographer in your area.</li>
+    <li><strong>Shoot completed</strong> — the photographer attends and captures interior and exterior images.</li>
+    <li><strong>Images delivered</strong> — fully edited, high-resolution photos sent to you within 48 hours.</li>
+  </ol>
+
+{%- elsif h == 'tenancy-agreement' or h == 'tenancy-agreement-digital-signature' -%}
+  <ol>
+    <li><strong>Order online</strong> — provide your property details, tenants' names, and agreed terms.</li>
+    <li><strong>Draft prepared</strong> — our team drafts a fully compliant AST tailored to your requirements.</li>
+    <li><strong>Review &amp; sign</strong> — we send the agreement for digital signature by all parties.</li>
+    <li><strong>Copies issued</strong> — signed PDF copies delivered to landlord and tenant.</li>
+  </ol>
+
+{%- elsif h == 'rent-increase-service' -%}
+  <ol>
+    <li><strong>Order online</strong> — provide your current rent, new amount, and tenancy details.</li>
+    <li><strong>Notice drafted</strong> — we prepare a legally compliant Section 13 notice.</li>
+    <li><strong>Served on your behalf</strong> — we issue the notice to your tenant with the correct notice period.</li>
+    <li><strong>Copies provided</strong> — you receive digital copies for your records.</li>
+  </ol>
+
+{%- elsif h == 'property-title' -%}
+  <ol>
+    <li><strong>Order online</strong> — provide the full property address.</li>
+    <li><strong>We retrieve the title</strong> — our team pulls the official title register and title plan from Land Registry.</li>
+    <li><strong>Documents delivered</strong> — your title documents are emailed to you within 24 hours.</li>
+  </ol>
+
+{%- elsif h == 'outlays' -%}
+  <ol>
+    <li><strong>Order online</strong> — provide the property address and transaction details.</li>
+    <li><strong>We pay on your behalf</strong> — our team handles all outlay payments directly with the relevant authorities.</li>
+    <li><strong>Full receipts provided</strong> — you receive an itemised breakdown of all fees paid.</li>
+  </ol>
+
+{%- elsif h == 'boosting-listing' or h == 'upgraded-featured-listings-boost-on-rightmove-zoopla-onthemarket' -%}
+  <ol>
+    <li><strong>Order online</strong> — provide your listing URL or property address.</li>
+    <li><strong>Boost activated</strong> — we upgrade your listing to featured placement on Rightmove, Zoopla, and OnTheMarket.</li>
+    <li><strong>Increased visibility</strong> — your property appears at the top of search results to serious buyers.</li>
+    <li><strong>Confirmation sent</strong> — we email you confirmation once all boosts are live.</li>
+  </ol>
+
+{%- else -%}
+  <p>Contact us and we'll walk you through exactly how this service works for your situation.</p>
+{%- endif -%}
