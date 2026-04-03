@@ -1,0 +1,147 @@
+<section class="contact-bp-hero">
+  <div class="page-width">
+    <div class="contact-bp-hero__text reveal-on-scroll">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h1>{{ section.settings.heading }}</h1>
+      <p>{{ section.settings.subheading }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bp-body section">
+  <div class="page-width contact-bp-grid">
+
+    <!-- Left: contact details -->
+    <div class="contact-bp-details reveal-on-scroll">
+      <h2>{{ section.settings.details_heading }}</h2>
+      <p class="contact-bp-details__intro">{{ section.settings.details_intro }}</p>
+
+      <ul class="contact-bp-details__list">
+        {%- if section.settings.phone != blank -%}
+          <li>
+            <div class="contact-bp-details__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>
+            </div>
+          </li>
+        {%- endif -%}
+        {%- if section.settings.email != blank -%}
+          <li>
+            <div class="contact-bp-details__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+            </div>
+          </li>
+        {%- endif -%}
+        {%- if section.settings.hours != blank -%}
+          <li>
+            <div class="contact-bp-details__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Hours</strong>
+              <span>{{ section.settings.hours }}</span>
+            </div>
+          </li>
+        {%- endif -%}
+      </ul>
+
+      <div class="contact-bp-trust">
+        <div class="contact-bp-trust__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <span>UK-Based Team</span>
+        </div>
+        <div class="contact-bp-trust__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Responds Within 24hrs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: contact form -->
+    <div class="contact-bp-form reveal-on-scroll" data-reveal-delay="100">
+      <div class="contact-bp-form__card">
+        <h3>{{ section.settings.form_heading }}</h3>
+
+        {%- form 'contact', id: 'ContactFormBP' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="contact-bp-form__success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div>
+                <strong>Message sent!</strong>
+                <p>Thanks for getting in touch. We'll be back to you within 24 hours.</p>
+              </div>
+            </div>
+          {%- else -%}
+            {%- if form.errors -%}
+              <div class="contact-bp-form__error" role="alert">Please check your email address and try again.</div>
+            {%- endif -%}
+
+            <div class="contact-bp-form__row">
+              <div class="contact-bp-form__field">
+                <label for="BPContactName">Full Name</label>
+                <input type="text" id="BPContactName" name="contact[name]" placeholder="Jane Smith" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+              </div>
+              <div class="contact-bp-form__field">
+                <label for="BPContactEmail">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="BPContactEmail" name="contact[email]" placeholder="jane@example.com" required
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  {% if form.errors contains 'email' %}aria-invalid="true"{% endif %}>
+              </div>
+            </div>
+
+            <div class="contact-bp-form__field">
+              <label for="BPContactService">Service Enquiry</label>
+              <select id="BPContactService" name="contact[service]">
+                <option value="">— Select a service (optional) —</option>
+                <option>Auction Legal Pack</option>
+                <option>RICS Level 2 Survey</option>
+                <option>Professional Photography</option>
+                <option>Tenancy Agreement</option>
+                <option>Rent Increase Service</option>
+                <option>Property Title</option>
+                <option>Outlays</option>
+                <option>Boosting Listing</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="contact-bp-form__field">
+              <label for="BPContactMessage">Message <span aria-hidden="true">*</span></label>
+              <textarea id="BPContactMessage" name="contact[body]" rows="5" placeholder="Tell us how we can help..." required>{{- form.body -}}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg contact-bp-form__submit">Send Message</button>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "tag": "div",
+  "class": "section-contact-page",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Get In Touch" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "We'd Love to Hear From You" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Have a question about one of our services? Our UK-based team is on hand to help — get in touch and we'll get back to you within 24 hours." },
+    { "type": "text", "id": "details_heading", "label": "Details heading", "default": "Contact Details" },
+    { "type": "textarea", "id": "details_intro", "label": "Details intro", "default": "Reach us by phone, email, or use the form and we'll respond promptly." },
+    { "type": "text", "id": "phone", "label": "Phone number", "default": "+44 (0)1234 567 890" },
+    { "type": "text", "id": "email", "label": "Email address", "default": "info@buypropertyservices.co.uk" },
+    { "type": "text", "id": "hours", "label": "Office hours", "default": "Mon–Fri, 9am–5:30pm" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Send Us a Message" }
+  ],
+  "presets": [{ "name": "Contact Page" }]
+}
+{% endschema %}
