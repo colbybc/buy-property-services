@@ -2945,6 +2945,7 @@ h1, h2, h3, h4, h5, h6 {
 .bp-footer__logo {
   display: inline-block;
   margin-bottom: 16px;
+  text-decoration: none;
 }
 
 .bp-footer__logo img {
