@@ -3588,3 +3588,26 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
   z-index: 3;
 }
+
+/* ==========================================================================
+   PRICE — HIDE GBP CURRENCY CODE, FIX FORMATTING
+   ========================================================================== */
+/* Hide the trailing " GBP" text that Dawn appends with money_with_currency */
+.price-item bdi::after {
+  content: none !important;
+}
+
+/* Strip ".00" from whole-pound prices using font-variant */
+.price-item {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Product page price — remove GBP label */
+.price__container .price-item bdi {
+  font-size: inherit;
+}
+
+/* Hide any element that is purely "GBP" text — Dawn sometimes renders it as a separate span */
+.price__currency-code {
+  display: none !important;
+}
