@@ -3301,3 +3301,20 @@ h1, h2, h3, h4, h5, h6 {
 .template-product [class*="breadcrumb"]:not(.product-breadcrumb):not(.product-breadcrumb__nav):not(.product-breadcrumb__list) {
   display: none !important;
 }
+
+/* ==========================================================================
+   RELATED SERVICES
+   ========================================================================== */
+.related-services-section {
+  background: var(--bp-bg-light);
+  border-top: 1px solid var(--bp-border);
+}
+
+.related-services__heading {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--bp-text);
+  text-align: center;
+  margin: 0 0 40px;
+  font-family: 'Poppins', sans-serif;
+}
