@@ -14,9 +14,9 @@
 {%- if handle == 'auction-tenanted-property-pre-sale-legal-pack' or handle == 'auction-legal-pack' -%}
   {%- assign logo_file = 'auction-legal-pack-logo.svg' -%}
   {%- assign logo_alt = 'Auction Legal Pack' -%}
-{%- elsif handle == 'listing-boost-survey-photography-service' or handle == 'rics-level-2-survey' -%}
-  {%- assign logo_file = 'listing-boost-logo.svg' -%}
-  {%- assign logo_alt = 'Listing Boost, Survey & Photography' -%}
+{%- elsif handle == 'survey-photography-service' or handle == 'rics-level-2-survey' -%}
+  {%- assign logo_file = 'survey-photography-logo.svg' -%}
+  {%- assign logo_alt = 'RICS Level 2 Survey & Photography' -%}
 {%- elsif handle == 'outlays' -%}
   {%- assign logo_file = 'outlays-logo.svg' -%}
   {%- assign logo_alt = 'Outlays' -%}
@@ -41,7 +41,7 @@
 
 {%- if handle == 'auction-tenanted-property-pre-sale-legal-pack' or handle == 'auction-legal-pack' -%}
   {%- capture service_desc -%}Complete legal documentation pack for property auctions, including all required searches, title documents, and certificates. Everything your solicitor needs — prepared and ready for auction day.{%- endcapture -%}
-{%- elsif handle == 'listing-boost-survey-photography-service' or handle == 'rics-level-2-survey' -%}
+{%- elsif handle == 'survey-photography-service' or handle == 'rics-level-2-survey' -%}
   {%- capture service_desc -%}Professional RICS Level 2 HomeBuyer Survey combined with high-quality property photography and a listing boost across major UK portals. One order, three essential services.{%- endcapture -%}
 {%- elsif handle == 'outlays' -%}
   {%- capture service_desc -%}We handle all search fees, Land Registry charges, and local authority costs on your behalf. Pay upfront with full transparency — no hidden fees, no surprises at completion.{%- endcapture -%}
@@ -163,7 +163,7 @@
 {%- endif -%}
 
 {%- comment -%}--- RICS LEVEL 2 SURVEY / LISTING BOOST BUNDLE ---{%- endcomment -%}
-{%- if handle == 'listing-boost-survey-photography-service' or handle == 'rics-level-2-survey' -%}
+{%- if handle == 'survey-photography-service' or handle == 'rics-level-2-survey' -%}
 <section class="service-details section">
   <div class="page-width">
     <div class="service-details__grid">

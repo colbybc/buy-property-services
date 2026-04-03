@@ -1,5 +1,9 @@
 {
   "sections": {
+    "breadcrumb": {
+      "type": "product-breadcrumb",
+      "settings": {}
+    },
     "main": {
       "type": "main-service-product",
       "blocks": {
@@ -71,7 +75,16 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "heading": "Ready to Get Started?",
+        "subheading": "Order online in minutes. Our team will be in touch within 24 hours to process your service.",
+        "button_label": "Browse All Services",
+        "button_link": "shopify://collections/all"
+      }
     }
   },
-  "order": ["main", "service_details", "related_services"]
+  "order": ["breadcrumb", "main", "service_details", "related_services", "cta"]
 }

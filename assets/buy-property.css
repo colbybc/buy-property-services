@@ -3242,3 +3242,54 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--bp-text-light);
   padding: 48px 0;
 }
+
+/* ==========================================================================
+   PRODUCT BREADCRUMB
+   ========================================================================== */
+.section-product-breadcrumb {
+  background: var(--bp-green);
+}
+
+.product-breadcrumb {
+  padding: 12px 0;
+}
+
+.product-breadcrumb__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.product-breadcrumb__list li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-breadcrumb__list a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.product-breadcrumb__list a:hover {
+  color: var(--bp-white);
+}
+
+.product-breadcrumb__list li[aria-current="page"] {
+  color: var(--bp-orange);
+  font-weight: 600;
+}
+
+.product-breadcrumb__list svg {
+  width: 12px;
+  height: 12px;
+  color: rgba(255,255,255,0.35);
+  flex-shrink: 0;
+}
