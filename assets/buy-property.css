@@ -3611,3 +3611,14 @@ h1, h2, h3, h4, h5, h6 {
 .price__currency-code {
   display: none !important;
 }
+
+/* ==========================================================================
+   SERVICE CARD ICON — HOVER ANIMATION
+   ========================================================================== */
+.service-card__icon svg {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-card:hover .service-card__icon svg {
+  transform: scale(1.2) rotate(-8deg);
+}
