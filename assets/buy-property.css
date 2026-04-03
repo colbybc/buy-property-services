@@ -3900,3 +3900,192 @@ h1, h2, h3, h4, h5, h6 {
     padding: 56px 0 52px;
   }
 }
+
+/* ==========================================================================
+   MOBILE AUDIT — TARGETED FIXES
+   ========================================================================== */
+
+/* --- Section headers: reduce subheading size on small screens --- */
+@media (max-width: 749px) {
+  .bp-section-header {
+    margin-bottom: 36px;
+  }
+  .bp-section-header p {
+    font-size: 1rem;
+  }
+}
+
+/* --- Hero: hide placeholder (empty box) on mobile; limit real image height --- */
+@media (max-width: 989px) {
+  .hero__image-placeholder {
+    display: none;
+  }
+  .hero__image-wrap img {
+    max-height: 320px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* --- Hero stats: 3-equal columns on mobile instead of wrapping --- */
+@media (max-width: 749px) {
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding-top: 24px;
+    text-align: center;
+  }
+  .hero__stat {
+    text-align: center;
+    padding: 0 12px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .hero__stat:last-child {
+    border-right: none;
+  }
+  .hero__stat .num {
+    font-size: 1.5rem;
+  }
+  .hero__stat .label {
+    font-size: 0.72rem;
+  }
+  .hero__stats::before {
+    display: none;
+  }
+}
+
+/* Override the 479px flex wrap now that we're using grid */
+@media (max-width: 479px) {
+  .hero__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    flex-wrap: unset;
+  }
+}
+
+/* --- CTA band: stack cards to 1 col on small screens --- */
+@media (max-width: 749px) {
+  .cta-band__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Process timeline: tighten on very small screens --- */
+@media (max-width: 479px) {
+  .process-timeline__steps {
+    padding-left: 36px;
+  }
+  .process-timeline__step-content h3 {
+    font-size: 1rem;
+  }
+  .process-timeline__step-content p {
+    font-size: 0.88rem;
+  }
+}
+
+/* --- Why choose us: image badges on mobile --- */
+@media (max-width: 749px) {
+  .why-image-badge {
+    padding: 10px 14px;
+  }
+  .why-image-badge .num {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Service cards: tighten body padding on mobile --- */
+@media (max-width: 579px) {
+  .service-card__body {
+    padding: 20px 18px 16px;
+  }
+  .service-card__footer {
+    padding: 14px 18px;
+  }
+  .service-card__title {
+    font-size: 1rem;
+  }
+}
+
+/* --- Collection hero: meta stat panel on very small screens --- */
+@media (max-width: 479px) {
+  .collection-bp-hero__meta {
+    width: 100%;
+  }
+  .collection-bp-hero__stat {
+    flex: 1;
+    padding: 16px 12px;
+  }
+  .collection-bp-hero__stat .num {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Footer: improve spacing on small screens --- */
+@media (max-width: 479px) {
+  .bp-footer__top {
+    padding: 40px 0 32px;
+  }
+  .bp-footer__social {
+    justify-content: flex-start;
+  }
+  .bp-footer__bottom-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* --- Buttons: ensure full-width tap targets on small screens --- */
+@media (max-width: 479px) {
+  .cta-band__left .btn,
+  .contact-bp-form__submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --- Product page: tighten info padding on mobile --- */
+@media (max-width: 749px) {
+  .service-page__info {
+    padding-top: 0;
+  }
+  .service-page__price-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* --- About story: tighten gap on small screens --- */
+@media (max-width: 749px) {
+  .about-story__grid {
+    gap: 32px;
+  }
+  .about-story__value {
+    gap: 12px;
+  }
+  .about-story__value-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+}
+
+/* --- Testimonials: tighten card padding on mobile --- */
+@media (max-width: 579px) {
+  .testimonial-card {
+    padding: 24px 20px;
+  }
+}
+
+/* --- Ensure page-width doesn't overflow on very small screens --- */
+@media (max-width: 360px) {
+  .page-width {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .hero__text h1 {
+    font-size: 2.4rem;
+  }
+}
