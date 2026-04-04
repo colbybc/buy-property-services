@@ -494,7 +494,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(90deg, var(--bp-green), var(--bp-green-light));
 }
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 0 16px 40px rgba(0,0,0,0.10);
 }
 .service-card:hover::before {
