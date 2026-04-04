@@ -339,6 +339,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero image */
 .hero__image-wrap {
   position: relative;
+  overflow: hidden;
+  border-radius: 16px;
 }
 .hero__image-wrap img {
   width: 100%;
@@ -348,6 +350,10 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease;
+}
+.hero__image-wrap:hover img {
+  transform: scale(1.02);
 }
 .hero__image-placeholder {
   width: 100%;
@@ -4926,4 +4932,273 @@ cart-remove-button .button:hover {
     font-size: 0.88rem;
     padding: 14px 14px;
   }
+}
+
+/* ==========================================================================
+   HOMEPAGE VISUAL POLISH
+   ========================================================================== */
+
+/* --- Hero refinements --- */
+.hero__text h1 {
+  letter-spacing: -0.03em;
+}
+.hero__badge {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero__badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+.hero__stat .num {
+  background: linear-gradient(180deg, var(--bp-white) 0%, rgba(255,255,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero__stats::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--bp-orange) 0%, rgba(232,146,42,0) 40%);
+  border-radius: 1px;
+}
+.hero__stats::before {
+  display: none;
+}
+
+/* --- Service card refinements --- */
+.service-card {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.service-card__icon {
+  box-shadow: inset 0 0 0 1px rgba(26,77,46,0.08);
+}
+.service-card:hover .service-card__icon {
+  box-shadow: inset 0 0 0 1px rgba(232,146,42,0.15);
+  transform: scale(1.05);
+}
+.service-card__icon {
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card__title {
+  transition: color 0.2s ease;
+}
+.service-card:hover .service-card__title {
+  color: var(--bp-green);
+}
+.service-card__footer .btn {
+  transition: all 0.25s ease, transform 0.15s ease;
+}
+.service-card:hover .service-card__footer .btn {
+  transform: translateX(2px);
+}
+.services-section .bp-section-header h2 {
+  letter-spacing: -0.02em;
+}
+
+/* --- Process timeline refinements --- */
+.process-timeline__number {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.process-timeline__number svg {
+  width: 26px;
+  height: 26px;
+}
+.process-timeline__step:hover .process-timeline__number {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(26,77,46,0.35);
+}
+.process-timeline__title {
+  transition: color 0.2s ease;
+}
+.process-timeline__step:hover .process-timeline__title {
+  color: var(--bp-green);
+}
+.process-timeline__header {
+  position: relative;
+}
+.process-timeline__header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--bp-orange);
+  border-radius: 2px;
+  margin: 20px auto 0;
+}
+@media (max-width: 749px) {
+  .process-timeline__number {
+    margin: 0;
+  }
+  .process-timeline__step:hover .process-timeline__number {
+    transform: none;
+  }
+}
+
+/* --- Why Choose Us refinements --- */
+.why-feature {
+  padding: 16px;
+  border-radius: 12px;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+.why-feature:hover {
+  background: var(--bp-white);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.why-feature__icon {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.why-feature:hover .why-feature__icon {
+  transform: scale(1.06);
+  background: linear-gradient(135deg, rgba(26,77,46,0.16) 0%, rgba(26,77,46,0.08) 100%);
+}
+.why-section .bp-section-header h2 {
+  letter-spacing: -0.02em;
+}
+.why-stat-card {
+  backdrop-filter: blur(8px);
+}
+.why-stat-card .num {
+  letter-spacing: -0.03em;
+}
+
+/* --- Testimonial refinements --- */
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.10);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.testimonials-section--dark .bp-section-header h2 {
+  letter-spacing: -0.02em;
+}
+.testimonial-stars {
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+}
+.testimonial-avatar {
+  box-shadow: 0 2px 8px rgba(232,146,42,0.3);
+}
+.testimonials-section {
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-section--dark::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,146,42,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.testimonials-section--dark::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(143,179,57,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --- FAQ refinements --- */
+.faq-item {
+  transition: background 0.2s ease;
+}
+.faq-item:hover {
+  background: rgba(26,77,46,0.02);
+}
+.faq-item__trigger {
+  transition: padding-left 0.2s ease;
+}
+.faq-item:hover .faq-item__trigger {
+  padding-left: 4px;
+}
+.faq-section .bp-section-header h2 {
+  letter-spacing: -0.02em;
+}
+.faq-aside__card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.faq-aside__card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+/* --- CTA Band refinements --- */
+.cta-band {
+  position: relative;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(232,146,42,0.3) 50%, transparent 100%);
+}
+.cta-band h2 {
+  letter-spacing: -0.02em;
+}
+.cta-band .btn--primary {
+  box-shadow: 0 4px 20px rgba(232,146,42,0.3);
+  transition: all 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+.cta-band .btn--primary:hover {
+  box-shadow: 0 6px 28px rgba(232,146,42,0.45);
+  transform: translateY(-2px);
+}
+
+/* --- Section header underline accents --- */
+.bp-section-header {
+  position: relative;
+}
+.bp-section-header h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--bp-orange);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+/* Remove duplicate underline on process timeline since it has its own */
+.process-timeline__header::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--bp-orange);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+/* --- Global hover transitions on buttons --- */
+.btn--primary {
+  transition: all 0.25s ease, transform 0.15s ease;
+}
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(232,146,42,0.25);
+}
+.btn--outline-white:hover {
+  transform: translateY(-1px);
+}
+
+/* --- Smooth section separator --- */
+.section-service-grid + .section-why-choose-us .why-section,
+.section-why-choose-us + .section-process-timeline .process-timeline {
+  border-top: none;
 }
