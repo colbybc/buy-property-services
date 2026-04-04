@@ -4,6 +4,13 @@
     {%- paginate collection.products by section.settings.products_per_page -%}
 
       {%- if collection.products.size > 0 -%}
+        <div class="collection-bp-results reveal-on-scroll">
+          <span class="collection-bp-results__count">{{ collection.products_count }} {{ collection.products_count | pluralize: 'service', 'services' }} available</span>
+          <span class="collection-bp-results__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            All prices include VAT
+          </span>
+        </div>
         <div class="services-grid">
           {%- for product in collection.products -%}
             {%- if product.tags contains 'hidden' -%}{%- continue -%}{%- endif -%}
