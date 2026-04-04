@@ -4500,15 +4500,10 @@ cart-remove-button .button:hover {
 }
 .service-accordion__content ol li {
   counter-increment: steps;
-  display: block !important;
-  padding-left: 36px;
-  position: relative;
 }
 .service-accordion__content ol li::before {
   content: counter(steps);
-  position: absolute;
-  left: 0;
-  top: -4px;
+  flex-shrink: 0;
   width: 22px;
   height: 22px;
   background: var(--bp-green);
@@ -4516,7 +4511,7 @@ cart-remove-button .button:hover {
   border-radius: 50%;
   font-size: 0.7rem;
   font-weight: 700;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
