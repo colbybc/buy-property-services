@@ -4421,12 +4421,11 @@ cart-remove-button .button:hover {
   background: rgba(26,77,46,0.04) !important;
 }
 .service-accordion__content {
-  padding: 0 18px 18px !important;
-  border-top: 1px solid var(--bp-border);
+  padding: 16px 18px 18px !important;
 }
 .service-accordion__content ul,
 .service-accordion__content ol {
-  margin: 12px 0 0;
+  margin: 0;
   padding-left: 0;
   list-style: none;
 }
@@ -4505,6 +4504,11 @@ cart-remove-button .button:hover {
   background: rgba(26,77,46,0.03);
 }
 
+/* --- Disable sticky on product info so accordions don't break layout --- */
+.service-product__info.product__column-sticky {
+  position: static !important;
+}
+
 /* --- Buy button: add hover glow --- */
 .sp-buy-btn {
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
@@ -4566,16 +4570,8 @@ cart-remove-button .button:hover {
 }
 
 /* --- Breadcrumb polish --- */
-.product-breadcrumb {
-  padding: 14px 0 !important;
-  border-bottom: 1px solid var(--bp-border);
-  background: var(--bp-bg-light);
-}
-.product-breadcrumb__list li {
-  font-size: 0.85rem !important;
-}
 .product-breadcrumb__list li[aria-current="page"] {
-  color: var(--bp-green) !important;
+  color: var(--bp-white) !important;
   font-weight: 600 !important;
 }
 
