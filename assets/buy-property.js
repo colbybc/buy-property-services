@@ -45,8 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Stat Counters
   function animateCounter(el) {
     var raw = el.dataset.target || '';
-    var suffix = raw.replace(/[\d,\.]+/, '');
-    var numStr = raw.replace(/[^\d\.]/g, '');
+    var numMatch = raw.match(/[\d,\.]+/);
+    if (!numMatch) return;
+    var numIndex = raw.indexOf(numMatch[0]);
+    var prefix = raw.substring(0, numIndex);
+    var suffix = raw.substring(numIndex + numMatch[0].length);
+    var numStr = numMatch[0].replace(/,/g, '');
     var target = parseFloat(numStr);
     if (isNaN(target)) return;
     var isFloat = numStr.indexOf('.') !== -1;
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var ease = 1 - Math.pow(1 - progress, 3);
       var current = target * ease;
       var display = isFloat ? current.toFixed(decimals) : Math.floor(current).toLocaleString();
-      el.textContent = display + suffix;
+      el.textContent = prefix + display + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
