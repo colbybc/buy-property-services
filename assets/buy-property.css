@@ -4457,17 +4457,25 @@ cart-remove-button .button:hover {
   padding-left: 0;
   list-style: none;
 }
+/* Reset Dawn .rte list styles inside accordions */
+.service-accordion__content.rte ul,
+.service-accordion__content.rte ol,
 .service-accordion__content ul,
 .service-accordion__content ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none !important;
+  list-style-position: outside !important;
+  padding: 0 !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+.service-accordion__content.rte li,
+.service-accordion__content li {
+  list-style: none !important;
 }
 .service-accordion__content ul li,
 .service-accordion__content ol li {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
+  position: relative;
+  padding-left: 36px;
   margin-bottom: 14px;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -4475,7 +4483,9 @@ cart-remove-button .button:hover {
 }
 .service-accordion__content ul li::before {
   content: '';
-  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  top: 3px;
   width: 22px;
   height: 22px;
   background: var(--bp-green);
@@ -4484,8 +4494,6 @@ cart-remove-button .button:hover {
   background-size: 10px;
   background-repeat: no-repeat;
   background-position: center;
-  align-self: flex-start;
-  margin-top: 2px;
 }
 .service-accordion__content ol {
   counter-reset: steps;
@@ -4495,7 +4503,9 @@ cart-remove-button .button:hover {
 }
 .service-accordion__content ol li::before {
   content: counter(steps);
-  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  top: 2px;
   width: 22px;
   height: 22px;
   background: var(--bp-green);
@@ -4503,11 +4513,9 @@ cart-remove-button .button:hover {
   border-radius: 50%;
   font-size: 0.7rem;
   font-weight: 700;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
-  margin-top: 2px;
   font-family: 'Poppins', sans-serif;
 }
 
