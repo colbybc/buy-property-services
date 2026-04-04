@@ -228,13 +228,12 @@
 
               {%- comment -%} ---- PRICE BLOCK ---- {%- endcomment -%}
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
+                <div id="price-{{ section.id }}" class="price price--large" role="status" {{ block.shopify_attributes }}>
+                  <div class="price__regular">
+                    <span class="price-item price-item--regular">
+                      {{ product.selected_or_first_available_variant.price | money }}
+                    </span>
+                  </div>
                 </div>
 
               {%- comment -%} ---- DESCRIPTION BLOCK ---- {%- endcomment -%}
