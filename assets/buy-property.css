@@ -3773,7 +3773,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card:hover .service-card__icon svg {
-  transform: scale(1.2) rotate(-8deg);
+  transform: scale(1.15);
 }
 
 /* ==========================================================================
