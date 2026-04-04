@@ -4500,14 +4500,17 @@ cart-remove-button .button:hover {
 }
 .service-accordion__content ol li {
   counter-increment: steps;
-  align-items: flex-start;
+  display: block !important;
+  padding-left: 36px;
+  position: relative;
 }
 .service-accordion__content ol li::before {
   content: counter(steps);
-  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  top: 2px;
   width: 22px;
   height: 22px;
-  margin-top: 3px;
   background: var(--bp-green);
   color: #fff;
   border-radius: 50%;
