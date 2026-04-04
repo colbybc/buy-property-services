@@ -4474,18 +4474,18 @@ cart-remove-button .button:hover {
 }
 .service-accordion__content ul li,
 .service-accordion__content ol li {
-  position: relative;
-  padding-left: 36px;
+  display: flex !important;
+  align-items: center;
+  gap: 14px;
   margin-bottom: 14px;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--bp-text-light);
+  padding-left: 0;
 }
 .service-accordion__content ul li::before {
   content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
+  flex-shrink: 0;
   width: 22px;
   height: 22px;
   background: var(--bp-green);
@@ -4500,14 +4500,14 @@ cart-remove-button .button:hover {
 }
 .service-accordion__content ol li {
   counter-increment: steps;
+  align-items: flex-start;
 }
 .service-accordion__content ol li::before {
   content: counter(steps);
-  position: absolute;
-  left: 0;
-  top: 0;
+  flex-shrink: 0;
   width: 22px;
   height: 22px;
+  margin-top: 3px;
   background: var(--bp-green);
   color: #fff;
   border-radius: 50%;
