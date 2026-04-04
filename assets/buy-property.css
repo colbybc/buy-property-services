@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero__badge {
   position: absolute;
-  bottom: -20px;
+  bottom: 20px;
   left: 24px;
   background: var(--bp-white);
   border-radius: var(--bp-radius);
@@ -371,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 .hero__badge svg {
   width: 28px;
