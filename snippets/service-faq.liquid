@@ -1,0 +1,304 @@
+{%- comment -%}
+  Renders per-service FAQ questions for a given product handle.
+  Usage: {%- render 'service-faq', product: product -%}
+{%- endcomment -%}
+
+{%- assign h = product.handle -%}
+
+{%- if h == 'auction-tenanted-property-pre-sale-legal-pack' or h == 'auction-legal-pack' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What is an Auction Legal Pack?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>An Auction Legal Pack is a set of legal documents prepared by a solicitor that potential buyers review before bidding. It includes title documents, property searches, Special Conditions of Sale, and any relevant certificates — everything needed for due diligence.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How long does it take to prepare?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>A complete Auction Legal Pack is typically prepared within 5–7 working days. We'll keep you updated throughout the process and confirm when it's ready for your auctioneer.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Do I need a legal pack for every auction?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes — virtually all UK auction houses require a legal pack to be available before the property is listed. Without one, bidders cannot carry out due diligence, which typically results in fewer bids and a lower sale price.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Can I use this for tenanted property sales?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Absolutely. Our legal pack covers both vacant and tenanted properties. For tenanted sales, we include copies of existing tenancy agreements, rent schedules, and any relevant notices alongside the standard pack.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'survey-photography-service' or h == 'rics-level-2-survey' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What does a RICS Level 2 Survey cover?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>A RICS Level 2 HomeBuyer Survey assesses the overall condition of the property, highlighting any significant defects, potential risks, and areas that may require further investigation. It uses a traffic-light system to rate each element.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Are your surveyors RICS regulated?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes. All surveys are carried out by fully qualified, RICS-regulated surveyors. The Royal Institution of Chartered Surveyors sets the professional standards for the property industry, so every report is thorough, impartial, and compliant.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How quickly will I receive the report and photos?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>The survey report is typically delivered within 3–5 working days of the visit. Edited photographs are usually ready within 48 hours. Both are sent to you digitally.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Is the listing boost included automatically?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes — the listing boost is bundled into this service. Once your photos are ready, we activate premium placement across Rightmove, Zoopla, and OnTheMarket at no additional cost.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'outlays' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What exactly are outlays?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Outlays are third-party fees incurred during a property transaction — such as Local Authority searches, Land Registry charges, and Drainage & Water searches. Rather than tracking and paying these individually, we handle everything on your behalf.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Are there any hidden fees on top?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>No. The price you pay covers all standard outlay costs. You'll receive a full itemised breakdown showing exactly what was paid and to whom — complete transparency.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What searches are included?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Standard searches include Local Authority, Drainage & Water, Environmental, and Land Registry searches. If your transaction requires additional searches, we'll discuss this with you before proceeding.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'photography-service' or h == 'professional-photography' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How many photos will I receive?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>You'll typically receive 15–25 high-quality, fully edited images depending on the size of the property. This covers all key rooms, exterior shots, and any standout features.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Do I need to prepare the property?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>We recommend a general tidy — clearing surfaces, opening curtains, and turning on lights. Our photographers are experienced at making properties look their best, but a clean, uncluttered space always helps.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Can I use the photos on any platform?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes — all images are yours to use however you like. They're optimised for Rightmove, Zoopla, OnTheMarket, social media, and print materials.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'property-title' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What information do title documents include?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Title documents show the registered owner, the extent of the property on a plan, any charges or mortgages, rights of way, easements, restrictive covenants, and the class of title held.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How quickly will I receive them?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Title documents are typically delivered to your email within 24 hours of placing your order. In most cases they arrive the same working day.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Can I get title documents for any property?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>We can obtain title documents for any registered property in England & Wales. A small number of older properties remain unregistered — if this is the case, we'll let you know and advise on next steps.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'rent-increase-service' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What is a Section 13 notice?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>A Section 13 notice is the legal mechanism under the Housing Act 1988 for increasing rent on an Assured Shorthold Tenancy. It must be served correctly with the right notice period to be valid.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How much notice do I need to give?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>For monthly tenancies, you must give at least one month's notice. For yearly tenancies, six months' notice is required. We'll calculate the correct notice period based on your tenancy details.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>What if my tenant disputes the increase?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>If your tenant refers the notice to a First-tier Tribunal, the Tribunal will assess whether the proposed rent is a fair market rate. We support you through this process and ensure your notice is compliant to give you the strongest position.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'tenancy-agreement' or h == 'tenancy-agreement-digital-signature' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Is the agreement legally compliant?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes. All our tenancy agreements are drafted to comply with the latest UK housing legislation, including the Housing Act 1988, Deregulation Act 2015, and Tenant Fees Act 2019.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Can I customise the terms?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Absolutely. When you order, you provide your specific details — property address, tenant names, rent amount, deposit, tenancy start date, and any special clauses. We draft the agreement to your exact requirements.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How does digital signing work?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Once the agreement is drafted, we send it to all parties via a secure digital signature platform. Each person signs electronically and receives a fully executed PDF copy — no printing or posting required.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Do I need a new agreement for each tenancy?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes — each new tenancy or renewal should have a fresh agreement. This ensures the terms are up to date with current legislation and protects your ability to serve valid notices if needed.</p>
+    </div>
+  </details>
+
+{%- elsif h == 'boosting-listing' or h == 'upgraded-featured-listings-boost-on-rightmove-zoopla-onthemarket' -%}
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Which portals will my listing appear on?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Your property will receive featured placement on all three major UK portals — Rightmove, Zoopla, and OnTheMarket — simultaneously for maximum exposure.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How much more visibility will I get?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Rightmove data shows featured listings receive over 130% more views in the first 7 days compared to standard listings. This translates directly into more enquiries, viewings, and stronger offers.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>How long does the boost last?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>The boost duration depends on the package selected. We offer flexible options to match your selling timeline — contact us if you need a custom period.</p>
+    </div>
+  </details>
+
+  <details class="product-faq__item">
+    <summary class="product-faq__question">
+      <span>Do I need my property already listed?</span>
+      <svg class="product-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="product-faq__answer">
+      <p>Yes — your property needs to be listed on the portals already (via an estate agent or listing service). We then upgrade your existing listing to featured/premium placement.</p>
+    </div>
+  </details>
+
+{%- endif -%}

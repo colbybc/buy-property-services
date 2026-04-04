@@ -59,6 +59,19 @@
       "type": "product-service-details",
       "settings": {}
     },
+    "faq": {
+      "type": "product-faq",
+      "settings": {
+        "eyebrow": "Common Questions",
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "partner_logos": {
+      "type": "partner-logos",
+      "settings": {
+        "heading": "Trusted & Listed On"
+      }
+    },
     "related_services": {
       "type": "related-services",
       "settings": {
@@ -76,5 +89,5 @@
       }
     }
   },
-  "order": ["breadcrumb", "main", "service_details", "related_services", "cta"]
+  "order": ["breadcrumb", "main", "service_details", "faq", "partner_logos", "related_services", "cta"]
 }

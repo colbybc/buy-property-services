@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What is an Auction Legal Pack?",
+            "answer": "<p>An Auction Legal Pack is a set of legal documents prepared by a solicitor that allows potential buyers to carry out their due diligence before bidding. It typically includes official title documents, property searches (Local Authority, Drainage & Water), Special Conditions of Sale, and any relevant certificates. Having a complete pack ready increases buyer confidence and can significantly raise your final sale price.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "How long does it take to receive my documents?",
+            "answer": "<p>Most of our services are delivered within 48–72 hours of placing your order. For more complex services such as RICS surveys or auction legal packs, we'll confirm a specific timeframe with you. We understand that speed is critical in property transactions and work hard to meet your deadlines.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Are your surveyors RICS regulated?",
+            "answer": "<p>Yes. All surveys are carried out by fully qualified, RICS-regulated surveyors. The Royal Institution of Chartered Surveyors (RICS) sets the professional standards for the property industry, so you can trust that every report is thorough, impartial, and compliant with current guidelines.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need a tenancy agreement even for short-term lets?",
+            "answer": "<p>Yes — a valid tenancy agreement is required by law for all residential lets in England and Scotland, regardless of duration. Our agreements are fully compliant with current UK housing legislation and are sent via digital signature, making the process quick and hassle-free for both landlord and tenant.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "What are Outlays and do I need to pay them?",
+            "answer": "<p>Outlays are third-party costs incurred during property transactions — such as Local Authority search fees, Land Registry charges, and Drainage & Water searches. Rather than you having to track and pay these individually, we handle all outlay payments on your behalf and provide a full breakdown with your completed pack.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "How does the Listing Boost service work?",
+            "answer": "<p>Our Listing Boost service places your property as a Featured Listing on Rightmove, Zoopla, and OnTheMarket simultaneously. Featured listings receive significantly more views than standard listings — Rightmove data shows over 130% more views in the first 7 days. This translates directly into more enquiries, faster offers, and stronger sale prices.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Can I order multiple services at once?",
+            "answer": "<p>Yes — you can add multiple services to your cart and check out in a single transaction. Our team will coordinate all services together and confirm timescales for each after your order is placed. If you're unsure which services you need, contact us and we'll recommend the right combination for your situation.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "What information do you need from me to get started?",
+            "answer": "<p>For most services, we simply need the full property address and your contact details. For tenancy agreements, we'll also need the names of all tenants, the agreed rent, deposit amount, and tenancy start date. We'll follow up by email after your order to collect anything we need to process your service.</p>"
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "question": "Do you cover the whole of the UK?",
+            "answer": "<p>Our services cover England and Wales. Some services, such as title searches and RICS surveys, are available across all regions. For Scotland and Northern Ireland, the legal framework differs — please contact us and we'll advise on what's available for your specific situation.</p>"
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "question": "What payment methods do you accept?",
+            "answer": "<p>We accept all major credit and debit cards, including Visa, Mastercard, and American Express, as well as Apple Pay and Google Pay. All payments are processed securely through Shopify's payment system. We do not store any card details.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"],
+      "settings": {
+        "eyebrow": "Got Questions?",
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about our property services. Can't find your answer? Get in touch.",
+        "show_cta": true,
+        "cta_heading": "Still have questions?",
+        "cta_text": "Our UK-based team is on hand to help. Get in touch and we'll walk you through everything.",
+        "cta_button_label": "Contact Us",
+        "cta_button_link": "shopify://pages/contact"
+      }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "heading": "Ready to Get Started?",
+        "subheading": "Browse our full range of professional property services and order online in minutes.",
+        "button_label": "Browse All Services",
+        "button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": ["faq", "cta"]
+}
