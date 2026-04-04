@@ -4421,7 +4421,7 @@ cart-remove-button .button:hover {
   background: rgba(26,77,46,0.04) !important;
 }
 .service-accordion__content {
-  padding: 16px 18px 18px !important;
+  padding: 18px 20px 20px !important;
 }
 .service-accordion__content ul,
 .service-accordion__content ol {
@@ -4432,7 +4432,7 @@ cart-remove-button .button:hover {
 .service-accordion__content ul li,
 .service-accordion__content ol li {
   position: relative;
-  padding-left: 24px;
+  padding-left: 28px;
   margin-bottom: 10px;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -4441,7 +4441,7 @@ cart-remove-button .button:hover {
 .service-accordion__content ul li::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: 2px;
   top: 6px;
   width: 14px;
   height: 14px;
