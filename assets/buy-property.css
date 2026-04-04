@@ -4412,16 +4412,44 @@ cart-remove-button .button:hover {
 .service-accordion + .service-accordion {
   margin-top: 8px;
 }
+.service-accordion__item {
+  border: none;
+}
 .service-accordion__trigger {
-  padding: 16px 18px !important;
-  background: var(--bp-bg-light) !important;
-  transition: background 0.2s ease !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--bp-bg-light);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: var(--bp-text);
+  text-align: left;
+  transition: background 0.2s ease;
 }
 .service-accordion__trigger:hover {
-  background: rgba(26,77,46,0.04) !important;
+  background: rgba(26,77,46,0.04);
+}
+.service-accordion__icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.service-accordion__item[open] .service-accordion__icon {
+  transform: rotate(180deg);
 }
 .service-accordion__content {
-  padding: 18px 20px 20px !important;
+  padding: 20px 24px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: var(--bp-text-light);
+}
+.service-accordion__content .rte {
+  margin: 0;
 }
 .service-accordion__content ul,
 .service-accordion__content ol {
