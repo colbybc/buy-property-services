@@ -4508,7 +4508,7 @@ cart-remove-button .button:hover {
   content: counter(steps);
   position: absolute;
   left: 0;
-  top: -1px;
+  top: -4px;
   width: 22px;
   height: 22px;
   background: var(--bp-green);
