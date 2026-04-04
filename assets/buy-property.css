@@ -5093,6 +5093,7 @@ cart-remove-button .button:hover {
 }
 .service-card:hover .service-card__icon {
   box-shadow: inset 0 0 0 1px rgba(232,146,42,0.15);
+  transform: scale(1.05);
 }
 .service-card__icon {
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
