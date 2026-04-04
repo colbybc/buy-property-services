@@ -7,12 +7,6 @@
         "fallback_desc": "Everything you need to buy, sell or let property in the UK — professional, regulated and competitively priced."
       }
     },
-    "partner_logos": {
-      "type": "partner-logos",
-      "settings": {
-        "heading": "Trusted & Listed On"
-      }
-    },
     "grid": {
       "type": "collection-services-grid",
       "settings": {
@@ -29,5 +23,5 @@
       }
     }
   },
-  "order": ["hero", "partner_logos", "grid", "cta"]
+  "order": ["hero", "grid", "cta"]
 }

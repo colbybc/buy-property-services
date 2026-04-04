@@ -23,12 +23,6 @@
         "body": "<p>Buy Property Services was founded with a simple mission: to make professional property services accessible, affordable, and straightforward for everyone — whether you're a first-time buyer, an experienced investor, or a landlord managing multiple properties.</p><p>We work with a network of RICS-regulated surveyors, solicitors, and property professionals to deliver services that meet the highest industry standards. Every service is handled with care, transparency, and a commitment to your outcome.</p><p>We believe property transactions shouldn't be complicated or costly. That's why we offer fixed, transparent prices with no hidden fees — and a team that's always on hand to help.</p>"
       }
     },
-    "partner_logos": {
-      "type": "partner-logos",
-      "settings": {
-        "heading": "Trusted & Listed On"
-      }
-    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -53,5 +47,5 @@
       }
     }
   },
-  "order": ["hero", "story", "partner_logos", "testimonials", "cta"]
+  "order": ["hero", "story", "testimonials", "cta"]
 }
