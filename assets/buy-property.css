@@ -924,6 +924,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Price */
+.sp-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.sp-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--bp-green);
+  letter-spacing: -0.02em;
+}
+.sp-price-vat {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--bp-text-light);
+}
+/* Legacy price override in case Dawn renders it */
 .service-product__info .price--large .price__regular .price-item {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
@@ -1006,42 +1026,54 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Trust signals */
 .sp-trust {
-  display: flex;
-  gap: 20px;
-  margin-top: 18px;
-  padding-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
   border-top: 1px solid var(--bp-border);
-  flex-wrap: wrap;
 }
 .sp-trust__item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
+  gap: 8px;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--bp-text-light);
   font-family: 'Poppins', sans-serif;
+  padding: 8px 0;
 }
 .sp-trust__item svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   color: var(--bp-green);
   flex-shrink: 0;
 }
 
 /* Address input */
+.service-product__address-field {
+  background: var(--bp-bg-light);
+  border: 1px solid var(--bp-border);
+  border-radius: 12px;
+  padding: 16px 18px !important;
+  margin: 16px 0 !important;
+}
 .service-product__address-field label {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 0.95rem !important;
+  font-size: 0.9rem !important;
   font-weight: 600 !important;
   color: var(--bp-text) !important;
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
 }
 .service-product__address-field input {
   font-family: 'Poppins', sans-serif !important;
   font-size: 0.975rem !important;
-  border-radius: var(--bp-radius) !important;
+  border-radius: 10px !important;
   border: 1.5px solid var(--bp-border) !important;
   padding: 12px 16px !important;
+  background: var(--bp-white) !important;
 }
 .service-product__address-field input:focus {
   border-color: var(--bp-green) !important;
@@ -4392,10 +4424,12 @@ cart-remove-button .button:hover {
 
 /* --- Description: better readability --- */
 .service-product__info .product__description {
-  font-size: 1rem;
+  font-size: 0.975rem;
   line-height: 1.7;
   color: var(--bp-text-light);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--bp-border);
 }
 
 /* --- Accordion: refined styling --- */
@@ -4517,12 +4551,16 @@ cart-remove-button .button:hover {
   font-family: 'Poppins', sans-serif;
 }
 
-/* --- Notice block: refined with icon alignment --- */
+/* --- Notice block: refined card style --- */
 .service-product__notice {
-  border-radius: 10px !important;
-  border-left-width: 4px !important;
-  border-left-color: var(--bp-green) !important;
-  background: rgba(26,77,46,0.03) !important;
+  border-radius: 12px !important;
+  border-left: none !important;
+  border: 1px solid rgba(26,77,46,0.15) !important;
+  background: linear-gradient(135deg, rgba(26,77,46,0.04) 0%, rgba(26,77,46,0.02) 100%) !important;
+  padding: 18px 20px !important;
+}
+.service-product__notice svg {
+  color: var(--bp-orange) !important;
 }
 
 /* --- Trust signals: pill style --- */
@@ -4563,57 +4601,52 @@ cart-remove-button .button:hover {
   box-shadow: none !important;
 }
 
-/* --- Service details cards: add hover lift --- */
+/* --- Service details cards: hover and top accent --- */
 .service-details__block {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-details__block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bp-green), var(--bp-green-light));
 }
 .service-details__block:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(0,0,0,0.08);
 }
 
-/* --- Service details benefits: numbered items --- */
+/* --- Service details benefits: clean layout --- */
 .service-details__benefit {
   position: relative;
-  padding-left: 36px;
+  padding-left: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--bp-border);
 }
-.service-details__benefit::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 24px;
-  height: 24px;
-  background: rgba(26,77,46,0.08);
-  border-radius: 6px;
-  border: 1px solid rgba(26,77,46,0.1);
-}
-.service-details__benefits {
-  counter-reset: benefits;
-}
-.service-details__benefit {
-  counter-increment: benefits;
-}
-.service-details__benefit::after {
-  content: counter(benefits);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--bp-green);
-  font-family: 'Poppins', sans-serif;
+.service-details__benefit:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 /* --- Breadcrumb polish --- */
 .product-breadcrumb__list li[aria-current="page"] {
   color: var(--bp-white) !important;
   font-weight: 600 !important;
+}
+
+/* --- Section backgrounds for product pages --- */
+.section-product-faq {
+  background: var(--bp-bg-light);
+  border-top: 1px solid var(--bp-border);
+  border-bottom: 1px solid var(--bp-border);
+}
+.section-related-services {
+  background: var(--bp-white);
 }
 
 /* --- Related services heading polish --- */
@@ -4785,14 +4818,18 @@ cart-remove-button .button:hover {
     font-size: 0.85rem !important;
   }
 
-  /* Trust signals: wrap nicely */
+  /* Price */
+  .sp-price {
+    font-size: 1.8rem !important;
+  }
+
+  /* Trust signals: 2-col grid on mobile */
   .sp-trust {
-    gap: 8px !important;
-    justify-content: center;
+    gap: 6px !important;
   }
   .sp-trust__item {
     font-size: 0.78rem !important;
-    padding: 6px 12px;
+    padding: 6px 0;
   }
 
   /* Sticky CTA bar refinements */
@@ -4883,11 +4920,7 @@ cart-remove-button .button:hover {
 /* --- Extra small screens (under 380px) --- */
 @media (max-width: 379px) {
   .sp-trust {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .sp-trust__item {
-    justify-content: center;
+    grid-template-columns: 1fr !important;
   }
   .product-faq__question {
     font-size: 0.88rem;

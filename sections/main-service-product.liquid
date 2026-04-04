@@ -228,12 +228,11 @@
 
               {%- comment -%} ---- PRICE BLOCK ---- {%- endcomment -%}
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" class="price price--large" role="status" {{ block.shopify_attributes }}>
-                  <div class="price__regular">
-                    <span class="price-item price-item--regular">
-                      {{ product.selected_or_first_available_variant.price | money }}
-                    </span>
-                  </div>
+                <div id="price-{{ section.id }}" class="sp-price-wrap" role="status" {{ block.shopify_attributes }}>
+                  <span class="sp-price">
+                    {{ product.selected_or_first_available_variant.price | money }}
+                  </span>
+                  <span class="sp-price-vat">inc. VAT</span>
                 </div>
 
               {%- comment -%} ---- DESCRIPTION BLOCK ---- {%- endcomment -%}
@@ -362,16 +361,20 @@
                   <!-- Trust signals -->
                   <div class="sp-trust">
                     <div class="sp-trust__item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"><polyline points="9 12 11 14 15 10"/></path></svg>
-                      <span>UK Specialists</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                      <span>UK Regulated Professionals</span>
                     </div>
                     <div class="sp-trust__item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                      <span>Fast Turnaround</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span>24hr Response</span>
                     </div>
                     <div class="sp-trust__item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
-                      <span>No Hidden Fees</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                      <span>Fixed Price, No Extras</span>
+                    </div>
+                    <div class="sp-trust__item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                      <span>Secure Checkout</span>
                     </div>
                   </div>
                 </div>
