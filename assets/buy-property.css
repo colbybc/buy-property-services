@@ -286,7 +286,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero__text h1 em {
   font-style: normal;
-  color: var(--bp-orange);
+  background: linear-gradient(135deg, var(--bp-orange) 0%, #f0a83a 50%, var(--bp-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero__sub {
   font-size: 1.25rem;
@@ -536,7 +539,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card__desc {
   font-size: 0.975rem;
   color: var(--bp-text-light);
-  line-height: 1.65;
+  line-height: 1.75;
   margin: 0;
   flex: 1;
 }
@@ -5481,10 +5484,19 @@ html {
 .cta-band .btn--primary {
   box-shadow: 0 4px 20px rgba(232,146,42,0.3);
   transition: all 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+  animation: cta-pulse 2.5s ease-in-out infinite;
 }
 .cta-band .btn--primary:hover {
   box-shadow: 0 6px 28px rgba(232,146,42,0.45);
   transform: translateY(-2px);
+  animation: none;
+}
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(232,146,42,0.3); }
+  50% { box-shadow: 0 4px 32px rgba(232,146,42,0.5); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-band .btn--primary { animation: none; }
 }
 
 /* --- Section header underline accents --- */
