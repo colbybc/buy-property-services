@@ -5759,49 +5759,6 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
   padding-right: 40px;
 }
 
-/* ── 4. Gradient border glow on card hover ── */
-.service-card {
-  position: relative;
-}
-.service-card::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: var(--bp-radius);
-  background: linear-gradient(135deg, var(--bp-green), var(--bp-orange), var(--bp-green));
-  background-size: 200% 200%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.service-card:hover::after {
-  opacity: 1;
-  animation: gradient-border-shift 2s ease infinite;
-}
-@keyframes gradient-border-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-/* Testimonial gradient border */
-.testimonial-card {
-  position: relative;
-}
-.testimonial-card::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: var(--bp-radius);
-  background: linear-gradient(135deg, rgba(232,146,42,0.4), rgba(26,77,46,0.4), rgba(232,146,42,0.4));
-  background-size: 200% 200%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.testimonial-card:hover::after {
-  opacity: 1;
-  animation: gradient-border-shift 2s ease infinite;
-}
 
 /* ── 6. Modern input styling ── */
 .contact-bp-form__field {
@@ -5851,6 +5808,4 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
   .btn--primary:hover,
   .btn--secondary:hover,
   .btn--outline-white:hover { padding-right: initial; }
-  .service-card::after,
-  .testimonial-card::after { animation: none; }
 }
