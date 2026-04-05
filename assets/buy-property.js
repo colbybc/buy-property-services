@@ -112,19 +112,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Sticky ATC Bar (product pages)
-  var stickyBar = document.getElementById('StickyAtcBar');
-  var priceBlock = document.querySelector('.sp-price-wrap');
-
   function updateScrollUI() {
     var scrollY = window.scrollY;
-    // Back to top
     backToTop.classList.toggle('is-visible', scrollY > 400);
-    // Sticky bar
-    if (stickyBar && priceBlock) {
-      var priceBottom = priceBlock.getBoundingClientRect().bottom;
-      stickyBar.classList.toggle('is-visible', priceBottom < 0);
-    }
   }
   var scrollUITicking = false;
   window.addEventListener('scroll', function () {

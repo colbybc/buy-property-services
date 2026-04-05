@@ -417,27 +417,6 @@
     </div>
   </div>
 
-  {%- comment -%} Sticky add-to-cart bar (desktop) {%- endcomment -%}
-  <div class="sticky-atc-bar" id="StickyAtcBar">
-    <div class="sticky-atc-bar__inner page-width">
-      <div class="sticky-atc-bar__info">
-        <span class="sticky-atc-bar__title">{{ product.title | escape }}</span>
-        <span class="sticky-atc-bar__price">{{ product.selected_or_first_available_variant.price | money }}</span>
-      </div>
-      <button
-        type="button"
-        class="sticky-atc-bar__btn"
-        onclick="document.querySelector('#{{ product_form_id }} .product-form__submit').click();"
-        {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
-      >
-        {%- if product.selected_or_first_available_variant.available -%}
-          Book This Service
-        {%- else -%}
-          Sold Out
-        {%- endif -%}
-      </button>
-    </div>
-  </div>
 </section>
 
 {% schema %}
