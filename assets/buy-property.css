@@ -5730,29 +5730,6 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
   pointer-events: none;
 }
 
-/* ── 3. Arrow slide on CTA buttons ── */
-.btn--primary,
-.btn--secondary,
-.btn--outline-white {
-  gap: 0px;
-  transition: all 0.25s ease, gap 0.25s ease, transform 0.15s ease;
-}
-.btn--primary::after,
-.btn--secondary::after,
-.btn--outline-white::after {
-  content: '\2192';
-  display: inline-block;
-  max-width: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-width 0.3s ease, opacity 0.25s ease;
-}
-.btn--primary:hover::after,
-.btn--secondary:hover::after,
-.btn--outline-white:hover::after {
-  max-width: 1.5em;
-  opacity: 1;
-}
 
 
 /* ── 6. Modern input styling ── */
@@ -5797,10 +5774,4 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .scroll-progress { display: none; }
-  .btn--primary::after,
-  .btn--secondary::after,
-  .btn--outline-white::after { display: none; }
-  .btn--primary:hover,
-  .btn--secondary:hover,
-  .btn--outline-white:hover { padding-right: initial; }
 }
