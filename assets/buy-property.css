@@ -51,6 +51,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* --- Smooth scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 /* --- Layout --- */
 .section {
   padding: 80px 0;
@@ -4603,6 +4611,65 @@ cart-remove-button .button:hover {
 }
 .product-service-logo:hover img {
   transform: scale(1.04);
+}
+
+/* Branded placeholder when no product image uploaded */
+.bp-product-placeholder {
+  background: linear-gradient(160deg, #f0faf4 0%, #e8f5ee 40%, #f5f0e1 100%);
+  border-radius: 16px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid rgba(26,77,46,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.bp-product-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231A4D2E' stroke-width='1'%3E%3Cellipse cx='300' cy='300' rx='80' ry='50' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='130' ry='90' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='185' ry='130' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='240' ry='175' transform='rotate(-15 300 300)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 600px 600px;
+  pointer-events: none;
+}
+.bp-product-placeholder__icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,77,46,0.08);
+  border-radius: 20px;
+  color: var(--bp-green);
+  position: relative;
+  z-index: 1;
+}
+.bp-product-placeholder__icon svg {
+  width: 40px;
+  height: 40px;
+}
+.bp-product-placeholder__text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bp-green);
+  text-align: center;
+  max-width: 200px;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+/* Also style the existing image area nicer */
+.product__media-wrapper {
+  position: sticky;
+  top: 24px;
+}
+.product__media-item img {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
 }
 
 /* --- Price --- */
