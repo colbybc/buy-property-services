@@ -5736,12 +5736,15 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
 .btn--outline-white {
   position: relative;
   overflow: hidden;
+  transition: all 0.25s ease, padding 0.25s ease, transform 0.15s ease;
 }
 .btn--primary::after,
 .btn--secondary::after,
 .btn--outline-white::after {
   content: '\2192';
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   right: -20px;
   opacity: 0;
   transition: right 0.25s ease, opacity 0.25s ease;
