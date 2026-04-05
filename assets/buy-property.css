@@ -3686,7 +3686,10 @@ h1, h2, h3, h4, h5, h6 {
    404 PAGE
    ========================================================================== */
 .bp-404 {
-  background: linear-gradient(135deg, #051a0d 0%, #0c3119 40%, #1A4D2E 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(143, 179, 57, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(232, 146, 42, 0.05) 0%, transparent 50%),
+    linear-gradient(160deg, #051a0d 0%, #0c3119 20%, #1A4D2E 45%, #1e5c35 65%, #1A4D2E 80%, #0f3d1f 100%);
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -3698,8 +3701,9 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/G%3E%3C/svg%3E");
-  opacity: 0.03;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cellipse cx='300' cy='300' rx='80' ry='50' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='130' ry='90' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='185' ry='130' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='240' ry='175' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='295' ry='220' transform='rotate(-15 300 300)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 600px 600px;
   pointer-events: none;
 }
 
@@ -5523,4 +5527,87 @@ html {
 .section-service-grid + .section-why-choose-us .why-section,
 .section-why-choose-us + .section-process-timeline .process-timeline {
   border-top: none;
+}
+
+/* ==========================================================================
+   PAGE TRANSITION — smooth fade-in on load
+   ========================================================================== */
+@keyframes bp-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.content-for-layout {
+  animation: bp-fade-in 0.4s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .content-for-layout {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   DAWN OVERRIDE CLEANUP
+   ========================================================================== */
+
+/* Kill Dawn's default product card styling that leaks through */
+.card-wrapper,
+.card {
+  border-radius: var(--bp-radius) !important;
+}
+
+/* Remove Dawn's default section padding on custom sections */
+.section-hero-banner,
+.section-service-grid,
+.section-why-choose-us,
+.section-process-timeline,
+.section-testimonials,
+.section-faq,
+.section-cta-band,
+.section-collection-hero,
+.section-about-hero,
+.section-contact-page,
+.section-footer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Override Dawn's link underline defaults */
+a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
+  text-underline-offset: 0.2em;
+}
+
+/* Kill Dawn's default heading letter-spacing */
+.shopify-section h1,
+.shopify-section h2 {
+  letter-spacing: -0.01em;
+}
+
+/* Ensure Dawn's color schemes don't override our backgrounds */
+.section-hero-banner .color-scheme-1,
+.section-service-grid .color-scheme-1,
+.section-why-choose-us .color-scheme-1,
+.section-process-timeline .color-scheme-1 {
+  background: transparent !important;
+}
+
+/* Fix Dawn predictive search overlay */
+.predictive-search {
+  font-family: 'Poppins', sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--bp-border) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important;
+}
+.predictive-search__result-group .predictive-search__item {
+  font-family: 'Poppins', sans-serif;
+}
+.predictive-search__item--link {
+  color: var(--bp-text) !important;
+  text-decoration: none !important;
+  padding: 10px 16px !important;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+.predictive-search__item--link:hover {
+  background: rgba(26,77,46,0.05) !important;
+  color: var(--bp-green) !important;
 }
