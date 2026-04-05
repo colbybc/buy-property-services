@@ -5692,6 +5692,171 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
 }
 
 /* ==========================================================================
+   1. BACK-TO-TOP BUTTON
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bp-green);
+  color: var(--bp-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(26,77,46,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--bp-green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(26,77,46,0.35);
+}
+.back-to-top svg {
+  width: 22px;
+  height: 22px;
+}
+@media screen and (max-width: 749px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+}
+
+/* ==========================================================================
+   3. STICKY ADD-TO-CART BAR (product pages, desktop)
+   ========================================================================== */
+.sticky-atc-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+.sticky-atc-bar.is-visible {
+  transform: translateY(0);
+}
+.sticky-atc-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  gap: 20px;
+}
+.sticky-atc-bar__info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.sticky-atc-bar__title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--bp-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sticky-atc-bar__price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--bp-green);
+  white-space: nowrap;
+}
+.sticky-atc-bar__btn {
+  background: var(--bp-orange);
+  color: var(--bp-white);
+  border: none;
+  border-radius: var(--bp-radius);
+  padding: 10px 28px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+.sticky-atc-bar__btn:hover {
+  background: var(--bp-orange-hover);
+  transform: translateY(-1px);
+}
+@media screen and (max-width: 749px) {
+  .sticky-atc-bar { display: none; }
+}
+
+/* ==========================================================================
+   4. BEST VALUE BADGE on service cards
+   ========================================================================== */
+.service-card__badge--value {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(135deg, var(--bp-orange) 0%, var(--bp-orange-hover) 100%);
+  color: var(--bp-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(232,146,42,0.3);
+}
+
+/* ==========================================================================
+   5. FAQ ACCORDION — smooth open/close animation
+   ========================================================================== */
+.service-accordion__content {
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease;
+}
+.service-accordion__item:not([open]) > .service-accordion__content {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+.service-accordion__item[open] > .service-accordion__content {
+  opacity: 1;
+}
+.service-accordion__trigger {
+  position: relative;
+}
+.service-accordion__trigger::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: var(--bp-border);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.service-accordion__item[open] .service-accordion__trigger::after {
+  opacity: 1;
+}
+
+/* ==========================================================================
    MODERN POLISH — glass, progress bar, arrow CTAs, gradient borders, inputs
    ========================================================================== */
 

@@ -34,6 +34,9 @@
               endif
             -%}
             <div class="service-card reveal-on-scroll" data-reveal-delay="{{ forloop.index0 | times: 60 }}">
+              {%- if product.handle contains 'listing-boost' or product.handle contains 'bundle' -%}
+                <span class="service-card__badge--value">Best Value</span>
+              {%- endif -%}
               <div class="service-card__body">
                 <div class="service-card__icon">
                   {%- if icon == 'document' -%}

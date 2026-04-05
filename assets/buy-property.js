@@ -102,6 +102,76 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
   updateProgress();
 
+  // Back to Top Button
+  var backToTop = document.createElement('button');
+  backToTop.className = 'back-to-top';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  backToTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+  document.body.appendChild(backToTop);
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Sticky ATC Bar (product pages)
+  var stickyBar = document.getElementById('StickyAtcBar');
+  var priceBlock = document.querySelector('.sp-price-wrap');
+
+  function updateScrollUI() {
+    var scrollY = window.scrollY;
+    // Back to top
+    backToTop.classList.toggle('is-visible', scrollY > 400);
+    // Sticky bar
+    if (stickyBar && priceBlock) {
+      var priceBottom = priceBlock.getBoundingClientRect().bottom;
+      stickyBar.classList.toggle('is-visible', priceBottom < 0);
+    }
+  }
+  var scrollUITicking = false;
+  window.addEventListener('scroll', function () {
+    if (!scrollUITicking) {
+      requestAnimationFrame(function () {
+        updateScrollUI();
+        scrollUITicking = false;
+      });
+      scrollUITicking = true;
+    }
+  }, { passive: true });
+  updateScrollUI();
+
+  // FAQ Accordion smooth animation
+  document.querySelectorAll('.service-accordion__item').forEach(function (details) {
+    var content = details.querySelector('.service-accordion__content');
+    if (!content) return;
+    details.addEventListener('toggle', function () {
+      if (details.open) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        setTimeout(function () { content.style.maxHeight = 'none'; }, 350);
+      }
+    });
+    var summary = details.querySelector('summary');
+    if (summary) {
+      summary.addEventListener('click', function (e) {
+        if (details.open) {
+          e.preventDefault();
+          content.style.maxHeight = content.scrollHeight + 'px';
+          requestAnimationFrame(function () {
+            content.style.maxHeight = '0';
+            content.style.paddingTop = '0';
+            content.style.paddingBottom = '0';
+            content.style.opacity = '0';
+          });
+          setTimeout(function () {
+            details.removeAttribute('open');
+            content.style.maxHeight = '';
+            content.style.paddingTop = '';
+            content.style.paddingBottom = '';
+            content.style.opacity = '';
+          }, 350);
+        }
+      });
+    }
+  });
+
   // Smooth Scroll
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="#"]');
