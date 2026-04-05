@@ -82,6 +82,26 @@ document.addEventListener('DOMContentLoaded', function () {
     counterObserver.observe(el);
   });
 
+  // Scroll Progress Bar
+  var progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  var progressTicking = false;
+  function updateProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+    progressTicking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!progressTicking) {
+      requestAnimationFrame(updateProgress);
+      progressTicking = true;
+    }
+  }, { passive: true });
+  updateProgress();
+
   // Smooth Scroll
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="#"]');

@@ -5690,3 +5690,167 @@ a:not(.btn):not(.service-card__stretched-link):not(.bp-footer__links a) {
   background: rgba(26,77,46,0.05) !important;
   color: var(--bp-green) !important;
 }
+
+/* ==========================================================================
+   MODERN POLISH — glass, progress bar, arrow CTAs, gradient borders, inputs
+   ========================================================================== */
+
+/* ── 1. Glass-morphism cards ── */
+.service-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+.service-card:hover {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(255,255,255,0.8);
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* ── 2. Scroll progress bar ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bp-green), var(--bp-orange));
+  z-index: 9999;
+  transition: none;
+  pointer-events: none;
+}
+
+/* ── 3. Arrow slide on CTA buttons ── */
+.btn--primary,
+.btn--secondary,
+.btn--outline-white {
+  position: relative;
+  overflow: hidden;
+}
+.btn--primary::after,
+.btn--secondary::after,
+.btn--outline-white::after {
+  content: '\2192';
+  position: absolute;
+  right: -20px;
+  opacity: 0;
+  transition: right 0.25s ease, opacity 0.25s ease;
+  font-size: 1.1em;
+}
+.btn--primary:hover::after,
+.btn--secondary:hover::after,
+.btn--outline-white:hover::after {
+  right: 16px;
+  opacity: 1;
+}
+.btn--primary:hover,
+.btn--secondary:hover,
+.btn--outline-white:hover {
+  padding-right: 40px;
+}
+
+/* ── 4. Gradient border glow on card hover ── */
+.service-card {
+  position: relative;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--bp-radius);
+  background: linear-gradient(135deg, var(--bp-green), var(--bp-orange), var(--bp-green));
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.service-card:hover::after {
+  opacity: 1;
+  animation: gradient-border-shift 2s ease infinite;
+}
+@keyframes gradient-border-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Testimonial gradient border */
+.testimonial-card {
+  position: relative;
+}
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--bp-radius);
+  background: linear-gradient(135deg, rgba(232,146,42,0.4), rgba(26,77,46,0.4), rgba(232,146,42,0.4));
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.testimonial-card:hover::after {
+  opacity: 1;
+  animation: gradient-border-shift 2s ease infinite;
+}
+
+/* ── 6. Modern input styling ── */
+.contact-bp-form__field {
+  position: relative;
+}
+.contact-bp-form__field input,
+.contact-bp-form__field select,
+.contact-bp-form__field textarea {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(26,77,46,0.12);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+.contact-bp-form__field input:focus,
+.contact-bp-form__field select:focus,
+.contact-bp-form__field textarea:focus {
+  border-color: var(--bp-green);
+  box-shadow: 0 0 0 4px rgba(26,77,46,0.08), 0 4px 16px rgba(26,77,46,0.06);
+  background: var(--bp-white);
+  transform: translateY(-1px);
+}
+.contact-bp-form__field label {
+  transition: color 0.2s ease;
+}
+.contact-bp-form__field:focus-within label {
+  color: var(--bp-green);
+}
+/* Submit button upgrade */
+.contact-bp-form__submit.btn--primary {
+  background: linear-gradient(135deg, var(--bp-orange) 0%, var(--bp-orange-hover) 100%);
+  border: none;
+  box-shadow: 0 4px 20px rgba(232,146,42,0.25);
+}
+.contact-bp-form__submit.btn--primary:hover {
+  box-shadow: 0 6px 28px rgba(232,146,42,0.4);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress { display: none; }
+  .btn--primary::after,
+  .btn--secondary::after,
+  .btn--outline-white::after { display: none; }
+  .btn--primary:hover,
+  .btn--secondary:hover,
+  .btn--outline-white:hover { padding-right: initial; }
+  .service-card::after,
+  .testimonial-card::after { animation: none; }
+}
