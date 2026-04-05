@@ -3821,9 +3821,23 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero */
 .contact-bp-hero {
-  background: linear-gradient(135deg, var(--bp-green-dark) 0%, var(--bp-green) 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(143, 179, 57, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(232, 146, 42, 0.05) 0%, transparent 50%),
+    linear-gradient(160deg, #051a0d 0%, #0c3119 20%, #1A4D2E 45%, #1e5c35 65%, #1A4D2E 80%, #0f3d1f 100%);
   padding: 80px 0 72px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-bp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cellipse cx='300' cy='300' rx='80' ry='50' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='130' ry='90' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='185' ry='130' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='240' ry='175' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='295' ry='220' transform='rotate(-15 300 300)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 600px 600px;
+  pointer-events: none;
 }
 
 .contact-bp-hero__text .eyebrow {
@@ -3832,11 +3846,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-bp-hero h1 {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 800;
   color: var(--bp-white);
   margin: 0 0 20px;
-  line-height: 1.15;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 .contact-bp-hero p {
@@ -3889,6 +3904,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   gap: 16px;
   align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+.contact-bp-details__list li:hover {
+  background: var(--bp-white);
 }
 
 .contact-bp-details__icon {
@@ -5085,6 +5106,153 @@ cart-remove-button .button:hover {
   .product-faq__question {
     font-size: 0.88rem;
     padding: 14px 14px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE AUDIT — ROUND 2
+   ========================================================================== */
+
+/* --- Testimonials: tighten quote mark on mobile --- */
+@media (max-width: 749px) {
+  .testimonial-card::before {
+    font-size: 5rem;
+    top: -5px;
+    right: 14px;
+  }
+  .testimonial-text {
+    font-size: 0.92rem;
+  }
+  .testimonial-author {
+    gap: 10px;
+  }
+  .testimonial-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 0.88rem;
+  }
+  .testimonial-name { font-size: 0.9rem; }
+  .testimonial-role { font-size: 0.8rem; }
+}
+
+/* --- FAQ: full width on mobile, tighter spacing --- */
+@media (max-width: 749px) {
+  .faq-item__trigger {
+    padding: 16px 0;
+  }
+  .faq-item__question {
+    font-size: 0.92rem;
+  }
+  .faq-item__answer-inner {
+    font-size: 0.9rem;
+  }
+  .faq-aside__card {
+    padding: 20px;
+  }
+}
+
+/* --- Contact page: form inputs full width, better tap targets --- */
+@media (max-width: 479px) {
+  .contact-bp-hero h1 {
+    font-size: 1.8rem;
+  }
+  .contact-bp-hero p {
+    font-size: 0.95rem;
+  }
+  .contact-bp-details__list li {
+    padding: 12px;
+  }
+  .contact-bp-details__icon {
+    width: 36px;
+    height: 36px;
+  }
+  .contact-bp-form__card {
+    padding: 24px 18px;
+  }
+  .contact-bp-form__field input,
+  .contact-bp-form__field select,
+  .contact-bp-form__field textarea {
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+}
+
+/* --- CTA band: tighten padding on mobile --- */
+@media (max-width: 749px) {
+  .cta-band {
+    padding: 56px 0;
+  }
+  .cta-band h2 {
+    font-size: 1.6rem;
+  }
+  .cta-band p {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- Why Choose Us: stat cards on small screens --- */
+@media (max-width: 479px) {
+  .why-visual {
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+    gap: 12px;
+  }
+  .why-stat-card {
+    padding: 20px 14px;
+  }
+  .why-stat-card .num {
+    font-size: 2rem;
+  }
+  .why-stat-card .lbl {
+    font-size: 0.82rem;
+  }
+}
+
+/* --- About page: value cards tighten on mobile --- */
+@media (max-width: 479px) {
+  .about-story__value {
+    padding: 12px;
+  }
+  .about-story__value h4 {
+    font-size: 0.9rem;
+  }
+  .about-story__value p {
+    font-size: 0.82rem;
+  }
+  .about-hero__text h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- Collection page: results bar stack on small screens --- */
+@media (max-width: 479px) {
+  .collection-bp-results {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* --- Global: prevent horizontal overflow on all screens --- */
+html {
+  overflow-x: hidden;
+}
+
+/* --- Ensure touch targets are at least 44px --- */
+@media (max-width: 749px) {
+  .btn--sm {
+    min-height: 44px;
+    padding: 10px 20px;
+  }
+  .faq-item__trigger {
+    min-height: 48px;
+  }
+  .bp-footer__links a {
+    padding: 4px 0;
+    display: inline-block;
+  }
+  .bp-footer__social-link {
+    width: 40px;
+    height: 40px;
   }
 }
 
