@@ -138,9 +138,9 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "icon": "shield",
-            "title": "Fully Regulated",
-            "description": "All our services are delivered by RICS-regulated professionals, giving you complete peace of mind."
+            "icon": "map",
+            "title": "UK-Wide Coverage",
+            "description": "We operate across England & Wales — wherever your property is, we've got you covered."
           }
         },
         "feature_2": {

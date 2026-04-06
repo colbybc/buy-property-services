@@ -29,6 +29,8 @@
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
                     {%- when 'check' -%}
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    {%- when 'map' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     {%- else -%}
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                   {%- endcase -%}
@@ -125,7 +127,8 @@
             { "value": "clock", "label": "Clock" },
             { "value": "star", "label": "Star" },
             { "value": "phone", "label": "Phone" },
-            { "value": "check", "label": "Checkmark" }
+            { "value": "check", "label": "Checkmark" },
+            { "value": "map", "label": "Map Pin" }
           ],
           "default": "shield"
         },
@@ -172,7 +175,7 @@
     {
       "name": "Why Choose Us",
       "blocks": [
-        { "type": "feature", "settings": { "icon": "shield", "title": "Fully Regulated", "description": "All our services are delivered by RICS-regulated professionals, giving you complete peace of mind." } },
+        { "type": "feature", "settings": { "icon": "map", "title": "UK-Wide Coverage", "description": "We operate across England & Wales — wherever your property is, we've got you covered." } },
         { "type": "feature", "settings": { "icon": "clock", "title": "Fast Turnaround", "description": "We understand time is critical in property transactions. Most services delivered within 48–72 hours." } },
         { "type": "feature", "settings": { "icon": "star", "title": "5-Star Rated", "description": "Over 5,000 satisfied clients have rated us 5 stars for quality, speed and professionalism." } },
         { "type": "feature", "settings": { "icon": "phone", "title": "Expert Support", "description": "Our UK-based team is available to guide you through every step of your property journey." } },

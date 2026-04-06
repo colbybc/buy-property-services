@@ -11,7 +11,7 @@
     "story": {
       "type": "about-story",
       "blocks": {
-        "v1": { "type": "value", "settings": { "icon": "shield", "title": "Regulated & Trustworthy", "description": "All our professional services are delivered to RICS and industry standards. You can trust every document and report we produce." } },
+        "v1": { "type": "value", "settings": { "icon": "shield", "title": "UK-Wide Coverage", "description": "We operate across England & Wales — wherever your property is, we've got you covered with professional services." } },
         "v2": { "type": "value", "settings": { "icon": "pound", "title": "Transparent Pricing", "description": "Fixed prices with no hidden fees, ever. You always know exactly what you're paying before you order." } },
         "v3": { "type": "value", "settings": { "icon": "star", "title": "5-Star Service", "description": "Thousands of satisfied clients across England and Wales trust us with their most important property decisions." } },
         "v4": { "type": "value", "settings": { "icon": "users", "title": "Real People, Real Help", "description": "Our UK-based team is available to answer questions and support you throughout every step of the process." } }
