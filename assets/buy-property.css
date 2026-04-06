@@ -4616,55 +4616,62 @@ cart-remove-button .button:hover {
 
 /* Branded placeholder when no product image uploaded */
 .bp-product-placeholder {
-  background: var(--bp-bg-light);
+  background: linear-gradient(180deg, #f0f7f2 0%, #e8f0ea 50%, #f5f2eb 100%);
   border-radius: 16px;
   aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  border: 1px solid var(--bp-border);
+  gap: 0;
+  border: 1px solid rgba(26,77,46,0.06);
   position: relative;
   overflow: hidden;
 }
+/* Large circular backdrop — matches the uploaded illustration style */
 .bp-product-placeholder::before {
   content: '';
   position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231A4D2E' stroke-width='1'%3E%3Cellipse cx='300' cy='300' rx='80' ry='50' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='130' ry='90' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='185' ry='130' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='240' ry='175' transform='rotate(-15 300 300)'/%3E%3Cellipse cx='300' cy='300' rx='295' ry='220' transform='rotate(-15 300 300)'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 600px 600px;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  height: 65%;
+  transform: translate(-50%, -55%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26,77,46,0.06) 0%, rgba(26,77,46,0.02) 60%, transparent 100%);
   pointer-events: none;
 }
 .bp-product-placeholder__geo { display: none; }
 .bp-product-placeholder__icon {
-  width: 88px;
-  height: 88px;
+  width: 140px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(26,77,46,0.06);
-  border-radius: 20px;
+  background: none;
+  border-radius: 0;
+  border: none;
   color: var(--bp-green);
   position: relative;
   z-index: 1;
-  border: 1px solid rgba(26,77,46,0.08);
 }
 .bp-product-placeholder__icon svg {
-  width: 40px;
-  height: 40px;
+  width: 120px;
+  height: 120px;
+  stroke-width: 1;
 }
 .bp-product-placeholder__text {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--bp-green);
   text-align: center;
-  max-width: 240px;
-  line-height: 1.3;
+  max-width: 260px;
+  line-height: 1.4;
   position: relative;
   z-index: 1;
+  margin-top: 16px;
+  opacity: 0.7;
 }
 /* Also style the existing image area nicer */
 .product__media-wrapper {
