@@ -175,27 +175,7 @@
         ========================================
       {%- endcomment -%}
       <div class="grid__item product__media-wrapper">
-        {%- if product.featured_media -%}
-          <div class="product__media-item" data-media-id="{{ product.featured_media.id }}">
-            {%- assign image = product.featured_media.preview_image -%}
-            <img
-              srcset="
-                {%- if image.width >= 550 -%}{{ image | image_url: width: 550 }} 550w,{%- endif -%}
-                {%- if image.width >= 750 -%}{{ image | image_url: width: 750 }} 750w,{%- endif -%}
-                {%- if image.width >= 1100 -%}{{ image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                {{ image | image_url }} {{ image.width }}w
-              "
-              src="{{ image | image_url: width: 750 }}"
-              sizes="(min-width: 750px) 50vw, 100vw"
-              alt="{{ image.alt | escape }}"
-              loading="lazy"
-              width="{{ image.width }}"
-              height="{{ image.height }}"
-              style="border-radius: 12px; object-fit: {{ section.settings.media_fit }};"
-            >
-          </div>
-        {%- else -%}
-          {%- comment -%} Branded placeholder if no image {%- endcomment -%}
+        {%- comment -%} Always show branded placeholder illustration {%- endcomment -%}
           {%- liquid
             assign ph_icon = 'document'
             assign ph_handle = product.handle
@@ -325,7 +305,6 @@
             </div>
             <span class="bp-product-placeholder__text">{{ product.title }}</span>
           </div>
-        {%- endif -%}
       </div>
 
       {%- comment -%}
