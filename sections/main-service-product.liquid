@@ -89,6 +89,84 @@
 
     /* Accordion styles are in buy-property.css */
 
+    /* Real product image */
+    .product__featured-image {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: {{ section.settings.media_fit | default: 'contain' }};
+      border-radius: 12px;
+      background: rgba(var(--color-foreground), 0.03);
+    }
+
+    /* Price tier table */
+    .sp-price-table-wrap {
+      margin: 1.6rem 0;
+      border: 1px solid rgba(var(--color-foreground), 0.12);
+      border-radius: 8px;
+      background: rgba(var(--color-foreground), 0.02);
+    }
+
+    .sp-price-table-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.4rem;
+      list-style: none;
+    }
+
+    .sp-price-table-trigger::-webkit-details-marker { display: none; }
+
+    .sp-price-table-trigger svg {
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .sp-price-table-wrap[open] .sp-price-table-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .sp-price-table-scroll {
+      overflow-x: auto;
+      padding: 0 1.4rem 1.2rem;
+    }
+
+    .sp-price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.3rem;
+    }
+
+    .sp-price-table th,
+    .sp-price-table td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+      white-space: nowrap;
+    }
+
+    .sp-price-table th {
+      font-weight: 700;
+      background: rgba(var(--color-foreground), 0.04);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .sp-price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .sp-price-table td + td,
+    .sp-price-table th + th {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
     /* Buy button - orange CTA override */
     .service-product__buy-btn .btn-primary,
     .service-product__buy-btn .product-form__submit {
@@ -175,7 +253,17 @@
         ========================================
       {%- endcomment -%}
       <div class="grid__item product__media-wrapper">
-        {%- comment -%} Always show branded placeholder illustration {%- endcomment -%}
+        {%- if product.featured_media -%}
+          <div class="product__media-item">
+            {{ product.featured_media | image_url: width: 1200 | image_tag:
+                 loading: 'lazy',
+                 widths: '320, 480, 640, 800, 1080, 1200',
+                 sizes: '(min-width: 750px) 50vw, 100vw',
+                 alt: product.featured_media.alt | default: product.title,
+                 class: 'product__featured-image'
+            }}
+          </div>
+        {%- else -%}
           {%- liquid
             assign ph_icon = 'document'
             assign ph_handle = product.handle
@@ -305,6 +393,7 @@
             </div>
             <span class="bp-product-placeholder__text">{{ product.title }}</span>
           </div>
+        {%- endif -%}
       </div>
 
       {%- comment -%}
@@ -426,6 +515,70 @@
                       >
 
                       {%- unless product.has_only_default_variant -%}
+                        {%- if product.options.size == 2 -%}
+                          {%- assign opt1_values = product.options_with_values[0].values -%}
+                          {%- assign opt2_values = product.options_with_values[1].values -%}
+                          <details class="sp-price-table-wrap">
+                            <summary class="sp-price-table-trigger">
+                              <span>View price by {{ product.options[0] | downcase }}</span>
+                              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="sp-price-table-scroll">
+                              <table class="sp-price-table">
+                                <thead>
+                                  <tr>
+                                    <th>{{ product.options[0] }}</th>
+                                    {%- for v2 in opt2_values -%}
+                                      <th>{{ v2 }}</th>
+                                    {%- endfor -%}
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {%- for v1 in opt1_values -%}
+                                    <tr>
+                                      <td>{{ v1 }}</td>
+                                      {%- for v2 in opt2_values -%}
+                                        {%- assign tier_variant = nil -%}
+                                        {%- for variant in product.variants -%}
+                                          {%- if variant.option1 == v1 and variant.option2 == v2 -%}
+                                            {%- assign tier_variant = variant -%}
+                                            {%- break -%}
+                                          {%- endif -%}
+                                        {%- endfor -%}
+                                        <td>{%- if tier_variant -%}{{ tier_variant.price | money }}{%- else -%}—{%- endif -%}</td>
+                                      {%- endfor -%}
+                                    </tr>
+                                  {%- endfor -%}
+                                </tbody>
+                              </table>
+                            </div>
+                          </details>
+                        {%- elsif product.options.size == 1 -%}
+                          <details class="sp-price-table-wrap">
+                            <summary class="sp-price-table-trigger">
+                              <span>View all {{ product.options[0] | downcase }} prices</span>
+                              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="sp-price-table-scroll">
+                              <table class="sp-price-table">
+                                <thead>
+                                  <tr>
+                                    <th>{{ product.options[0] }}</th>
+                                    <th>Price</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {%- for variant in product.variants -%}
+                                    <tr>
+                                      <td>{{ variant.option1 }}</td>
+                                      <td>{{ variant.price | money }}</td>
+                                    </tr>
+                                  {%- endfor -%}
+                                </tbody>
+                              </table>
+                            </div>
+                          </details>
+                        {%- endif -%}
                         <div class="service-product__variants">
                           {%- for option in product.options_with_values -%}
                             <div class="service-product__variant-group">
@@ -518,6 +671,61 @@
       </button>
     </div>
   </div>
+
+  {%- unless product.has_only_default_variant -%}
+    <script type="application/json" id="ServiceVariantData-{{ section.id }}">
+      {{ product.variants | json }}
+    </script>
+    <script>
+      (function() {
+        var sectionId = {{ section.id | json }};
+        var root = document.getElementById('MainServiceProduct-' + sectionId);
+        if (!root) return;
+        var dataEl = document.getElementById('ServiceVariantData-' + sectionId);
+        if (!dataEl) return;
+        var variants;
+        try { variants = JSON.parse(dataEl.textContent); } catch (e) { return; }
+        var selects = root.querySelectorAll('.sp-variant-select');
+        if (!selects.length) return;
+        var priceEl = root.querySelector('.sp-price');
+        var stickyPriceEl = root.querySelector('.service-product__sticky-price');
+        var variantIdInput = root.querySelector('.product-variant-id');
+        var submitBtn = root.querySelector('.product-form__submit');
+        var stickyBtn = root.querySelector('.service-product__sticky-cta .btn-primary');
+        var formatter = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
+
+        function findVariant() {
+          var values = Array.prototype.map.call(selects, function(s) { return s.value; });
+          for (var i = 0; i < variants.length; i++) {
+            var v = variants[i];
+            if (selects.length >= 1 && v.option1 !== values[0]) continue;
+            if (selects.length >= 2 && v.option2 !== values[1]) continue;
+            if (selects.length >= 3 && v.option3 !== values[2]) continue;
+            return v;
+          }
+          return null;
+        }
+
+        function update() {
+          var variant = findVariant();
+          if (!variant) return;
+          var formatted = formatter.format(variant.price / 100);
+          if (priceEl) priceEl.textContent = formatted;
+          if (stickyPriceEl) stickyPriceEl.textContent = formatted;
+          if (variantIdInput) {
+            variantIdInput.value = variant.id;
+            variantIdInput.disabled = !variant.available;
+          }
+          if (submitBtn) submitBtn.disabled = !variant.available;
+          if (stickyBtn) stickyBtn.disabled = !variant.available;
+        }
+
+        Array.prototype.forEach.call(selects, function(s) {
+          s.addEventListener('change', update);
+        });
+      })();
+    </script>
+  {%- endunless -%}
 
 </section>
 
